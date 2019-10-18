@@ -10,6 +10,6 @@ public class BrickHpBehaviour : MonoBehaviour
     [Header("Score Modifier")]
     public float scoreValue;
 
-    [Header("Health")]
-    public int health = 2;
+    [Header("Armor")]
+    public int ArmorPoints = 2;
 }

@@ -12,11 +12,12 @@ public class BrickMovingBehaviour : MonoBehaviour
     public float scoreValue;
 
     [Header("Waypoint")]
+    [Tooltip("Drop your waypoints here")]
     public List<Waypoint> waypoints;
     [SerializeField]
     private int waypointIndex;
 
-    private Vector2 refVector;
+    private Vector3 refVector;
     private bool isWaiting;
 
     [Header("Pattern")]
@@ -30,6 +31,8 @@ public class BrickMovingBehaviour : MonoBehaviour
         if(waypoints.Count != 0)
         {
             this.transform.position = waypoints[waypointIndex].transform.position;
+
+            waypointIndex++;
         }
     }
 
@@ -38,13 +41,17 @@ public class BrickMovingBehaviour : MonoBehaviour
         Moving();
     }
 
+    /// <summary>
+    /// Déplacement de la Brick
+    /// </summary>
     private void Moving()
     {
-        this.transform.position = Vector2.SmoothDamp(this.transform.position, waypoints[waypointIndex].transform.position, ref refVector, waypoints[waypointIndex].smoothTime,
+        this.transform.position = Vector3.SmoothDamp(this.transform.position, waypoints[waypointIndex].transform.position, ref refVector, waypoints[waypointIndex].smoothTime,
             waypoints[waypointIndex].speed);
 
         if(this.transform.position == waypoints[waypointIndex].transform.position)
         {
+            Debug.Log("Reached");
             if (waypoints[waypointIndex].hasToWait)
             {
                 isWaiting = true;
@@ -57,13 +64,17 @@ public class BrickMovingBehaviour : MonoBehaviour
         }
     }
 
+
+    /// <summary>
+    /// Définition du prochain 
+    /// </summary>
     private void NextWaypoint()
     {
         if (turningBack)
         {
             if (onItsWayBack)
             {
-                if (waypointIndex > waypoints.Count)
+                if (waypointIndex > 0)
                 {
                     waypointIndex--;
                 }
@@ -75,7 +86,7 @@ public class BrickMovingBehaviour : MonoBehaviour
             }
             else
             {
-                if (waypointIndex < waypoints.Count)
+                if (waypointIndex < waypoints.Count - 1)
                 {
                     waypointIndex++;
                 }
@@ -88,7 +99,7 @@ public class BrickMovingBehaviour : MonoBehaviour
         }
         else
         {
-            if (waypointIndex < waypoints.Count)
+            if (waypointIndex < waypoints.Count - 1)
             {
                 waypointIndex++;
             }
