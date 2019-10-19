@@ -10,6 +10,9 @@ TagManager:
   - TeleportIgnore
   - Ball
   - Wall
+  - Bullet
+  - RacketManager
+  - Racket
   layers:
   - Default
   - TransparentFX
