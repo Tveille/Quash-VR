@@ -9,12 +9,11 @@ public class BrickMovingBehaviour : MonoBehaviour
     public int wallLayerID = 0;
 
     [Header("Score Modifier")]
-    public float scoreValue;
+    public int scoreValue;
 
     [Header("Waypoint")]
     [Tooltip("Drop your waypoints here")]
     public List<Waypoint> waypoints;
-    [SerializeField]
     private int waypointIndex;
 
     private Vector3 refVector;
@@ -117,5 +116,16 @@ public class BrickMovingBehaviour : MonoBehaviour
         isWaiting = false;
 
         NextWaypoint();
+    }
+
+
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ball")
+        {
+            BrickManager.Instance.DeadBrick(this.gameObject, scoreValue);
+        }
     }
 }

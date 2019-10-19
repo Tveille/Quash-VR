@@ -5,5 +5,16 @@ using UnityEngine;
 public class SimpleBrickBehaviour : MonoBehaviour
 {
     [Header("Score Modifier")]
-    public float scoreValue;
+    public int scoreValue;
+
+
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Ball")
+        {
+            BrickManager.Instance.DeadBrick(this.gameObject, scoreValue);
+        }
+    }
 }

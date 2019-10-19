@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
 public class Waypoint : MonoBehaviour
 {
     [Header("Waiting Parameters")]
