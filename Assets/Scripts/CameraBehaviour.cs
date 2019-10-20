@@ -5,20 +5,44 @@ using VRTK;
 
 public class CameraBehaviour : MonoBehaviour
 {
-    public float distanceCamPos;
-    public float verticalCamPos = 1.7f;
-    public float horizontalCamPos;
+    public float distanceCamPosOffset;
+    public float verticalCamPosOffset;
+    public float horizontalCamPosOffset;
+
+    public Vector3 targetPos = new Vector3(0f,1.8f,2f);
+    public Vector3 diffPos;
+    public Vector3 parentPos;
+
+    public Canvas debuggerCanvas;
+    private Vector3 initPos;
 
 
+
+    private void Awake()
+    {
+        //initPos = debuggerCanvas.transform.position;
+    }
 
     private void Update()
     {
-        VRTK_DeviceFinder.HeadsetTransform().position = new Vector3(distanceCamPos, verticalCamPos, horizontalCamPos);
+        //debuggerCanvas.transform.position = initPos - diffPos;
 
-        VRTK_DeviceFinder.HeadsetCamera().position = new Vector3(distanceCamPos, verticalCamPos, horizontalCamPos);
+        diffPos = new Vector3(targetPos.x - VRTK_DeviceFinder.HeadsetTransform().transform.localPosition.x, 
+            targetPos.y - VRTK_DeviceFinder.HeadsetTransform().transform.localPosition.y, 
+            targetPos.z - VRTK_DeviceFinder.HeadsetTransform().transform.localPosition.z);
 
-        Debug.Log("Headset Transform Position = " + VRTK_DeviceFinder.HeadsetTransform().position);
 
-        Debug.Log("Headset Camera Position = " + VRTK_DeviceFinder.HeadsetCamera().position);
+        VRTK_DeviceFinder.HeadsetTransform().parent.transform.position = parentPos;
+
+        parentPos = new Vector3(diffPos.x + horizontalCamPosOffset,
+            diffPos.y + verticalCamPosOffset, diffPos.z + distanceCamPosOffset);
+
+        DebugManager.Instance.DisplayValue(0, ("HeadSet Position" + VRTK_DeviceFinder.HeadsetTransform().localPosition));
+        DebugManager.Instance.DisplayValue(1, ("Diff Position" + diffPos));
+        DebugManager.Instance.DisplayValue(2, ("Headset Parent Position = " + VRTK_DeviceFinder.HeadsetTransform().parent.transform.localPosition));
+        DebugManager.Instance.DisplayValue(3, ("targetPos = " + targetPos));
+
+        distanceCamPosOffset = DebugManager.Instance.Tweak(0, ("distance " + distanceCamPosOffset), distanceCamPosOffset, -0.5f, 4f);
+        horizontalCamPosOffset = DebugManager.Instance.Tweak(1, ("horizontal " + horizontalCamPosOffset), horizontalCamPosOffset, -4f, 4f);
     }
 }

@@ -50,7 +50,7 @@ public class BrickMovingBehaviour : MonoBehaviour
 
         if(this.transform.position == waypoints[waypointIndex].transform.position)
         {
-            Debug.Log("Reached");
+            //Debug.Log("Reached");
             if (waypoints[waypointIndex].hasToWait)
             {
                 isWaiting = true;
