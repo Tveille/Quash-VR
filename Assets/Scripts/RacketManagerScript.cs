@@ -13,7 +13,9 @@ public class RacketManagerScript : MonoBehaviour
     private Vector3 positionTMinus1;
     private float lastFixedDeltaT; // Peut être ailleur?
 
-    private void Start()
+    public float deltaHitTime = 0.5f; //Valeur A twik
+
+private void Start()
     {
         //racket = Instantiate(racketPrefab, racketSpawn) as GameObject;
 
@@ -27,6 +29,21 @@ public class RacketManagerScript : MonoBehaviour
         positionTMinus2 = positionTMinus1;
         positionTMinus1 = racket.transform.position;
         lastFixedDeltaT = Time.fixedDeltaTime;
+    }
+
+    public void HitEvent(GameObject hitObject)
+    {
+        StartCoroutine(BallIgnoreCoroutine(hitObject, Time.time));
+    }
+
+    private IEnumerator BallIgnoreCoroutine(GameObject hitObject, float lastHitTime)
+    {
+        Physics.IgnoreCollision(racket.GetComponent<Collider>(), hitObject.GetComponent<Collider>(), true);
+        while(Time.time < lastHitTime + deltaHitTime)
+        {
+            yield return new WaitForFixedUpdate();
+        }
+        Physics.IgnoreCollision(racket.GetComponent<Collider>(), hitObject.GetComponent<Collider>(), false);
     }
 
     public Vector3 GetVelocity()
