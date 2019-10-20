@@ -5251,6 +5251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11512f2645d1465469c3226de07b66b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabPlayer: {fileID: 0}
 --- !u!4 &687064895
 Transform:
   m_ObjectHideFlags: 0
@@ -16826,6 +16827,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1250940345}
+    - target: {fileID: -9197648490567272665, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
+        type: 3}
+      propertyPath: viewIdField
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4864644986353855238, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
+        type: 3}
+      propertyPath: viewIdField
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f74565dd8bbecd347ac68e59bdd6fd2c, type: 3}
 --- !u!23 &9098340691128902369
