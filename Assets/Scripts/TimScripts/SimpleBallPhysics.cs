@@ -63,7 +63,7 @@ public class SimpleBallPhysics : MonoBehaviour
     private IEnumerator Hit()
     {
         Transform currentPosition = gameObject.transform;
-        GameObject.Find("RacketManager").GetComponent<RacketManagerScript>().HitEvent(gameObject);
+        GameObject.Find("RacketManager").GetComponent<RacketManagerScript>().OnHitEvent(gameObject);
         yield return new WaitForFixedUpdate();
 
         //Debug.Log("Debug Coroutine");
