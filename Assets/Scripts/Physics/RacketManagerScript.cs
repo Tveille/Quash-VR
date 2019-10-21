@@ -34,34 +34,39 @@ public class RacketManagerScript : MonoBehaviour
         lastFixedDeltaT = Time.fixedDeltaTime;
     }
 
-    //public void ActionCall(/*Player*/)
-    //{
-    //    StartCoroutine(PerformAction());
-    //}
+    public void ActionCall(/*Player*/)
+    {
+        StartCoroutine(PerformAction());
+    }
 
-    //private IEnumerator PerformAction()
-    //{
-    //    // Abonnement au release
-    //    while(true)
-    //    {
-    //        if (!isBeingGrabbed && !isGrabbed)
-    //        {
-    //            isBeingGrabbed = true;
-    //            StartCoroutine(RacketCallBack);
-    //            break;
-    //        }
+    private IEnumerator PerformAction()
+    {
+        // Abonnement au release
+        while (true)
+        {
+            if (!isBeingGrabbed && !isGrabbed)
+            {
+                isBeingGrabbed = true;
+                StartCoroutine(racket.GetComponent<TestRacketBehaviour>().RacketCallBack());
+                break;
+            }
 
-    //        yield return new WaitForFixedUpdate();
-    //    }
-    //}
+            yield return new WaitForFixedUpdate();
+        }
+    }
 
 
 
-    //public void StopCall()
-    //{
-    //    if(isBeingGrabbed)
-    //        StopCoroutine()
-    //}
+    public void StopCall()
+    {
+        if (isBeingGrabbed)
+            StopCoroutine(racket.GetComponent<TestRacketBehaviour>().RacketCallBack());
+        else
+        {
+            StopCoroutine(PerformAction());
+        }               
+    }
+
     public void HitEvent(GameObject hitObject)
     {
         StartCoroutine(BallIgnoreCoroutine(hitObject, Time.time));
