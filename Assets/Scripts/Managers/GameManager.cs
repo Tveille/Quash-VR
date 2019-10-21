@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 {
 
     public GameObject prefabPlayer;
-    public GameObject menu;
+
 
     public static GameManager Instance;
 
@@ -23,12 +23,6 @@ public class GameManager : MonoBehaviour
 
     public void RestartScene()
     {
-        Debug.Log(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public void Menu()
-    {
-        //menu.SetActive(!menu.activeSelf);
     }
 }

@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 4875086584084759346}
   - component: {fileID: 3657241882769391226}
   - component: {fileID: 485897111494767082}
-  - component: {fileID: 4576182242955923654}
   - component: {fileID: 5261209929423338892}
   - component: {fileID: -7628372426430276947}
   m_Layer: 0
@@ -143,6 +142,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounciness: 0.9
   velocityMultiplier: 1.2
+  gravity: 0
+  gravityModifier: 0
 --- !u!114 &3657241882769391226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,7 +167,7 @@ MonoBehaviour:
   grabOverrideButton: 0
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 485897111494767082}
-  secondaryGrabActionScript: {fileID: 4576182242955923654}
+  secondaryGrabActionScript: {fileID: 0}
   isUsable: 0
   holdButtonToUse: 1
   useOnlyIfGrabbed: 0
@@ -194,18 +195,6 @@ MonoBehaviour:
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
---- !u!114 &4576182242955923654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4875086584084759347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5261209929423338892
 MonoBehaviour:
   m_ObjectHideFlags: 0

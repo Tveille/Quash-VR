@@ -9,12 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4078316109679935818}
+  - component: {fileID: 5595549186476607001}
   - component: {fileID: 7168094651677042421}
   - component: {fileID: 8451126288808329959}
   - component: {fileID: 6821508232259680630}
-  - component: {fileID: 6788980871827868409}
   - component: {fileID: 3203913093025722122}
-  - component: {fileID: 5595549186476607001}
   - component: {fileID: 3993434249537831826}
   m_Layer: 0
   m_Name: LeftController
@@ -37,6 +36,36 @@ Transform:
   m_Father: {fileID: 7801512562378669575}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5595549186476607001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150532118874212417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b26f999cbdac8478b6c2a046256169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activationButton: 9
+  activationMode: 0
+  selectionButton: 10
+  clickMethod: 0
+  attemptClickOnDeactivate: 0
+  clickAfterHoverDuration: 0
+  maximumLength: Infinity
+  attachedTo: {fileID: 150532118874212417}
+  controllerEvents: {fileID: 0}
+  customOrigin: {fileID: 4078316109679935818}
+  controller: {fileID: 0}
+  pointerOriginTransform: {fileID: 0}
+  hoveringElement: {fileID: 0}
+  controllerRenderModel: {fileID: 0}
+  hoverDurationTimer: 0
+  canClickOnHover: 0
+  autoActivatingCanvas: {fileID: 0}
+  collisionClick: 0
 --- !u!114 &7168094651677042421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,22 +148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customColliderContainer: {fileID: 0}
---- !u!114 &6788980871827868409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150532118874212417}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65eb64f0f2fd6d64faddbcf5d7d3bdbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useButton: 3
-  controllerEvents: {fileID: 0}
-  interactTouch: {fileID: 0}
-  interactGrab: {fileID: 0}
 --- !u!114 &3203913093025722122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,36 +178,6 @@ MonoBehaviour:
   interactUse: {fileID: 0}
   customOrigin: {fileID: 0}
   controller: {fileID: 0}
---- !u!114 &5595549186476607001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150532118874212417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71b26f999cbdac8478b6c2a046256169, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activationButton: 10
-  activationMode: 0
-  selectionButton: 3
-  clickMethod: 0
-  attemptClickOnDeactivate: 0
-  clickAfterHoverDuration: 0
-  maximumLength: Infinity
-  attachedTo: {fileID: 150532118874212417}
-  controllerEvents: {fileID: 0}
-  customOrigin: {fileID: 4078316109679935818}
-  controller: {fileID: 0}
-  pointerOriginTransform: {fileID: 0}
-  hoveringElement: {fileID: 0}
-  controllerRenderModel: {fileID: 0}
-  hoverDurationTimer: 0
-  canClickOnHover: 0
-  autoActivatingCanvas: {fileID: 0}
-  collisionClick: 0
 --- !u!114 &3993434249537831826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,10 +470,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8552349933306650082}
+  - component: {fileID: 5712077845761979393}
+  - component: {fileID: 1899658536542101928}
+  - component: {fileID: 6465678577763424456}
   - component: {fileID: 5576616264958897718}
   - component: {fileID: 1705493582485996922}
   - component: {fileID: 7185292953986687041}
-  - component: {fileID: 2238547603429429026}
+  - component: {fileID: 5500643318524121076}
   m_Layer: 0
   m_Name: RightController
   m_TagString: Untagged
@@ -512,6 +498,98 @@ Transform:
   m_Father: {fileID: 7801512562378669575}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5712077845761979393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8971452699045802819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b26f999cbdac8478b6c2a046256169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activationButton: 9
+  activationMode: 0
+  selectionButton: 10
+  clickMethod: 0
+  attemptClickOnDeactivate: 0
+  clickAfterHoverDuration: 0
+  maximumLength: Infinity
+  attachedTo: {fileID: 0}
+  controllerEvents: {fileID: 0}
+  customOrigin: {fileID: 0}
+  controller: {fileID: 0}
+  pointerOriginTransform: {fileID: 0}
+  hoveringElement: {fileID: 0}
+  controllerRenderModel: {fileID: 0}
+  hoverDurationTimer: 0
+  canClickOnHover: 0
+  autoActivatingCanvas: {fileID: 0}
+  collisionClick: 0
+--- !u!114 &1899658536542101928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8971452699045802819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec704cceb26f6f49b6c900fc83d8d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableTeleport: 1
+  targetListPolicy: {fileID: 0}
+  pointerRenderer: {fileID: 6465678577763424456}
+  activationButton: 9
+  holdButtonToActivate: 1
+  activateOnEnable: 0
+  activationDelay: 0
+  selectionButton: 10
+  selectOnPress: 0
+  selectionDelay: 0
+  selectAfterHoverDuration: 0
+  interactWithObjects: 0
+  grabToPointerTip: 0
+  attachedTo: {fileID: 8971452699045802819}
+  controllerEvents: {fileID: 0}
+  interactUse: {fileID: 0}
+  customOrigin: {fileID: 0}
+  controller: {fileID: 0}
+--- !u!114 &6465678577763424456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8971452699045802819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc65878c7102524bb8c2bcfbefff497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playareaCursor: {fileID: 0}
+  directionIndicator: {fileID: 0}
+  customRaycast: {fileID: 0}
+  pointerOriginSmoothingSettings:
+    smoothsPosition: 0
+    maxAllowedPerFrameDistanceDifference: 0.003
+    smoothsRotation: 0
+    maxAllowedPerFrameAngleDifference: 1.5
+  validCollisionColor: {r: 0, g: 1, b: 0, a: 1}
+  invalidCollisionColor: {r: 1, g: 0, b: 0, a: 1}
+  tracerVisibility: 0
+  cursorVisibility: 0
+  maximumLength: 100
+  scaleFactor: 0.002
+  cursorScaleMultiplier: 25
+  cursorMatchTargetRotation: 0
+  cursorDistanceRescale: 0
+  maximumCursorScale: {x: Infinity, y: Infinity, z: Infinity}
+  customTracer: {fileID: 0}
+  customCursor: {fileID: 0}
 --- !u!114 &5576616264958897718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,27 +672,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customColliderContainer: {fileID: 0}
---- !u!114 &2238547603429429026
+--- !u!114 &5500643318524121076
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8971452699045802819}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58cdac96da703d7488a11cc3bde08cbd, type: 3}
+  m_Script: {fileID: 11500000, guid: 71b26f999cbdac8478b6c2a046256169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToGrab: {fileID: 0}
-  objectIsPrefab: 0
-  cloneGrabbedObject: 0
-  alwaysCloneOnEnable: 0
-  attemptSecondaryGrab: 0
-  interactTouch: {fileID: 0}
-  interactGrab: {fileID: 0}
-  secondaryInteractTouch: {fileID: 0}
-  secondaryInteractGrab: {fileID: 0}
+  activationButton: 9
+  activationMode: 0
+  selectionButton: 10
+  clickMethod: 0
+  attemptClickOnDeactivate: 0
+  clickAfterHoverDuration: 0
+  maximumLength: Infinity
+  attachedTo: {fileID: 0}
+  controllerEvents: {fileID: 0}
+  customOrigin: {fileID: 0}
+  controller: {fileID: 0}
+  pointerOriginTransform: {fileID: 0}
+  hoveringElement: {fileID: 0}
+  controllerRenderModel: {fileID: 0}
+  hoverDurationTimer: 0
+  canClickOnHover: 0
+  autoActivatingCanvas: {fileID: 0}
+  collisionClick: 0
 --- !u!1 &8976967245826851535
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,27 +976,27 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7801512562541541113}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &7803260042641153923 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4000011401111930, guid: be540b97364be0a4890e39e62ac89ed1,
-    type: 3}
-  m_PrefabInstance: {fileID: 7801512562541541113}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7800561921727614459 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1587602180963074, guid: be540b97364be0a4890e39e62ac89ed1,
     type: 3}
   m_PrefabInstance: {fileID: 7801512562541541113}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7802213497474020767 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1000013941130086, guid: be540b97364be0a4890e39e62ac89ed1,
+--- !u!4 &7803260042641153923 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4000011401111930, guid: be540b97364be0a4890e39e62ac89ed1,
     type: 3}
   m_PrefabInstance: {fileID: 7801512562541541113}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &7800794350556374521 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1538727058887424, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 3}
+  m_PrefabInstance: {fileID: 7801512562541541113}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7802213497474020767 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000013941130086, guid: be540b97364be0a4890e39e62ac89ed1,
     type: 3}
   m_PrefabInstance: {fileID: 7801512562541541113}
   m_PrefabAsset: {fileID: 0}

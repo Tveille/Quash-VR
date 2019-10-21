@@ -34,9 +34,6 @@ public class DebugManager : MonoBehaviour
     [Header("Debug Text 03")]
     public TextMeshProUGUI debugText03;
 
-    Vector3 v3;
-    float f;
-    int i;
 
     public static DebugManager Instance;
 
