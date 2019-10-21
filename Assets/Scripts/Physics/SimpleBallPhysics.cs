@@ -7,27 +7,29 @@ public class SimpleBallPhysics : MonoBehaviour
     public float bounciness;
     public float velocityMultiplier;
     public float gravity;
+    public float gravityModifier;
 
     private Rigidbody rigidBody;
 
     private Vector3 lastVelocity;
-    private bool isSubjectToGravity;
+    private bool isSubjectToModifiedGravity;
 
-    // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
-        isSubjectToGravity = true;
+        isSubjectToModifiedGravity = false;
     }
 
     private void FixedUpdate()
     {
         lastVelocity = rigidBody.velocity;  // Vitesse avant contact necessaire pour le calcul du rebond (méthode Bounce)
 
-        if(isSubjectToGravity)
+        if(isSubjectToModifiedGravity)
         {
-            rigidBody.AddForce(new Vector3(0, -gravity, 0));
+            rigidBody.AddForce(new Vector3(0, - gravityModifier * gravity, 0));
         }
+        else
+            rigidBody.AddForce(new Vector3(0, -gravity, 0));
     }
 
     private void OnCollisionEnter(Collision other)
@@ -35,12 +37,12 @@ public class SimpleBallPhysics : MonoBehaviour
         if (other.gameObject.CompareTag("Wall"))
         {
             Bounce(other.GetContact(0));
-            isSubjectToGravity = true;
+            isSubjectToModifiedGravity = false;
         }
         if (other.gameObject.CompareTag("Racket"))
         {
             //Debug.Log("Collision detected");
-            isSubjectToGravity = false;
+            isSubjectToModifiedGravity = true;
             StartCoroutine(Hit());
         }
     }

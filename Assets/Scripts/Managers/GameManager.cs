@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartScene()
     {
-        Debug.Log("Restart Scene");
+        Debug.Log(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4223,7 +4223,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &626545873
 PrefabInstance:
@@ -5204,7 +5204,7 @@ PrefabInstance:
     - target: {fileID: 4875086584084759336, guid: b302091e0ef501c4c8c620512486a1ed,
         type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 4875086584084759336, guid: b302091e0ef501c4c8c620512486a1ed,
         type: 3}
@@ -5230,6 +5230,11 @@ PrefabInstance:
         type: 3}
       propertyPath: gravity
       value: 9.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875086584084759346, guid: b302091e0ef501c4c8c620512486a1ed,
+        type: 3}
+      propertyPath: gravityModifier
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4576182242955923654, guid: b302091e0ef501c4c8c620512486a1ed, type: 3}
@@ -7269,7 +7274,7 @@ RectTransform:
   m_Children:
   - {fileID: 1927242034}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: -90, y: -90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8770,7 +8775,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1198599361 stripped
 Transform:
@@ -13086,7 +13091,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1891230929
 GameObject:
@@ -15657,7 +15662,7 @@ PrefabInstance:
     - target: {fileID: 5761266604447212015, guid: 4bdb309a16a688c4390fb0b1ff5c07dd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5761266604447212015, guid: 4bdb309a16a688c4390fb0b1ff5c07dd,
         type: 3}

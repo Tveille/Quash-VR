@@ -8,14 +8,17 @@ public class RacketManagerScript : MonoBehaviour
     //public Transform racketSpawn;
 
     public GameObject racket;
+    public float deltaHitTime = 0.5f; //Valeur A twik
+
 
     private Vector3 positionTMinus2;
     private Vector3 positionTMinus1;
     private float lastFixedDeltaT; // Peut être ailleur?
 
-    public float deltaHitTime = 0.5f; //Valeur A twik
+    private bool isBeingGrabbed;
+    private bool isGrabbed;
 
-private void Start()
+    private void Start()
     {
         //racket = Instantiate(racketPrefab, racketSpawn) as GameObject;
 
@@ -31,6 +34,34 @@ private void Start()
         lastFixedDeltaT = Time.fixedDeltaTime;
     }
 
+    //public void ActionCall(/*Player*/)
+    //{
+    //    StartCoroutine(PerformAction());
+    //}
+
+    //private IEnumerator PerformAction()
+    //{
+    //    // Abonnement au release
+    //    while(true)
+    //    {
+    //        if (!isBeingGrabbed && !isGrabbed)
+    //        {
+    //            isBeingGrabbed = true;
+    //            StartCoroutine(RacketCallBack);
+    //            break;
+    //        }
+
+    //        yield return new WaitForFixedUpdate();
+    //    }
+    //}
+
+
+
+    //public void StopCall()
+    //{
+    //    if(isBeingGrabbed)
+    //        StopCoroutine()
+    //}
     public void HitEvent(GameObject hitObject)
     {
         StartCoroutine(BallIgnoreCoroutine(hitObject, Time.time));
