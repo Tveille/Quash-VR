@@ -11,17 +11,24 @@ public class GameManager : MonoBehaviour
     public GameObject prefabPlayer;
     public GameObject menu;
 
-    void Awake(){
+    public static GameManager Instance;
+
+
+    void Awake()
+    {
         PhotonNetwork.Instantiate(prefabPlayer.name, prefabPlayer.transform.position, Quaternion.identity, 0);
+
+        Instance = this;
     }
 
     public void RestartScene()
     {
+        Debug.Log("Restart Scene");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void Menu()
     {
-        menu.SetActive(!menu.activeSelf);
+        //menu.SetActive(!menu.activeSelf);
     }
 }
