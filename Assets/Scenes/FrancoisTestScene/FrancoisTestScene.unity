@@ -132,6 +132,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrickMoving (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6069188586322574767, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 6069188586322574763, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -477,7 +482,7 @@ GameObject:
   - component: {fileID: 39847635}
   m_Layer: 0
   m_Name: BrickHP (11)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -583,6 +588,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrickMoving (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 6069188586322574767, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 6069188586322574763, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -679,7 +689,7 @@ GameObject:
   - component: {fileID: 119815842}
   m_Layer: 0
   m_Name: Waypoint (9)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -776,7 +786,7 @@ GameObject:
   - component: {fileID: 119876290}
   m_Layer: 0
   m_Name: BrickSimple (28)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -883,7 +893,7 @@ GameObject:
   - component: {fileID: 163062813}
   m_Layer: 0
   m_Name: BrickSimple (26)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1082,7 +1092,7 @@ GameObject:
   - component: {fileID: 169162114}
   m_Layer: 0
   m_Name: BrickSimple (38)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1189,7 +1199,7 @@ GameObject:
   - component: {fileID: 190376339}
   m_Layer: 0
   m_Name: BrickHP (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1298,7 +1308,7 @@ GameObject:
   - component: {fileID: 215466247}
   m_Layer: 0
   m_Name: BrickSimple (46)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1405,7 +1415,7 @@ GameObject:
   - component: {fileID: 222403973}
   m_Layer: 0
   m_Name: BrickSimple (8)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1673,7 +1683,7 @@ GameObject:
   - component: {fileID: 246714715}
   m_Layer: 0
   m_Name: BrickSimple (56)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1780,7 +1790,7 @@ GameObject:
   - component: {fileID: 249554491}
   m_Layer: 0
   m_Name: BrickSimple (31)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1899,7 +1909,7 @@ GameObject:
   - component: {fileID: 254221574}
   m_Layer: 0
   m_Name: BrickSimple (57)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2006,7 +2016,7 @@ GameObject:
   - component: {fileID: 254800031}
   m_Layer: 0
   m_Name: BrickSimple (41)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2205,7 +2215,7 @@ GameObject:
   - component: {fileID: 317539055}
   m_Layer: 0
   m_Name: BrickSimple (29)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2312,7 +2322,7 @@ GameObject:
   - component: {fileID: 317723056}
   m_Layer: 0
   m_Name: BrickSimple (33)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2425,7 +2435,7 @@ GameObject:
   - component: {fileID: 332039939}
   m_Layer: 0
   m_Name: BrickSimple (42)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2532,7 +2542,7 @@ GameObject:
   - component: {fileID: 348909123}
   m_Layer: 0
   m_Name: BrickSimple (13)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2737,7 +2747,7 @@ GameObject:
   - component: {fileID: 384454497}
   m_Layer: 0
   m_Name: BrickSimple (12)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2844,7 +2854,7 @@ GameObject:
   - component: {fileID: 437172902}
   m_Layer: 0
   m_Name: BrickSimple (19)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2950,7 +2960,7 @@ GameObject:
   - component: {fileID: 440424609}
   m_Layer: 0
   m_Name: Waypoint (13)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3047,7 +3057,7 @@ GameObject:
   - component: {fileID: 455209882}
   m_Layer: 0
   m_Name: BrickSimple (76)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3154,7 +3164,7 @@ GameObject:
   - component: {fileID: 457075329}
   m_Layer: 0
   m_Name: BrickSimple (27)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3267,7 +3277,7 @@ GameObject:
   - component: {fileID: 464490820}
   m_Layer: 0
   m_Name: BrickSimple (51)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3698,7 +3708,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506187205}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3766,7 +3776,7 @@ GameObject:
   - component: {fileID: 507482850}
   m_Layer: 0
   m_Name: BrickSimple (81)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3891,7 +3901,7 @@ GameObject:
   - component: {fileID: 581616038}
   m_Layer: 0
   m_Name: BrickSimple (83)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3998,7 +4008,7 @@ GameObject:
   - component: {fileID: 589116367}
   m_Layer: 0
   m_Name: BrickSimple (15)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4105,7 +4115,7 @@ GameObject:
   - component: {fileID: 594420690}
   m_Layer: 0
   m_Name: BrickSimple (6)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4239,6 +4249,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrickMoving (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 6069188586322574767, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 6069188586322574763, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4321,6 +4336,233 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83a37e87fbf1902478faa2c6a4bbfd17, type: 3}
+--- !u!1 &666227578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 666227579}
+  - component: {fileID: 666227586}
+  - component: {fileID: 666227585}
+  - component: {fileID: 666227584}
+  - component: {fileID: 666227583}
+  - component: {fileID: 666227582}
+  - component: {fileID: 666227581}
+  - component: {fileID: 666227580}
+  m_Layer: 0
+  m_Name: LeftControllerT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &666227579
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666227578}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -25.249796, y: -45.857094, z: 129.24968}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1541995952}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &666227580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666227578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc65878c7102524bb8c2bcfbefff497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playareaCursor: {fileID: 0}
+  directionIndicator: {fileID: 0}
+  customRaycast: {fileID: 0}
+  pointerOriginSmoothingSettings:
+    smoothsPosition: 0
+    maxAllowedPerFrameDistanceDifference: 0.003
+    smoothsRotation: 0
+    maxAllowedPerFrameAngleDifference: 1.5
+  validCollisionColor: {r: 0, g: 1, b: 0, a: 1}
+  invalidCollisionColor: {r: 1, g: 0, b: 0, a: 1}
+  tracerVisibility: 0
+  cursorVisibility: 0
+  maximumLength: 100
+  scaleFactor: 0.002
+  cursorScaleMultiplier: 25
+  cursorMatchTargetRotation: 0
+  cursorDistanceRescale: 0
+  maximumCursorScale: {x: Infinity, y: Infinity, z: Infinity}
+  customTracer: {fileID: 0}
+  customCursor: {fileID: 0}
+--- !u!114 &666227581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666227578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b26f999cbdac8478b6c2a046256169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activationButton: 10
+  activationMode: 0
+  selectionButton: 3
+  clickMethod: 0
+  attemptClickOnDeactivate: 0
+  clickAfterHoverDuration: 0
+  maximumLength: Infinity
+  attachedTo: {fileID: 666227578}
+  controllerEvents: {fileID: 0}
+  customOrigin: {fileID: 666227579}
+  controller: {fileID: 0}
+  pointerOriginTransform: {fileID: 0}
+  hoveringElement: {fileID: 0}
+  controllerRenderModel: {fileID: 0}
+  hoverDurationTimer: 0
+  canClickOnHover: 0
+  autoActivatingCanvas: {fileID: 0}
+  collisionClick: 0
+--- !u!114 &666227582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666227578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec704cceb26f6f49b6c900fc83d8d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableTeleport: 1
+  targetListPolicy: {fileID: 0}
+  pointerRenderer: {fileID: 666227580}
+  activationButton: 9
+  holdButtonToActivate: 1
+  activateOnEnable: 0
+  activationDelay: 0
+  selectionButton: 10
+  selectOnPress: 0
+  selectionDelay: 0
+  selectAfterHoverDuration: 0
+  interactWithObjects: 0
+  grabToPointerTip: 0
+  attachedTo: {fileID: 0}
+  controllerEvents: {fileID: 0}
+  interactUse: {fileID: 0}
+  customOrigin: {fileID: 0}
+  controller: {fileID: 0}
+--- !u!114 &666227583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666227578}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65eb64f0f2fd6d64faddbcf5d7d3bdbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useButton: 3
+  controllerEvents: {fileID: 0}
+  interactTouch: {fileID: 0}
+  interactGrab: {fileID: 0}
+--- !u!114 &666227584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666227578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e104da36bd3b04b90c6ae969ac66dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customColliderContainer: {fileID: 0}
+--- !u!114 &666227585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666227578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947b27445602ed640b885db7e667dfc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabButton: 4
+  grabPrecognition: 0
+  throwMultiplier: 1
+  createRigidBodyWhenNotTouching: 0
+  controllerAttachPoint: {fileID: 0}
+  controllerEvents: {fileID: 0}
+  interactTouch: {fileID: 0}
+--- !u!114 &666227586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666227578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eba3cd5456cd79e49948f5ceb58544b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axisFidelity: 1
+  senseAxisForceZeroThreshold: 0.15
+  senseAxisPressThreshold: 0.95
+  triggerClickThreshold: 1
+  triggerForceZeroThreshold: 0.01
+  triggerAxisZeroOnUntouch: 0
+  gripClickThreshold: 1
+  gripForceZeroThreshold: 0.01
+  gripAxisZeroOnUntouch: 0
+  triggerPressed: 0
+  triggerTouched: 0
+  triggerHairlinePressed: 0
+  triggerClicked: 0
+  triggerAxisChanged: 0
+  triggerSenseAxisChanged: 0
+  gripPressed: 0
+  gripTouched: 0
+  gripHairlinePressed: 0
+  gripClicked: 0
+  gripAxisChanged: 0
+  touchpadPressed: 0
+  touchpadTouched: 0
+  touchpadAxisChanged: 0
+  touchpadSenseAxisChanged: 0
+  touchpadTwoTouched: 0
+  touchpadTwoPressed: 0
+  touchpadTwoAxisChanged: 0
+  buttonOnePressed: 0
+  buttonOneTouched: 0
+  buttonTwoPressed: 0
+  buttonTwoTouched: 0
+  startMenuPressed: 0
+  middleFingerSenseAxisChanged: 0
+  ringFingerSenseAxisChanged: 0
+  pinkyFingerSenseAxisChanged: 0
+  gripSenseAxisChanged: 0
+  gripSensePressed: 0
+  controllerVisible: 1
 --- !u!1 &667392251
 GameObject:
   m_ObjectHideFlags: 0
@@ -4336,7 +4578,7 @@ GameObject:
   - component: {fileID: 667392253}
   m_Layer: 0
   m_Name: BrickSimple (48)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4473,7 +4715,7 @@ GameObject:
   - component: {fileID: 669613051}
   m_Layer: 0
   m_Name: BrickSimple (37)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4580,7 +4822,7 @@ GameObject:
   - component: {fileID: 670145338}
   m_Layer: 0
   m_Name: BrickHP (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4686,6 +4928,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrickMoving (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 6069188586322574767, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 6069188586322574763, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4779,6 +5026,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BrickMoving (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069188586322574767, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 6069188586322574763, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
         type: 3}
@@ -5137,7 +5389,7 @@ GameObject:
   - component: {fileID: 705267127}
   m_Layer: 0
   m_Name: BrickSimple (34)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5320,6 +5572,86 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &723770323
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4875086584084759347, guid: b302091e0ef501c4c8c620512486a1ed,
+        type: 3}
+      propertyPath: m_Name
+      value: CustomBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875086584084759336, guid: b302091e0ef501c4c8c620512486a1ed,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.105
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875086584084759336, guid: b302091e0ef501c4c8c620512486a1ed,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.074
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875086584084759336, guid: b302091e0ef501c4c8c620512486a1ed,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.427
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875086584084759336, guid: b302091e0ef501c4c8c620512486a1ed,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875086584084759336, guid: b302091e0ef501c4c8c620512486a1ed,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875086584084759336, guid: b302091e0ef501c4c8c620512486a1ed,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875086584084759336, guid: b302091e0ef501c4c8c620512486a1ed,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875086584084759336, guid: b302091e0ef501c4c8c620512486a1ed,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875086584084759336, guid: b302091e0ef501c4c8c620512486a1ed,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875086584084759336, guid: b302091e0ef501c4c8c620512486a1ed,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875086584084759336, guid: b302091e0ef501c4c8c620512486a1ed,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875086584084759340, guid: b302091e0ef501c4c8c620512486a1ed,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875086584084759346, guid: b302091e0ef501c4c8c620512486a1ed,
+        type: 3}
+      propertyPath: gravity
+      value: 9.81
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4576182242955923654, guid: b302091e0ef501c4c8c620512486a1ed, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: b302091e0ef501c4c8c620512486a1ed, type: 3}
 --- !u!1 &729509202
 GameObject:
   m_ObjectHideFlags: 0
@@ -5335,7 +5667,7 @@ GameObject:
   - component: {fileID: 729509204}
   m_Layer: 0
   m_Name: BrickSimple (14)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5508,7 +5840,7 @@ GameObject:
   - component: {fileID: 755421358}
   m_Layer: 0
   m_Name: BrickSimple (55)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5615,7 +5947,7 @@ GameObject:
   - component: {fileID: 762690989}
   m_Layer: 0
   m_Name: BrickSimple (68)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5722,7 +6054,7 @@ GameObject:
   - component: {fileID: 767978770}
   m_Layer: 0
   m_Name: BrickSimple (45)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5829,7 +6161,7 @@ GameObject:
   - component: {fileID: 768000589}
   m_Layer: 0
   m_Name: BrickSimple (80)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5933,6 +6265,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrickMoving (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 6069188586322574767, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 6069188586322574763, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6029,7 +6366,7 @@ GameObject:
   - component: {fileID: 778367292}
   m_Layer: 0
   m_Name: Waypoint (14)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6126,7 +6463,7 @@ GameObject:
   - component: {fileID: 781161208}
   m_Layer: 0
   m_Name: BrickSimple (5)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6233,7 +6570,7 @@ GameObject:
   - component: {fileID: 807556008}
   m_Layer: 0
   m_Name: BrickSimple (10)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6340,7 +6677,7 @@ GameObject:
   - component: {fileID: 811708931}
   m_Layer: 0
   m_Name: BrickSimple (39)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6450,6 +6787,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrickMoving (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6069188586322574767, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 6069188586322574763, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6546,7 +6888,7 @@ GameObject:
   - component: {fileID: 828933887}
   m_Layer: 0
   m_Name: Waypoint (12)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6643,7 +6985,7 @@ GameObject:
   - component: {fileID: 834577636}
   m_Layer: 0
   m_Name: BrickSimple (66)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6750,7 +7092,7 @@ GameObject:
   - component: {fileID: 854378282}
   m_Layer: 0
   m_Name: BrickHP (6)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6859,7 +7201,7 @@ GameObject:
   - component: {fileID: 923443558}
   m_Layer: 0
   m_Name: BrickSimple (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6965,7 +7307,7 @@ GameObject:
   - component: {fileID: 927699871}
   m_Layer: 0
   m_Name: Waypoint (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7058,6 +7400,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BrickMoving (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069188586322574767, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 6069188586322574763, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
         type: 3}
@@ -7156,7 +7503,7 @@ GameObject:
   - component: {fileID: 949117132}
   m_Layer: 0
   m_Name: BrickSimple (54)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7368,7 +7715,7 @@ GameObject:
   - component: {fileID: 995249617}
   m_Layer: 0
   m_Name: BrickSimple (60)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7475,7 +7822,7 @@ GameObject:
   - component: {fileID: 1008354317}
   m_Layer: 0
   m_Name: BrickSimple (71)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7582,7 +7929,7 @@ GameObject:
   - component: {fileID: 1022201988}
   m_Layer: 0
   m_Name: BrickSimple (25)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7686,7 +8033,7 @@ GameObject:
   - component: {fileID: 1042120614}
   m_Layer: 0
   m_Name: Waypoint (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7721,6 +8068,120 @@ MonoBehaviour:
   waitFor: 0
   smoothTime: 0.25
   speed: 4
+--- !u!1001 &1061755366
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8776666389479398583, guid: 1e171ffe7f326b44ea923c75c065f9ff,
+        type: 3}
+      propertyPath: m_Name
+      value: Racket
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776666389479398583, guid: 1e171ffe7f326b44ea923c75c065f9ff,
+        type: 3}
+      propertyPath: m_TagString
+      value: Racket
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776666389479398576, guid: 1e171ffe7f326b44ea923c75c065f9ff,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.148
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776666389479398576, guid: 1e171ffe7f326b44ea923c75c065f9ff,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.079
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776666389479398576, guid: 1e171ffe7f326b44ea923c75c065f9ff,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.928
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776666389479398576, guid: 1e171ffe7f326b44ea923c75c065f9ff,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776666389479398576, guid: 1e171ffe7f326b44ea923c75c065f9ff,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776666389479398576, guid: 1e171ffe7f326b44ea923c75c065f9ff,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776666389479398576, guid: 1e171ffe7f326b44ea923c75c065f9ff,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776666389479398576, guid: 1e171ffe7f326b44ea923c75c065f9ff,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776666389479398576, guid: 1e171ffe7f326b44ea923c75c065f9ff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776666389479398576, guid: 1e171ffe7f326b44ea923c75c065f9ff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776666389479398576, guid: 1e171ffe7f326b44ea923c75c065f9ff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776666389479398577, guid: 1e171ffe7f326b44ea923c75c065f9ff,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.0000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776666389479398577, guid: 1e171ffe7f326b44ea923c75c065f9ff,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776666389479398577, guid: 1e171ffe7f326b44ea923c75c065f9ff,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.0000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276729969633534000, guid: 1e171ffe7f326b44ea923c75c065f9ff,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276729969633534000, guid: 1e171ffe7f326b44ea923c75c065f9ff,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276729969633534000, guid: 1e171ffe7f326b44ea923c75c065f9ff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276729969633534000, guid: 1e171ffe7f326b44ea923c75c065f9ff,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276729969633534000, guid: 1e171ffe7f326b44ea923c75c065f9ff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1e171ffe7f326b44ea923c75c065f9ff, type: 3}
 --- !u!1 &1064636546
 GameObject:
   m_ObjectHideFlags: 0
@@ -7736,7 +8197,7 @@ GameObject:
   - component: {fileID: 1064636548}
   m_Layer: 0
   m_Name: BrickSimple (23)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7843,7 +8304,7 @@ GameObject:
   - component: {fileID: 1073564522}
   m_Layer: 0
   m_Name: BrickSimple (64)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7950,7 +8411,7 @@ GameObject:
   - component: {fileID: 1093046396}
   m_Layer: 0
   m_Name: BrickSimple (52)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8053,6 +8514,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BrickMoving (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069188586322574767, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 6069188586322574763, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
         type: 3}
@@ -8157,7 +8623,7 @@ GameObject:
   - component: {fileID: 1126384591}
   m_Layer: 0
   m_Name: BrickSimple (79)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8261,6 +8727,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrickSimple (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 6638883875395251446, guid: 86f168f45575fff4791f2d2b9fa2d699,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 6638883875395251447, guid: 86f168f45575fff4791f2d2b9fa2d699,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8337,7 +8808,7 @@ GameObject:
   - component: {fileID: 1137704558}
   m_Layer: 0
   m_Name: Waypoint (8)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8434,7 +8905,7 @@ GameObject:
   - component: {fileID: 1139393350}
   m_Layer: 0
   m_Name: BrickSimple (17)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8526,6 +8997,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139393348}
   m_Mesh: {fileID: -5495902117074765545, guid: fe2854fef66d39f4e9f3f62b1c61b8af, type: 3}
+--- !u!1 &1155981879 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8776666389479398583, guid: 1e171ffe7f326b44ea923c75c065f9ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 1061755366}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1159189495
 GameObject:
   m_ObjectHideFlags: 0
@@ -8541,7 +9018,7 @@ GameObject:
   - component: {fileID: 1159189497}
   m_Layer: 0
   m_Name: BrickHP (10)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8728,7 +9205,7 @@ GameObject:
   - component: {fileID: 1209126800}
   m_Layer: 0
   m_Name: BrickSimple (53)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8835,7 +9312,7 @@ GameObject:
   - component: {fileID: 1209349711}
   m_Layer: 0
   m_Name: BrickSimple (43)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8948,7 +9425,7 @@ GameObject:
   - component: {fileID: 1226885812}
   m_Layer: 0
   m_Name: BrickSimple (78)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9054,7 +9531,7 @@ GameObject:
   - component: {fileID: 1251645304}
   m_Layer: 0
   m_Name: Waypoint (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9185,7 +9662,7 @@ GameObject:
   - component: {fileID: 1269266205}
   m_Layer: 0
   m_Name: BrickSimple (18)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9455,7 +9932,7 @@ GameObject:
   - component: {fileID: 1300993654}
   m_Layer: 0
   m_Name: BrickSimple (50)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9562,7 +10039,7 @@ GameObject:
   - component: {fileID: 1319175863}
   m_Layer: 0
   m_Name: BrickSimple (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9666,6 +10143,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrickSimple (74)
       objectReference: {fileID: 0}
+    - target: {fileID: 6638883875395251446, guid: 86f168f45575fff4791f2d2b9fa2d699,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 6638883875395251447, guid: 86f168f45575fff4791f2d2b9fa2d699,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9755,7 +10237,7 @@ GameObject:
   - component: {fileID: 1406496682}
   m_Layer: 0
   m_Name: BrickSimple (32)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9862,7 +10344,7 @@ GameObject:
   - component: {fileID: 1432605889}
   m_Layer: 0
   m_Name: BrickSimple (47)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9969,7 +10451,7 @@ GameObject:
   - component: {fileID: 1433710549}
   m_Layer: 0
   m_Name: BrickSimple (49)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10075,7 +10557,7 @@ GameObject:
   - component: {fileID: 1448728329}
   m_Layer: 0
   m_Name: Waypoint (10)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10168,6 +10650,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BrickMoving (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069188586322574767, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 6069188586322574763, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
         type: 3}
@@ -10266,7 +10753,7 @@ GameObject:
   - component: {fileID: 1458495511}
   m_Layer: 0
   m_Name: BrickHP (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10398,7 +10885,7 @@ GameObject:
   - component: {fileID: 1493982932}
   m_Layer: 0
   m_Name: Waypoint (5)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10495,7 +10982,7 @@ GameObject:
   - component: {fileID: 1506539821}
   m_Layer: 0
   m_Name: BrickSimple (59)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10602,7 +11089,7 @@ GameObject:
   - component: {fileID: 1509500924}
   m_Layer: 0
   m_Name: BrickHP (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10696,6 +11183,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509500922}
   m_Mesh: {fileID: -5495902117074765545, guid: fe2854fef66d39f4e9f3f62b1c61b8af, type: 3}
+--- !u!4 &1541995952 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8166748994558718948, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7801512561730418899}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1543855462
 GameObject:
   m_ObjectHideFlags: 0
@@ -10744,7 +11237,7 @@ GameObject:
   - component: {fileID: 1566053701}
   m_Layer: 0
   m_Name: BrickSimple (63)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10851,7 +11344,7 @@ GameObject:
   - component: {fileID: 1566213936}
   m_Layer: 0
   m_Name: BrickSimple (35)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10958,7 +11451,7 @@ GameObject:
   - component: {fileID: 1568876765}
   m_Layer: 0
   m_Name: BrickSimple (69)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11064,7 +11557,7 @@ GameObject:
   - component: {fileID: 1593381697}
   m_Layer: 0
   m_Name: Waypoint (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11161,7 +11654,7 @@ GameObject:
   - component: {fileID: 1593502469}
   m_Layer: 0
   m_Name: BrickSimple (70)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11265,6 +11758,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrickSimple (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6638883875395251446, guid: 86f168f45575fff4791f2d2b9fa2d699,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 6638883875395251447, guid: 86f168f45575fff4791f2d2b9fa2d699,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11342,7 +11840,7 @@ GameObject:
   - component: {fileID: 1632287043}
   m_Layer: 0
   m_Name: BrickSimple (58)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11547,7 +12045,7 @@ GameObject:
   - component: {fileID: 1655202358}
   m_Layer: 0
   m_Name: BrickSimple (75)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11653,7 +12151,7 @@ GameObject:
   - component: {fileID: 1659011279}
   m_Layer: 0
   m_Name: Waypoint (11)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11750,7 +12248,7 @@ GameObject:
   - component: {fileID: 1659745263}
   m_Layer: 0
   m_Name: BrickSimple (67)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11857,7 +12355,7 @@ GameObject:
   - component: {fileID: 1687475032}
   m_Layer: 0
   m_Name: BrickHP (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11972,7 +12470,7 @@ GameObject:
   - component: {fileID: 1693884526}
   m_Layer: 0
   m_Name: BrickSimple (72)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12079,7 +12577,7 @@ GameObject:
   - component: {fileID: 1716998808}
   m_Layer: 0
   m_Name: BrickSimple (40)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12186,7 +12684,7 @@ GameObject:
   - component: {fileID: 1757086594}
   m_Layer: 0
   m_Name: BrickSimple (9)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12293,7 +12791,7 @@ GameObject:
   - component: {fileID: 1772709503}
   m_Layer: 0
   m_Name: BrickSimple (11)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12484,7 +12982,7 @@ GameObject:
   - component: {fileID: 1811442847}
   m_Layer: 0
   m_Name: BrickSimple (21)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12591,7 +13089,7 @@ GameObject:
   - component: {fileID: 1821292646}
   m_Layer: 0
   m_Name: BrickSimple (44)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12695,7 +13193,7 @@ GameObject:
   - component: {fileID: 1823052122}
   m_Layer: 0
   m_Name: Waypoint (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12745,7 +13243,7 @@ GameObject:
   - component: {fileID: 1858197138}
   m_Layer: 0
   m_Name: BrickSimple (16)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12852,7 +13350,7 @@ GameObject:
   - component: {fileID: 1875313008}
   m_Layer: 0
   m_Name: BrickSimple (82)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12959,7 +13457,7 @@ GameObject:
   - component: {fileID: 1878411235}
   m_Layer: 0
   m_Name: BrickSimple (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13066,7 +13564,7 @@ GameObject:
   - component: {fileID: 1880223634}
   m_Layer: 0
   m_Name: BrickHP (5)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13160,6 +13658,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880223632}
   m_Mesh: {fileID: -5495902117074765545, guid: fe2854fef66d39f4e9f3f62b1c61b8af, type: 3}
+--- !u!1 &1883232079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1883232081}
+  - component: {fileID: 1883232080}
+  m_Layer: 0
+  m_Name: RacketManager
+  m_TagString: RacketManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1883232080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883232079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af3a515cef68b6d4a876a2f21fe767bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  racket: {fileID: 1155981879}
+  deltaHitTime: 0.5
+--- !u!4 &1883232081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883232079}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1891230929
 GameObject:
   m_ObjectHideFlags: 0
@@ -13175,7 +13718,7 @@ GameObject:
   - component: {fileID: 1891230931}
   m_Layer: 0
   m_Name: BrickSimple (62)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13297,6 +13840,143 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1894127781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1894127782}
+  - component: {fileID: 1894127786}
+  - component: {fileID: 1894127785}
+  - component: {fileID: 1894127784}
+  - component: {fileID: 1894127783}
+  m_Layer: 0
+  m_Name: RightControllerT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1894127782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894127781}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -25.249796, y: -45.857094, z: 129.24968}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1541995952}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1894127783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894127781}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58cdac96da703d7488a11cc3bde08cbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToGrab: {fileID: 0}
+  objectIsPrefab: 0
+  cloneGrabbedObject: 0
+  alwaysCloneOnEnable: 0
+  attemptSecondaryGrab: 0
+  interactTouch: {fileID: 0}
+  interactGrab: {fileID: 0}
+  secondaryInteractTouch: {fileID: 0}
+  secondaryInteractGrab: {fileID: 0}
+--- !u!114 &1894127784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894127781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e104da36bd3b04b90c6ae969ac66dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customColliderContainer: {fileID: 0}
+--- !u!114 &1894127785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894127781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947b27445602ed640b885db7e667dfc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabButton: 4
+  grabPrecognition: 0
+  throwMultiplier: 1
+  createRigidBodyWhenNotTouching: 0
+  controllerAttachPoint: {fileID: 0}
+  controllerEvents: {fileID: 0}
+  interactTouch: {fileID: 0}
+--- !u!114 &1894127786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894127781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eba3cd5456cd79e49948f5ceb58544b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axisFidelity: 1
+  senseAxisForceZeroThreshold: 0.15
+  senseAxisPressThreshold: 0.95
+  triggerClickThreshold: 1
+  triggerForceZeroThreshold: 0.01
+  triggerAxisZeroOnUntouch: 0
+  gripClickThreshold: 1
+  gripForceZeroThreshold: 0.01
+  gripAxisZeroOnUntouch: 0
+  triggerPressed: 0
+  triggerTouched: 0
+  triggerHairlinePressed: 0
+  triggerClicked: 0
+  triggerAxisChanged: 0
+  triggerSenseAxisChanged: 0
+  gripPressed: 0
+  gripTouched: 0
+  gripHairlinePressed: 0
+  gripClicked: 0
+  gripAxisChanged: 0
+  touchpadPressed: 0
+  touchpadTouched: 0
+  touchpadAxisChanged: 0
+  touchpadSenseAxisChanged: 0
+  touchpadTwoTouched: 0
+  touchpadTwoPressed: 0
+  touchpadTwoAxisChanged: 0
+  buttonOnePressed: 0
+  buttonOneTouched: 0
+  buttonTwoPressed: 0
+  buttonTwoTouched: 0
+  startMenuPressed: 0
+  middleFingerSenseAxisChanged: 0
+  ringFingerSenseAxisChanged: 0
+  pinkyFingerSenseAxisChanged: 0
+  gripSenseAxisChanged: 0
+  gripSensePressed: 0
+  controllerVisible: 1
 --- !u!1 &1899693947
 GameObject:
   m_ObjectHideFlags: 0
@@ -13419,7 +14099,7 @@ GameObject:
   - component: {fileID: 1915290229}
   m_Layer: 0
   m_Name: BrickHP (8)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13689,7 +14369,7 @@ GameObject:
   - component: {fileID: 1931937560}
   m_Layer: 0
   m_Name: BrickSimple (61)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13796,7 +14476,7 @@ GameObject:
   - component: {fileID: 1936411675}
   m_Layer: 0
   m_Name: BrickSimple (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13903,7 +14583,7 @@ GameObject:
   - component: {fileID: 1954140120}
   m_Layer: 0
   m_Name: BrickSimple (22)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14007,6 +14687,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrickMoving (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 6069188586322574767, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 6069188586322574763, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14104,7 +14789,7 @@ GameObject:
   - component: {fileID: 2013101629}
   m_Layer: 0
   m_Name: BrickHP (9)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14213,7 +14898,7 @@ GameObject:
   - component: {fileID: 2014351210}
   m_Layer: 0
   m_Name: BrickSimple (36)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14320,7 +15005,7 @@ GameObject:
   - component: {fileID: 2014450465}
   m_Layer: 0
   m_Name: BrickSimple (30)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14427,7 +15112,7 @@ GameObject:
   - component: {fileID: 2023541119}
   m_Layer: 0
   m_Name: BrickSimple (24)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14534,7 +15219,7 @@ GameObject:
   - component: {fileID: 2049685880}
   m_Layer: 0
   m_Name: BrickSimple (77)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14644,6 +15329,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrickMoving (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 6069188586322574767, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 6069188586322574763, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14741,7 +15431,7 @@ GameObject:
   - component: {fileID: 2082938728}
   m_Layer: 0
   m_Name: BrickSimple (73)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14848,7 +15538,7 @@ GameObject:
   - component: {fileID: 2088575828}
   m_Layer: 0
   m_Name: BrickSimple (65)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14954,7 +15644,7 @@ GameObject:
   - component: {fileID: 2117962334}
   m_Layer: 0
   m_Name: Waypoint (6)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15050,7 +15740,7 @@ GameObject:
   - component: {fileID: 56119120184673315}
   m_Layer: 0
   m_Name: Waypoint
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15146,7 +15836,7 @@ GameObject:
   - component: {fileID: 354866427860021546}
   m_Layer: 0
   m_Name: Waypoint
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15303,7 +15993,7 @@ GameObject:
   - component: {fileID: 518753609832018934}
   m_Layer: 0
   m_Name: Waypoint
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15338,7 +16028,7 @@ GameObject:
   - component: {fileID: 541461432409219818}
   m_Layer: 0
   m_Name: Waypoint
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15495,7 +16185,7 @@ GameObject:
   - component: {fileID: 982093990196390991}
   m_Layer: 0
   m_Name: Waypoint
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15530,7 +16220,7 @@ GameObject:
   - component: {fileID: 1919004200457367020}
   m_Layer: 0
   m_Name: Waypoint
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15687,7 +16377,7 @@ GameObject:
   - component: {fileID: 3834509944802127456}
   m_Layer: 0
   m_Name: Waypoint
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15720,6 +16410,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DebugCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5761266604447212000, guid: 4bdb309a16a688c4390fb0b1ff5c07dd,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 514962893}
     - target: {fileID: 5761266604447212015, guid: 4bdb309a16a688c4390fb0b1ff5c07dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15825,11 +16520,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5761266604447212000, guid: 4bdb309a16a688c4390fb0b1ff5c07dd,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 514962893}
     - target: {fileID: 5761266604039793475, guid: 4bdb309a16a688c4390fb0b1ff5c07dd,
         type: 3}
       propertyPath: m_Mesh
@@ -15896,7 +16586,7 @@ GameObject:
   - component: {fileID: 5846826857648667785}
   m_Layer: 0
   m_Name: Waypoint
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15990,6 +16680,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrickHP
       objectReference: {fileID: 0}
+    - target: {fileID: 5902416764057436619, guid: 96e734fb1a8be454b9b30d0ead46465f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 5902416764057436615, guid: 96e734fb1a8be454b9b30d0ead46465f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16066,7 +16761,7 @@ GameObject:
   - component: {fileID: 6166881073793655348}
   m_Layer: 0
   m_Name: Waypoint
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16160,6 +16855,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Waypoint
       objectReference: {fileID: 0}
+    - target: {fileID: 6458339348918627307, guid: b03d74d185438504aa9fc49c345b65d9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 6458339348918627306, guid: b03d74d185438504aa9fc49c345b65d9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16228,6 +16928,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BrickSimple
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638883875395251446, guid: 86f168f45575fff4791f2d2b9fa2d699,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 6638883875395251447, guid: 86f168f45575fff4791f2d2b9fa2d699,
         type: 3}
@@ -16305,7 +17010,7 @@ GameObject:
   - component: {fileID: 6963247242675295593}
   m_Layer: 0
   m_Name: Waypoint
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16462,7 +17167,7 @@ GameObject:
   - component: {fileID: 7232498570499559983}
   m_Layer: 0
   m_Name: Waypoint
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16494,6 +17199,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VRTK_Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801512562686892801, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801512562686892801, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801512562686892801, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801512562686892801, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
+        type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801512560912371688, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801512560912371688, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8166748994558718948, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
         type: 3}
@@ -16565,37 +17300,27 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1272976834}
-    - target: {fileID: 7801512562686892801, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
-        type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7801512562686892801, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
-        type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7801512562686892801, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
-        type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7801512562686892801, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
-        type: 3}
-      propertyPath: m_BackGroundColor.a
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7801512562378669568, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
         type: 3}
       propertyPath: m_Name
       value: VRTK_ControllersAlias
       objectReference: {fileID: 0}
-    - target: {fileID: 7801512560912371688, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
+    - target: {fileID: 7801512561288448486, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
         type: 3}
-      propertyPath: m_Layer
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7801512561288448486, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
+    - target: {fileID: 7801512562073073931, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
+        type: 3}
+      propertyPath: scriptAliasRightController
+      value: 
+      objectReference: {fileID: 1894127781}
+    - target: {fileID: 7801512562073073931, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
+        type: 3}
+      propertyPath: scriptAliasLeftController
+      value: 
+      objectReference: {fileID: 666227578}
+    - target: {fileID: 7801512562568227372, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -16678,7 +17403,7 @@ GameObject:
   - component: {fileID: 9098340691128902376}
   m_Layer: 0
   m_Name: Waypoint
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
