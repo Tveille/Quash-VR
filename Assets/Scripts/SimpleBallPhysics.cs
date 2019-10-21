@@ -5,19 +5,29 @@ using UnityEngine;
 public class SimpleBallPhysics : MonoBehaviour
 {
     public float bounciness;
+    public float velocityMultiplier;
+    public float gravity;
 
-    private Rigidbody rigidbody;
+    private Rigidbody rigidBody;
+
     private Vector3 lastVelocity;
+    private bool isSubjectToGravity;
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rigidBody = GetComponent<Rigidbody>();
+        isSubjectToGravity = true;
     }
 
     private void FixedUpdate()
     {
-        lastVelocity = rigidbody.velocity;  // Vitesse avant contact necessaire pour le calcul du rebond (méthode Bounce)
+        lastVelocity = rigidBody.velocity;  // Vitesse avant contact necessaire pour le calcul du rebond (méthode Bounce)
+
+        if(isSubjectToGravity)
+        {
+            rigidBody.AddForce(new Vector3(0, -gravity, 0));
+        }
     }
 
     private void OnCollisionEnter(Collision other)
@@ -25,6 +35,13 @@ public class SimpleBallPhysics : MonoBehaviour
         if (other.gameObject.CompareTag("Wall"))
         {
             Bounce(other.GetContact(0));
+            isSubjectToGravity = true;
+        }
+        if (other.gameObject.CompareTag("Racket"))
+        {
+            //Debug.Log("Collision detected");
+            isSubjectToGravity = false;
+            StartCoroutine(Hit());
         }
     }
 
@@ -38,6 +55,19 @@ public class SimpleBallPhysics : MonoBehaviour
         Vector3 tangent = Vector3.Normalize(lastVelocity - normalVelocity * normal);
         float tangentVelocity = Vector3.Dot(tangent, lastVelocity);
 
-        rigidbody.velocity = bounciness * (tangentVelocity * tangent - normalVelocity * normal);
+        rigidBody.velocity = bounciness * (tangentVelocity * tangent - normalVelocity * normal);
+    }
+
+    private IEnumerator Hit()
+    {
+        Transform currentPosition = gameObject.transform;
+        GameObject.Find("RacketManager").GetComponent<RacketManagerScript>().HitEvent(gameObject);
+        yield return new WaitForFixedUpdate();
+
+        //Debug.Log("Debug Coroutine");
+        Vector3 newVelocity = GameObject.Find("RacketManager").GetComponent<RacketManagerScript>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
+
+        rigidBody.position = currentPosition.position + newVelocity * Time.fixedDeltaTime * velocityMultiplier;
+        rigidBody.velocity = newVelocity * velocityMultiplier;
     }
 }
