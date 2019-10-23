@@ -17950,6 +17950,26 @@ PrefabInstance:
       propertyPath: viewIdField
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7801512562686892801, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801512562686892801, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.066037714
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801512562686892801, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.066037714
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801512562686892801, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.066037714
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f74565dd8bbecd347ac68e59bdd6fd2c, type: 3}
 --- !u!23 &9098340691128902369

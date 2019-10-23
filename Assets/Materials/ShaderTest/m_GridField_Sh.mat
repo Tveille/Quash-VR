@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: m_GridField_Sh
+  m_Name: M_GridField_Sh
   m_Shader: {fileID: -6465566751694194690, guid: 8e1e96fde0df1d342b78e38906aca7d5,
     type: 3}
   m_ShaderKeywords: 

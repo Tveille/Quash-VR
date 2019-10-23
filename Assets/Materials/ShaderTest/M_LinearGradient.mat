@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Fresnel_Sh
-  m_Shader: {fileID: -6465566751694194690, guid: d86d3d11a0d238e44844f204d7f8f4d7,
+  m_Name: M_LinearGradient
+  m_Shader: {fileID: -6465566751694194690, guid: ae5a83e65e1318c45ad38a77ab9e3b97,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,8 +20,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_A03001A6:
-        m_Texture: {fileID: 2800000, guid: a1c0272e46ed4e34cae8c1cafd5e69ed, type: 3}
+    - Texture2D_547FC8A1:
+        m_Texture: {fileID: 2800000, guid: 779ed00db3c83d34abb55c8a9ba6d14b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -48,11 +48,20 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_F3375DA9_Texture_1:
+        m_Texture: {fileID: 2800000, guid: c5223530f34c18f46b895ba1c6bbe607, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_1322E3C6: 5
+    - Vector1_162FCB6: 0.01
+    - Vector1_74C41B31: 0.8
+    - Vector1_B3282C63: 0.6
+    - Vector1_E63CD420: 0.01
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -75,12 +84,13 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_2511713B: {r: 1.85098, g: 1.121569, b: 0.2196078, a: 0}
+    - Color_EDC520B5: {r: 0.3687038, g: 2.608238, b: 2.608238, a: 0}
+    - Vector2_873487D2: {r: 3, g: 3, b: 0, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
---- !u!114 &230452830862444281
+--- !u!114 &3276753519923038650
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

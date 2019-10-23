@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: m_ForceField_Sh
-  m_Shader: {fileID: -6465566751694194690, guid: ea46bc7f235f7164b808bd7e4700adac,
+  m_Name: M_ForceField_Sh01
+  m_Shader: {fileID: -6465566751694194690, guid: f2d039e2724d5d0488c730be44f77a56,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -59,8 +59,13 @@ Material:
     m_Floats:
     - Vector1_1322E3C6: 1.4
     - Vector1_162FCB6: 0.01
+    - Vector1_1C5E8F59: 0.8
+    - Vector1_939CDD3C: 0.8
     - Vector1_B3282C63: 0.2
+    - Vector1_BE1116E4: 0
     - Vector1_E63CD420: 0.05
+    - Vector1_F138FA4B: 0.5
+    - Vector1_F55BCBA5: 0.11
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -84,7 +89,10 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_2511713B: {r: 1.85098, g: 1.121569, b: 0.2196078, a: 0}
-    - Color_EDC520B5: {r: 0.1621692, g: 3.4415908, b: 3.4415908, a: 0}
+    - Color_2BF9F4BF: {r: 0, g: 0.6605494, b: 0.7264151, a: 0}
+    - Color_EDC520B5: {r: 0, g: 2.7246666, b: 4.5947943, a: 0}
+    - Vector2_51F2E13A: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_6CC2883: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_873487D2: {r: 2, g: 2, b: 0, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
