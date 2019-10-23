@@ -13,8 +13,6 @@ TagManager:
   - Bullet
   - RacketManager
   - Racket
-  - Floor
-  - FrontWall
   layers:
   - Default
   - TransparentFX
