@@ -14,6 +14,7 @@ public class RacketManagerScript : MonoBehaviour
     private bool isGrabbed;
     private PlayerID userID;
 
+    private Vector3 positionTMinus2Bis;
     private Vector3 positionTMinus2;
     private Vector3 positionTMinus1;
     private float lastFixedDeltaT; // Peut être ailleur?
@@ -27,13 +28,16 @@ public class RacketManagerScript : MonoBehaviour
         isGrabbed = false;
         userID = PlayerID.NONE;
 
+
         positionTMinus1 = racket.transform.position;
         positionTMinus2 = racket.transform.position;
+        positionTMinus2Bis = racket.transform.position;
         lastFixedDeltaT = 1;
     }
 
     void FixedUpdate()
     {
+        positionTMinus2Bis = positionTMinus2;
         positionTMinus2 = positionTMinus1;
         positionTMinus1 = racket.transform.position;
         lastFixedDeltaT = Time.fixedDeltaTime;
@@ -100,8 +104,25 @@ public class RacketManagerScript : MonoBehaviour
 
     public Vector3 GetVelocity()
     {
-        Vector3 velocity = ((positionTMinus1 - positionTMinus2) / lastFixedDeltaT + (gameObject.transform.position) / Time.fixedDeltaTime) / 2;
-        Debug.Log(velocity);
+        Vector3 velocity;
+        if (positionTMinus1 == racket.transform.position)
+        {
+            velocity = (((positionTMinus2 - positionTMinus2Bis) / lastFixedDeltaT) + ((positionTMinus1 - positionTMinus2) / Time.fixedDeltaTime)) / 2;
+            //Debug.Log("Post Racket Fixed Update");
+            //Debug.Log(velocity);
+        }
+        else
+        {
+            velocity = ((positionTMinus1 - positionTMinus2) / lastFixedDeltaT + (racket.transform.position - positionTMinus1) / Time.fixedDeltaTime) / 2;
+            //velocity = (positionTMinus1 - positionTMinus2) / lastFixedDeltaT;
+            //velocity = (racket.transform.position - positionTMinus1) / Time.fixedDeltaTime;
+            //Debug.Log("Pre Racket Fixed Update");
+            //Debug.Log(racket.transform.position);
+            //Debug.Log(positionTMinus1);
+            //Debug.Log(positionTMinus2);
+            //Debug.Log(lastFixedDeltaT);
+            //Debug.Log(velocity);
+        }
         return velocity;
     }
 }
