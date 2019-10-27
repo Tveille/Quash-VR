@@ -57,7 +57,7 @@ public class MagicalBallScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Racket"))
         {
-            StartCoroutine(Hit()); //Changer le nom de la coroutine
+            StartCoroutine(Hit()); //Changer le nom de la coroutine+
             ballState = BallLastInterraction.RACKET;
         }
         else if ((other.gameObject.CompareTag("FrontWall") || other.gameObject.CompareTag("Brick")) &&  ballState == BallLastInterraction.RACKET)
