@@ -97,7 +97,7 @@ public class RacketManagerScript : MonoBehaviour
         Physics.IgnoreCollision(racket.GetComponent<Collider>(), hitObject.GetComponent<Collider>(), true);
         while(Time.time < lastHitTime + deltaHitTime)
         {
-            yield return new WaitForFixedUpdate();
+            yield return new WaitForFixedUpdate(); // Remplacer par WaitForSeconds
         }
         Physics.IgnoreCollision(racket.GetComponent<Collider>(), hitObject.GetComponent<Collider>(), false);
     }
