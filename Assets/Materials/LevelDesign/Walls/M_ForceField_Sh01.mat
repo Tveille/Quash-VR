@@ -102,7 +102,7 @@ Material:
     - Color_4EC8CF40: {r: 0, g: 0, b: 0, a: 0}
     - Color_EDC520B5: {r: 0, g: 1.2644733, b: 2.1185474, a: 0}
     - Color_F7C52B1A: {r: 1, g: 0, b: 0, a: 0}
-    - Vector2_51F2E13A: {r: 15, g: 5, b: 0, a: 0}
+    - Vector2_51F2E13A: {r: 30, g: 10, b: 0, a: 0}
     - Vector2_6CC2883: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_873487D2: {r: 2, g: 2, b: 0, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
