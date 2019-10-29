@@ -2,34 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// A faire : Utiliser Vector3.Reflect au lieu de calculer à la main
 public class MagicalBallScript2 : MonoBehaviour
 {
-    public Transform returnPoint;
-
     public float bounciness;
-    public float hitSpeedMultiplier;
-    public float magicalBounceSpeed;
 
+    [Header("Speed Settings")]
+    public float maxSpeed;
+    public float minSpeed;
+    public float hitSpeedMultiplier;
+
+    [Header("Gravity Settings")]
     public float initialGravity;
     public float afterRacketHitGravity;
     public float afterFrontWallBounceGravity;
     public float afterFloorBounceGravity;
 
-    public float maxSpeed;
-    public float minSpeed;
-
-    
+    [Header("MagicBounce Vertical Settings")]
     public float verticalCompensationSlope;
     public float verticalCompensationOffset;
     public bool vcIsPositive;
 
+    [Header("MagicBounce Depth Settings")]
+    public float depthCompensationSlope;
+    public float depthCompensationOffset;
+
+    [Header("FloorBounce Settings")]
     public float verticalBounceSlope;
     public float verticalBounceOffset;
 
-    public float depthCompensation;
-    public float depthOffset;
-
+    [Header("Attraction Settings")]
     public float attractionStrength;
+    public Transform targetPoint;
 
     //public bool isResetable; // Nom à changer
 
@@ -39,7 +43,6 @@ public class MagicalBallScript2 : MonoBehaviour
 
 
     private Vector3 lastVelocity;
-    private float floorBounce;
 
     private Coroutine sideAttraction;
 
@@ -68,7 +71,7 @@ public class MagicalBallScript2 : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Racket"))
         {
-            StartCoroutine(RacketHit());
+            StartCoroutine(RacketHitCoroutine());
             ballState = BallLastInterraction.RACKET;
         }
         else if (other.gameObject.CompareTag("FrontWall") || other.gameObject.CompareTag("Brick"))
@@ -78,19 +81,20 @@ public class MagicalBallScript2 : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Floor"))
         {
-            if(ballState != BallLastInterraction.FRONTWALL)
-            {
-                //do something special?
-                Bounce(other.GetContact(0));
-            }
+            FloorBounce(other.GetContact(0));
+            ballState = BallLastInterraction.FLOOR;
+        }
+        else if(other.gameObject.CompareTag("Wall"))
+        {
+            StandardBounce(other.GetContact(0));
         }
         else
-            Bounce(other.GetContact(0));
+            StandardBounce(other.GetContact(0));        // Util?
     }
 
     /// Méthode qui calcul le rebond de la balle (calcul vectorielle basique) et modifie la trajectoire en conséquence
     /// contactPoint : données de collision entre la balle et l'autre objet
-    private void Bounce(ContactPoint contactPoint)
+    private void StandardBounce(ContactPoint contactPoint)
     {
         Vector3 normal = contactPoint.normal;
         float normalVelocity = Vector3.Dot(normal, lastVelocity);
@@ -101,22 +105,32 @@ public class MagicalBallScript2 : MonoBehaviour
         rigidbody.velocity = bounciness * (tangentVelocity * tangent - normalVelocity * normal);
     }
 
+    private void FloorBounce(ContactPoint contactPoint) // Attention valable que pour sol plat!
+    {
+        Vector3 normal = contactPoint.normal;
+        float normalVelocity = AdjustFloorBounce(Vector3.Dot(normal, lastVelocity));
+
+        Vector3 tangent = Vector3.Normalize(lastVelocity - normalVelocity * normal);
+        float tangentVelocity = Vector3.Dot(tangent, lastVelocity);
+
+        rigidbody.velocity = bounciness * (tangentVelocity * tangent - normalVelocity * normal);
+    }
 
     private void MagicalBounce2(Collision collision)
     {
         Vector3 hittedPoint = collision.GetContact(0).point;
-        float verticalVelocity = VerticalCompensation(hittedPoint.y);
+        float verticalVelocity = CalculateVerticalBounceVelocity(hittedPoint.y);
+        Debug.Log(verticalVelocity);
+        //floorBounce = AdjustFloorBounce(hittedPoint.y);
 
-        floorBounce = FloorBounceCompensation(hittedPoint.y);
-
-        float depthVelocity = DepthCompensation(hittedPoint.y);
-
+        float depthVelocity = - CalculateDepthBounceVelocity(hittedPoint.y);
+        Debug.Log(depthVelocity);
         rigidbody.velocity = new Vector3(Vector3.Dot(lastVelocity, Vector3.right), verticalVelocity, depthVelocity);
-        
-
+        Debug.Log(rigidbody.velocity);
+        sideAttraction = StartCoroutine(SideAttractionCoroutine());
     }
 
-    private IEnumerator RacketHit()
+    private IEnumerator RacketHitCoroutine()
     {
         Transform currentPosition = gameObject.transform;
         GameObject.Find("RacketManager").GetComponent<RacketManagerScript>().OnHitEvent(gameObject);
@@ -128,9 +142,9 @@ public class MagicalBallScript2 : MonoBehaviour
         rigidbody.velocity = ClampVelocity(newVelocity * hitSpeedMultiplier);
     }
 
-    private float VerticalCompensation(float hitHeigth)
+    private float CalculateVerticalBounceVelocity(float hitHeigth)
     {
-        float compensation = verticalCompensationSlope * hitHeigth + verticalCompensationOffset;
+        float compensation = MakeLinearAssociation(hitHeigth, verticalCompensationSlope, verticalCompensationOffset);
         if (vcIsPositive && compensation < 0)
         {
             return 0;
@@ -138,29 +152,29 @@ public class MagicalBallScript2 : MonoBehaviour
         return compensation;
     }
 
-    private IEnumerator SweetSpotSideAttraction()
+    private IEnumerator SideAttractionCoroutine()
     {
         while(true)
         {
-            rigidbody.AddForce(attractionStrength * (transform.position - targetPoint));
+            rigidbody.AddForce(attractionStrength * (transform.position.x - targetPoint.position.x) * Vector3.right); 
             yield return new WaitForFixedUpdate();
         }
     }
 
-    private float FloorBounceCompensation(float hitHeigth)
+    private float AdjustFloorBounce(float verticalVelocity)
     {
-        float adjustedBounce = verticalBounceSlope * hitHeigth + verticalBounceOffset;
+        float adjustedBounce = MakeLinearAssociation(verticalVelocity, verticalBounceSlope, verticalBounceOffset);
 
         if (adjustedBounce < 0)
         {
-            return 0; // pour eviter les bugs...?
+            return 0;                                                           // pour eviter les bugs...?
         }
         return adjustedBounce;
     }
 
-    private float DepthCompensation(float hitHeigth)
+    private float CalculateDepthBounceVelocity(float hitHeigth)
     {
-        return depthCompensation * hitHeigth + depthOffset;
+        return MakeLinearAssociation(hitHeigth, depthCompensationSlope, depthCompensationOffset);
     }
 
     private Vector3 ClampVelocity(Vector3 calculateVelocity)
@@ -176,5 +190,9 @@ public class MagicalBallScript2 : MonoBehaviour
         else
             return calculateVelocity;
     }
-    
+
+    private float MakeLinearAssociation(float variable, float slope, float offset)
+    {
+        return slope * variable + offset;
+    }
 }

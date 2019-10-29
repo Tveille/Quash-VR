@@ -15,6 +15,7 @@ TagManager:
   - Racket
   - Floor
   - FrontWall
+  - Brick
   layers:
   - Default
   - TransparentFX
