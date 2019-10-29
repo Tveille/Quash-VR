@@ -6,7 +6,7 @@ using UnityEngine;
 public class MagicalBallScript2 : MonoBehaviour
 {
     public float bounciness;
-
+    public bool switchPhysic;
     [Header("Speed Settings")]
     public float maxSpeed;
     public float minSpeed;
@@ -71,7 +71,15 @@ public class MagicalBallScript2 : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Racket"))
         {
-            StartCoroutine(RacketHitCoroutine());
+            if(switchPhysic)
+            {
+                RacketHit(other);
+            }
+            else
+            {
+                StartCoroutine(RacketHitCoroutine());
+            }
+            
             ballState = BallLastInterraction.RACKET;
         }
         else if (other.gameObject.CompareTag("FrontWall") || other.gameObject.CompareTag("Brick"))
@@ -125,9 +133,13 @@ public class MagicalBallScript2 : MonoBehaviour
 
         float depthVelocity = - CalculateDepthBounceVelocity(hittedPoint.y);
         Debug.Log(depthVelocity);
+
+        float sideVelocity = - collision.GetContact(0).point.x;
         rigidbody.velocity = new Vector3(Vector3.Dot(lastVelocity, Vector3.right), verticalVelocity, depthVelocity);
         Debug.Log(rigidbody.velocity);
-        sideAttraction = StartCoroutine(SideAttractionCoroutine());
+        //sideAttraction = StartCoroutine(SideAttractionCoroutine());
+
+        
     }
 
     private IEnumerator RacketHitCoroutine()
@@ -140,6 +152,27 @@ public class MagicalBallScript2 : MonoBehaviour
 
         rigidbody.position = currentPosition.position + newVelocity * Time.fixedDeltaTime * hitSpeedMultiplier;
         rigidbody.velocity = ClampVelocity(newVelocity * hitSpeedMultiplier);
+    }
+
+    private void RacketHit(Collision other) // Ajout d'un seuil pour pouvoir jouer avec la balle?
+    {
+        //Transform currentPosition = gameObject.transform;
+        Vector3 racketVelocity = GameObject.Find("RacketManager").GetComponent<RacketManagerScript>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
+        Vector3 relativeVelocity = lastVelocity - racketVelocity;
+
+
+        //Debug.Log(other.contactCount);
+        //Debug.Log(other.GetContact(0).normal);
+        Vector3 contactPointNormal = Vector3.Normalize(other.GetContact(0).normal);
+        //Debug.Log(contactPointNormal);
+
+        Vector3 normalVelocity = Vector3.Dot(contactPointNormal, relativeVelocity) * contactPointNormal;
+
+        Vector3 tangentVelocity = relativeVelocity - normalVelocity;        // Ajouter frottement
+
+        rigidbody.velocity = hitSpeedMultiplier * (-normalVelocity + tangentVelocity);
+
+        GameObject.Find("RacketManager").GetComponent<RacketManagerScript>().OnHitEvent(gameObject);  // Ignore collision pour quelque frame.
     }
 
     private float CalculateVerticalBounceVelocity(float hitHeigth)
