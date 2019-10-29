@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6069188586322574760}
   m_Layer: 0
   m_Name: BrickMoving
-  m_TagString: FrontWall
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6069188586322574767}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children: []
@@ -59,8 +59,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0df0caf38ad1f2c49a9fe7ca7c41d674, type: 2}
-  - {fileID: 2100000, guid: d4f12ab0a6f032341b14f64fb913eda8, type: 2}
+  - {fileID: 2100000, guid: 109dcec20fb6bfe408f91903a99b067e, type: 2}
+  - {fileID: 2100000, guid: c51bf0ec4c68576418dd3ed8983bc9d5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,8 +94,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLayerID: 0
-  scoreValue: 0
-  waypoints: []
+  scoreValue: 2
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
   turningBack: 0
 --- !u!65 &6069188586322574760
 BoxCollider:

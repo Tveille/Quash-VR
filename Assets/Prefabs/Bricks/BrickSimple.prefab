@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6638883875395251444}
   m_Layer: 0
   m_Name: BrickSimple
-  m_TagString: FrontWall
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6638883875395251446}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children: []
@@ -59,8 +59,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6ce4170639c4c4744a24aefe29d94162, type: 2}
-  - {fileID: 2100000, guid: d4f12ab0a6f032341b14f64fb913eda8, type: 2}
+  - {fileID: 2100000, guid: 1b63bf4cc0016f442b974607a41c66c0, type: 2}
+  - {fileID: 2100000, guid: c4658c0b48d4bfa4ebbd71be2e17a0a8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,4 +106,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff73b366fb4a864e94fcf89e82b1d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 0
+  scoreValue: 1
