@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3570460419677328625}
   - component: {fileID: 3570460419677328624}
   - component: {fileID: 3570460419677328627}
+  - component: {fileID: 5333041436344931860}
   - component: {fileID: 3570460419677328621}
   - component: {fileID: 4677614535404087717}
   - component: {fileID: 8400721180601361973}
@@ -115,7 +116,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3570460419677328621
+--- !u!114 &5333041436344931860
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,6 +124,35 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3570460419677328620}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebdd94f02426434bade0b1f633f608e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounciness: 1
+  maxSpeed: 20000
+  minSpeed: 0
+  hitSpeedMultiplier: 2
+  initialGravity: 9.81
+  afterRacketHitGravity: 9.81
+  afterFrontWallBounceGravity: 9.81
+  afterFloorBounceGravity: 9.81
+  verticalCompensationSlope: -1
+  verticalCompensationOffset: 5
+  vcIsPositive: 0
+  depthCompensationSlope: -1
+  depthCompensationOffset: 15
+  verticalBounceSlope: 1
+  verticalBounceOffset: 0
+  attractionStrength: 0
+  targetPoint: {fileID: 0}
+--- !u!114 &3570460419677328621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3570460419677328620}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13e31e13ed69e9d43b509e235de6e3b7, type: 3}
   m_Name: 
@@ -135,7 +165,8 @@ MonoBehaviour:
   afterRacketHitGravity: 9.81
   afterFrontWallBounceGravity: 9.81
   afterFloorBounceGravity: 0
-  isResetable: 0
+  maxSpeed: 0
+  minSpeed: 0
 --- !u!114 &4677614535404087717
 MonoBehaviour:
   m_ObjectHideFlags: 0
