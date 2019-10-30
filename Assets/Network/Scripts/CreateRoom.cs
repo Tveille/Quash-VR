@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Realtime;
+using TMPro;
 
 
 public class CreateRoom : MonoBehaviourPunCallbacks
 {
     [SerializeField]
-    private Text _roomName;
-
+    private TextMeshProUGUI _roomName;
     private RoomCanvasGroup roomCanvases;
     
     public Button buttonCreate;
