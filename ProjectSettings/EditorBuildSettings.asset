@@ -5,16 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Network/Scenes/Rooms.unity
     guid: d16de0a1836e2634d8bd743b5f30a862
   - enabled: 0
     path: Assets/Scenes/BasicScene.unity
     guid: 24148b2bda2376c4188f5d50a74cf057
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FrancoisTestScene/FrancoisTestScene.unity
     guid: 9d6e0119961d5a44b9708208f0e30286
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PlaytestScene.unity
     guid: de0faacfee83c6e478f1a105c477a395
+  - enabled: 1
+    path: Assets/Scenes/VincentScene/Scene_Prototype1_00.unity
+    guid: 008bfaef953af2746adc33cec6fd0f2c
   m_configObjects: {}
