@@ -120,6 +120,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &66839986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 66839987}
+  m_Layer: 0
+  m_Name: zFloorBouncePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &66839987
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66839986}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &98958364
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,7 +821,7 @@ GameObject:
   m_Component:
   - component: {fileID: 979044267}
   m_Layer: 0
-  m_Name: ReturnPoint
+  m_Name: xReturnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -805,7 +835,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979044266}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6.8}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1966,15 +1996,15 @@ GameObject:
   - component: {fileID: 4875086584255880604}
   - component: {fileID: 4875086584255880607}
   - component: {fileID: 4875086584255880606}
-  - component: {fileID: 4875086584255880577}
+  - component: {fileID: 4875086584255880578}
   m_Layer: 0
-  m_Name: MagicBall2
+  m_Name: MagicBall3
   m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4875086584255880577
+--- !u!114 &4875086584255880578
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1983,26 +2013,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 4875086584255880576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ebdd94f02426434bade0b1f633f608e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3472f620cc6a0d741bf5d65b184ce56a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  switchPhysic: 0
+  hitMaxSpeed: 0
+  hitMinSpeed: 100
+  hitSpeedMultiplier: 2
+  slowness: 1
+  gravity: 9.81
+  depthVelocity: 10
+  zFloorBounceTarget: {fileID: 66839987}
+  xReturnTarget: {fileID: 979044267}
   bounciness: 1
-  maxSpeed: 200000
-  minSpeed: 0
-  hitSpeedMultiplier: 0
-  initialGravity: 9.81
-  afterRacketHitGravity: 9.81
-  afterFrontWallBounceGravity: 9.81
-  afterFloorBounceGravity: 9.81
-  verticalCompensationSlope: -1
-  verticalCompensationOffset: 5
-  vcIsPositive: 1
-  depthCompensationSlope: -1
-  depthCompensationOffset: 15
-  verticalBounceSlope: -1
-  verticalBounceOffset: 15
-  attractionStrength: 0.1
-  targetPoint: {fileID: 979044267}
+  frottementDynamique: 0
 --- !u!33 &4875086584255880602
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2088,7 +2112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e5a9b6b17d98bd45a0b801bfdca528f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialVelocity: {x: 0, y: 5, z: 10}
+  initialVelocity: {x: 0, y: 5, z: 5}
 --- !u!54 &4875086584255880607
 Rigidbody:
   m_ObjectHideFlags: 0
