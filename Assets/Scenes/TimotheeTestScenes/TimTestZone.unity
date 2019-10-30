@@ -2072,10 +2072,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3472f620cc6a0d741bf5d65b184ce56a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switchPhysic: 0
+  physicsUsed: 0
   hitMaxSpeed: 0
   hitMinSpeed: 100
   hitSpeedMultiplier: 2
+  frottementRacket: 0
   slowness: 1
   gravity: 9.81
   depthVelocity: 10
