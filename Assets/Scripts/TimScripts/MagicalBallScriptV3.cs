@@ -9,13 +9,23 @@ public class MagicalBallScriptV3 : MonoBehaviour
         NORMAL,
         SLOW
     }
-    
-    public bool switchPhysic;
 
-    [Header("Speed Settings")]
+    public enum RacketInteractionType
+    {
+        BASICARCADE,
+        BASICPHYSIC,
+        MEDIUMPHYSIC
+    }
+    
+    
+    
+
+    [Header("Racket Settings")]
+    public RacketInteractionType physicsUsed;
     public float hitMaxSpeed;
     public float hitMinSpeed;
     public float hitSpeedMultiplier;
+    public float frottementRacket;
 
     [Header("Slow Return Settings")]
     public float slowness;              //Modider le nom?
@@ -75,14 +85,21 @@ public class MagicalBallScriptV3 : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Racket"))
         {
-            if (switchPhysic)
+            switch (physicsUsed)
             {
-                RacketHit(other);
+                case RacketInteractionType.BASICARCADE:
+                    RacketHit(other);
+                    break;
+                
+                case RacketInteractionType.BASICPHYSIC:
+                    StartCoroutine(RacketHitCoroutine());
+                    break;
+                    
+                case RacketInteractionType.MEDIUMPHYSIC:
+                    RacketHitMediumPhysics(other);
+                    break;
             }
-            else
-            {
-                StartCoroutine(RacketHitCoroutine());
-            }
+            
 
             ballState = BallState.NORMAL;
         }
@@ -99,13 +116,15 @@ public class MagicalBallScriptV3 : MonoBehaviour
     /// contactPoint : données de collision entre la balle et l'autre objet
     private void StandardBounce(ContactPoint contactPoint)
     {
-        Vector3 normal = contactPoint.normal;
-        float normalVelocity = bounciness * Vector3.Dot(normal, lastVelocity);
-
+        Vector3 normal = Vector3.Normalize(contactPoint.normal);
+        float normalVelocity = Vector3.Dot(normal, lastVelocity);
+        Debug.Log(normalVelocity * normal);
         Vector3 tangent = Vector3.Normalize(lastVelocity - normalVelocity * normal);
-        float tangentVelocity = (1 - frottementDynamique) * Vector3.Dot(tangent, lastVelocity);
+        float tangentVelocity = Vector3.Dot(tangent, lastVelocity);
+        Debug.Log(tangentVelocity * tangent);
 
-        rigidbody.velocity = (tangentVelocity * tangent - normalVelocity * normal);
+        rigidbody.velocity = ((1 - frottementDynamique) * tangentVelocity * tangent - bounciness * normalVelocity * normal);
+        Debug.Log(rigidbody.velocity);
     }
 
     private void MagicalBounce3(Collision collision)
@@ -114,7 +133,7 @@ public class MagicalBallScriptV3 : MonoBehaviour
         //Debug.Log(verticalVelocity);
 
         float sideVelocity = CalculateSideBounceVelocity(collision);
-        Debug.Log(sideVelocity);
+        //Debug.Log(sideVelocity);
 
         rigidbody.velocity = new Vector3(sideVelocity, verticalVelocity, -depthVelocity) / slowness;
         //Debug.Log(rigidbody.velocity);
@@ -154,10 +173,30 @@ public class MagicalBallScriptV3 : MonoBehaviour
         GameObject.Find("RacketManager").GetComponent<RacketManagerScript>().OnHitEvent(gameObject);  // Ignore collision pour quelque frame.
     }
 
+    private void RacketHitMediumPhysics(Collision other) // Ajout d'un seuil pour pouvoir jouer avec la balle?
+    {
+        Vector3 racketVelocity = GameObject.Find("RacketManager").GetComponent<RacketManagerScript>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
+        Vector3 relativeVelocity = lastVelocity - racketVelocity;
+
+
+        //Debug.Log(other.contactCount);
+        //Debug.Log(other.GetContact(0).normal);
+        Vector3 contactPointNormal = Vector3.Normalize(other.GetContact(0).normal);
+        //Debug.Log(contactPointNormal);
+
+        Vector3 normalVelocity = (2 * Vector3.Dot(contactPointNormal, racketVelocity) - Vector3.Dot(contactPointNormal, lastVelocity)) * hitSpeedMultiplier * contactPointNormal;
+
+        Vector3 tangentVelocity = (lastVelocity - Vector3.Dot(contactPointNormal, lastVelocity) * contactPointNormal) * (1 - frottementRacket);        // Ajouter frottement
+
+        rigidbody.velocity = ClampVelocity(hitSpeedMultiplier * (-normalVelocity + tangentVelocity));
+
+        GameObject.Find("RacketManager").GetComponent<RacketManagerScript>().OnHitEvent(gameObject);  // Ignore collision pour quelque frame.
+    }
+
     private float CalculateVerticalBounceVelocity(Collision collision)
     {
         Vector3 collisionPoint = collision.GetContact(0).point;
-        return (gravity * (zFloorBounceTarget.position.z - collisionPoint.z) / -depthVelocity) - (collisionPoint.y * -depthVelocity / (zFloorBounceTarget.position.z - collisionPoint.z));
+        return (gravity * (zFloorBounceTarget.position.z - transform.position.z) / -depthVelocity / 2) - (transform.position.y * -depthVelocity / (zFloorBounceTarget.position.z - transform.position.z));
     }
 
     private float CalculateSideBounceVelocity(Collision collision)

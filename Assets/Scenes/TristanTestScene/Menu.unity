@@ -10255,10 +10255,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8976967245826851535, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
         type: 3}
       propertyPath: m_Name
       value: VRTK_Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8971452699045802819, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8166748994558718948, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
         type: 3}

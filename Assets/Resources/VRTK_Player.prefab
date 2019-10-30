@@ -241,7 +241,7 @@ MonoBehaviour:
   clickAfterHoverDuration: 0
   maximumLength: Infinity
   attachedTo: {fileID: 150532118874212417}
-  controllerEvents: {fileID: 0}
+  controllerEvents: {fileID: 7168094651677042421}
   customOrigin: {fileID: 4078316109679935818}
   controller: {fileID: 0}
   pointerOriginTransform: {fileID: 0}
@@ -796,7 +796,6 @@ GameObject:
   - component: {fileID: 5576616264958897718}
   - component: {fileID: 1705493582485996922}
   - component: {fileID: 7185292953986687041}
-  - component: {fileID: 5500643318524121076}
   m_Layer: 0
   m_Name: RightController
   m_TagString: Untagged
@@ -993,36 +992,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customColliderContainer: {fileID: 0}
---- !u!114 &5500643318524121076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8971452699045802819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71b26f999cbdac8478b6c2a046256169, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activationButton: 9
-  activationMode: 0
-  selectionButton: 10
-  clickMethod: 0
-  attemptClickOnDeactivate: 0
-  clickAfterHoverDuration: 0
-  maximumLength: Infinity
-  attachedTo: {fileID: 0}
-  controllerEvents: {fileID: 0}
-  customOrigin: {fileID: 0}
-  controller: {fileID: 0}
-  pointerOriginTransform: {fileID: 0}
-  hoveringElement: {fileID: 0}
-  controllerRenderModel: {fileID: 0}
-  hoverDurationTimer: 0
-  canClickOnHover: 0
-  autoActivatingCanvas: {fileID: 0}
-  collisionClick: 0
 --- !u!1 &8976967245826851535
 GameObject:
   m_ObjectHideFlags: 0
