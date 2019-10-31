@@ -17,29 +17,18 @@ public class MagicalBallScriptV3 : MonoBehaviour
         MEDIUMPHYSIC
     }
     
-    
-    
-
     [Header("Racket Settings")]
     public RacketInteractionType physicsUsed;
     public float hitMaxSpeed;
     public float hitMinSpeed;
     public float hitSpeedMultiplier;
-    public float frottementRacket;
+    public float racketFriction;
 
     [Header("Slow Return Settings")]
     public float slowness;              //Modider le nom?
 
     [Header("Gravity Settings")]
     public float gravity;
-    //public float afterRacketHitGravity;
-    //public float afterFrontWallBounceGravity;
-    //public float afterFloorBounceGravity;
-
-    //[Header("MagicBounce Vertical Settings")]
-    //public float verticalCompensationSlope;
-    //public float verticalCompensationOffset;
-    //public bool vcIsPositive;
 
     [Header("MagicBounce Depth Settings")]
     public float depthVelocity;
@@ -50,12 +39,7 @@ public class MagicalBallScriptV3 : MonoBehaviour
 
     [Header("Bounce Settings")]
     public float bounciness;
-    public float frottementDynamique;
-
-
-
-    //public bool isResetable; // Nom à changer
-    //private Vector3 resetPosition;
+    public float dynamicFriction;
 
     private Rigidbody rigidbody;
     
@@ -66,7 +50,6 @@ public class MagicalBallScriptV3 : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
-        //resetPosition = gameObject.transform.position;
         ballState = BallState.NORMAL;
     }
 
@@ -88,15 +71,15 @@ public class MagicalBallScriptV3 : MonoBehaviour
             switch (physicsUsed)
             {
                 case RacketInteractionType.BASICARCADE:
-                    RacketHit(other);
+                    RacketArcadeHit();
                     break;
                 
                 case RacketInteractionType.BASICPHYSIC:
-                    StartCoroutine(RacketHitCoroutine());
+                    RacketBasicPhysicHit(other);
                     break;
                     
                 case RacketInteractionType.MEDIUMPHYSIC:
-                    RacketHitMediumPhysics(other);
+                    RacketMediumPhysicHit(other);
                     break;
             }
             
@@ -123,74 +106,58 @@ public class MagicalBallScriptV3 : MonoBehaviour
         float tangentVelocity = Vector3.Dot(tangent, lastVelocity);
         Debug.Log(tangentVelocity * tangent);
 
-        rigidbody.velocity = ((1 - frottementDynamique) * tangentVelocity * tangent - bounciness * normalVelocity * normal);
+        rigidbody.velocity = ((1 - dynamicFriction) * tangentVelocity * tangent - bounciness * normalVelocity * normal);
         Debug.Log(rigidbody.velocity);
     }
 
     private void MagicalBounce3(Collision collision)
     {
         float verticalVelocity = CalculateVerticalBounceVelocity(collision);
-        //Debug.Log(verticalVelocity);
 
         float sideVelocity = CalculateSideBounceVelocity(collision);
-        //Debug.Log(sideVelocity);
 
         rigidbody.velocity = new Vector3(sideVelocity, verticalVelocity, -depthVelocity) / slowness;
-        //Debug.Log(rigidbody.velocity);
     }
 
-    private IEnumerator RacketHitCoroutine()
+    private void RacketArcadeHit()
     {
         Transform currentPosition = gameObject.transform;
-        GameObject.Find("RacketManager").GetComponent<RacketManagerScript>().OnHitEvent(gameObject);
-        yield return new WaitForFixedUpdate();
+        GameObject.Find("RacketManager").GetComponent<RacketManager>().OnHitEvent(gameObject);
+        
 
-        Vector3 newVelocity = GameObject.Find("RacketManager").GetComponent<RacketManagerScript>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
+        Vector3 newVelocity = GameObject.Find("RacketManager").GetComponent<RacketManager>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
 
         newVelocity = ClampVelocity(newVelocity * hitSpeedMultiplier);
         rigidbody.position = currentPosition.position + newVelocity  * Time.fixedDeltaTime;
         rigidbody.velocity = newVelocity;
     }
 
-    private void RacketHit(Collision other) // Ajout d'un seuil pour pouvoir jouer avec la balle?
+    private void RacketBasicPhysicHit(Collision other) // Ajout d'un seuil pour pouvoir jouer avec la balle?
     {
-        //Transform currentPosition = gameObject.transform;
-        Vector3 racketVelocity = GameObject.Find("RacketManager").GetComponent<RacketManagerScript>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
+        Vector3 racketVelocity = GameObject.Find("RacketManager").GetComponent<RacketManager>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
         Vector3 relativeVelocity = lastVelocity - racketVelocity;
-
-
-        //Debug.Log(other.contactCount);
-        //Debug.Log(other.GetContact(0).normal);
         Vector3 contactPointNormal = Vector3.Normalize(other.GetContact(0).normal);
-        //Debug.Log(contactPointNormal);
 
         Vector3 normalVelocity = Vector3.Dot(contactPointNormal, relativeVelocity) * contactPointNormal;
-
-        Vector3 tangentVelocity = relativeVelocity - normalVelocity;        // Ajouter frottement
+        Vector3 tangentVelocity = (relativeVelocity - normalVelocity) * (1 - racketFriction);        // Ajouter frottement
 
         rigidbody.velocity = ClampVelocity(hitSpeedMultiplier * (-normalVelocity + tangentVelocity));
 
-        GameObject.Find("RacketManager").GetComponent<RacketManagerScript>().OnHitEvent(gameObject);  // Ignore collision pour quelque frame.
+        GameObject.Find("RacketManager").GetComponent<RacketManager>().OnHitEvent(gameObject);  // Ignore collision pour quelque frame.
     }
 
-    private void RacketHitMediumPhysics(Collision other) // Ajout d'un seuil pour pouvoir jouer avec la balle?
+    private void RacketMediumPhysicHit(Collision other) // Ajout d'un seuil pour pouvoir jouer avec la balle?
     {
-        Vector3 racketVelocity = GameObject.Find("RacketManager").GetComponent<RacketManagerScript>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
+        Vector3 racketVelocity = GameObject.Find("RacketManager").GetComponent<RacketManager>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
         Vector3 relativeVelocity = lastVelocity - racketVelocity;
-
-
-        //Debug.Log(other.contactCount);
-        //Debug.Log(other.GetContact(0).normal);
         Vector3 contactPointNormal = Vector3.Normalize(other.GetContact(0).normal);
-        //Debug.Log(contactPointNormal);
 
         Vector3 normalVelocity = (2 * Vector3.Dot(contactPointNormal, racketVelocity) - Vector3.Dot(contactPointNormal, lastVelocity)) * hitSpeedMultiplier * contactPointNormal;
+        Vector3 tangentVelocity = (lastVelocity - Vector3.Dot(contactPointNormal, lastVelocity) * contactPointNormal) * (1 - racketFriction);        // Ajouter frottement
 
-        Vector3 tangentVelocity = (lastVelocity - Vector3.Dot(contactPointNormal, lastVelocity) * contactPointNormal) * (1 - frottementRacket);        // Ajouter frottement
+        rigidbody.velocity = ClampVelocity(hitSpeedMultiplier * (normalVelocity + tangentVelocity));
 
-        rigidbody.velocity = ClampVelocity(hitSpeedMultiplier * (-normalVelocity + tangentVelocity));
-
-        GameObject.Find("RacketManager").GetComponent<RacketManagerScript>().OnHitEvent(gameObject);  // Ignore collision pour quelque frame.
+        GameObject.Find("RacketManager").GetComponent<RacketManager>().OnHitEvent(gameObject);  // Ignore collision pour quelque frame.
     }
 
     private float CalculateVerticalBounceVelocity(Collision collision)
@@ -207,18 +174,18 @@ public class MagicalBallScriptV3 : MonoBehaviour
         return Vector3.Dot(depthVelocity * Vector3.back, returnHorizontalDirection) * Vector3.Dot(returnHorizontalDirection, Vector3.right);
     }
 
-    private Vector3 ClampVelocity(Vector3 calculateVelocity)        //Nom à modifier
+    private Vector3 ClampVelocity(Vector3 velocity)        //Nom à modifier
     {
-        if (calculateVelocity.magnitude < hitMinSpeed)
+        if (velocity.magnitude < hitMinSpeed)
         {
-            return hitMinSpeed * Vector3.Normalize(calculateVelocity);
+            return hitMinSpeed * Vector3.Normalize(velocity);
         }
-        else if (calculateVelocity.magnitude > hitMaxSpeed)
+        else if (velocity.magnitude > hitMaxSpeed)
         {
-            return hitMaxSpeed * Vector3.Normalize(calculateVelocity);
+            return hitMaxSpeed * Vector3.Normalize(velocity);
         }
         else
-            return calculateVelocity;
+            return velocity;
     }
 
     private float MakeLinearAssociation(float variable, float slope, float offset)

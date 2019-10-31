@@ -17,11 +17,11 @@ public class PlayerManager : MonoBehaviour
     
     public void OnPlayer1RightActionCall()
     {
-        GameObject.Find("RacketManager").GetComponent<RacketManagerScript>().OnActionCall(PlayerID.PLAYER1);
+        GameObject.Find("RacketManager").GetComponent<RacketManager>().OnActionCall(PlayerID.PLAYER1);
     }
 
     public void OnPlayer1RightStopCall()
     {
-        GameObject.Find("RacketManager").GetComponent<RacketManagerScript>().OnStopCall(PlayerID.PLAYER1);
+        GameObject.Find("RacketManager").GetComponent<RacketManager>().OnStopCall(PlayerID.PLAYER1);
     }
 }

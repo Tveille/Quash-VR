@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RacketManagerScript : MonoBehaviour
+public class RacketManager : MonoBehaviour
 {
     //public GameObject racketPrefab;
     //public Transform racketSpawn;

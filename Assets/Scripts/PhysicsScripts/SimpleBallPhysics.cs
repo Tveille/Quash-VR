@@ -63,11 +63,11 @@ public class SimpleBallPhysics : MonoBehaviour
     private IEnumerator Hit()
     {
         Transform currentPosition = gameObject.transform;
-        GameObject.Find("RacketManager").GetComponent<RacketManagerScript>().OnHitEvent(gameObject);
+        GameObject.Find("RacketManager").GetComponent<RacketManager>().OnHitEvent(gameObject);
         yield return new WaitForFixedUpdate();
 
         //Debug.Log("Debug Coroutine");
-        Vector3 newVelocity = GameObject.Find("RacketManager").GetComponent<RacketManagerScript>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
+        Vector3 newVelocity = GameObject.Find("RacketManager").GetComponent<RacketManager>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
 
         rigidBody.position = currentPosition.position + newVelocity * Time.fixedDeltaTime * velocityMultiplier;
         rigidBody.velocity = newVelocity * velocityMultiplier;
