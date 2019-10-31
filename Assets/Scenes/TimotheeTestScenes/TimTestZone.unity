@@ -257,7 +257,7 @@ Transform:
   - {fileID: 1062182558}
   - {fileID: 978171690}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &514714877
 Mesh:
@@ -506,37 +506,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1192487249}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &804616912
+--- !u!1 &804616912 stripped
 GameObject:
-  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 8776666389479398583, guid: 8bac73acdc443c24ca4708c31bda1424,
     type: 3}
   m_PrefabInstance: {fileID: 1120155774}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 804616913}
-  m_Layer: 0
-  m_Name: Missing Prefab (Dummy)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &804616913
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 1120155774}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 804616912}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1424882066}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &905775322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -974,7 +949,7 @@ PrefabInstance:
     - target: {fileID: 8776666389479398576, guid: 8bac73acdc443c24ca4708c31bda1424,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8776666389479398576, guid: 8bac73acdc443c24ca4708c31bda1424,
         type: 3}
@@ -1288,7 +1263,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1349255912 stripped
 GameObject:
@@ -1296,37 +1271,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1846892118}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1424882065
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 1120155774}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1424882066}
-  m_Layer: 0
-  m_Name: Racket (Missing Prefab)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1424882066
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 1120155774}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1424882065}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 804616913}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!21 &1504161023
 Material:
   serializedVersion: 6
@@ -1630,7 +1574,7 @@ Transform:
   - {fileID: 598370163}
   - {fileID: 98958366}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1947291784
 GameObject:
@@ -1662,7 +1606,7 @@ Transform:
   - {fileID: 1242317896}
   - {fileID: 926615738}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2025929797
 GameObject:
@@ -2076,14 +2020,14 @@ MonoBehaviour:
   hitMaxSpeed: 0
   hitMinSpeed: 100
   hitSpeedMultiplier: 2
-  frottementRacket: 0
+  racketFriction: 0
   slowness: 1
   gravity: 9.81
-  depthVelocity: 10
+  depthVelocity: 2
   zFloorBounceTarget: {fileID: 66839987}
   xReturnTarget: {fileID: 979044267}
   bounciness: 1
-  frottementDynamique: 0
+  dynamicFriction: 0
 --- !u!33 &4875086584255880602
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2104,7 +2048,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &4875086584255880604
 SphereCollider:
@@ -2185,4 +2129,4 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2

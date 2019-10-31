@@ -19,7 +19,7 @@ public class MagicalBallScript : MonoBehaviour
     public float magicalBounceSpeed;
 
     public float initialGravity;
-    public float afterRacketHitGravity;
+    public float afterRacketArcadeHitGravity;
     public float afterFrontWallBounceGravity;
     public float afterFloorBounceGravity;
 
@@ -30,7 +30,7 @@ public class MagicalBallScript : MonoBehaviour
 
     private Rigidbody rigidbody;
     //private Vector3 resetPosition;
-    private BallLastInterraction ballState;
+    private BallLastInterraction ballInterractionState;
 
 
     private Vector3 lastVelocity;
@@ -39,18 +39,18 @@ public class MagicalBallScript : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
         //resetPosition = gameObject.transform.position;
-        ballState = BallLastInterraction.NONE;
+        ballInterractionState = BallLastInterraction.NONE;
     }
 
     private void FixedUpdate()
     {
         lastVelocity = rigidbody.velocity;  // Vitesse avant contact necessaire pour le calcul du rebond (méthode Bounce)
 
-        if (ballState == BallLastInterraction.NONE)
+        if (ballInterractionState == BallLastInterraction.NONE)
             rigidbody.AddForce(initialGravity * Vector3.down);
-        else if (ballState == BallLastInterraction.RACKET)
-            rigidbody.AddForce(afterRacketHitGravity * Vector3.down);
-        else if (ballState == BallLastInterraction.FRONTWALL)
+        else if (ballInterractionState == BallLastInterraction.RACKET)
+            rigidbody.AddForce(afterRacketArcadeHitGravity * Vector3.down);
+        else if (ballInterractionState == BallLastInterraction.FRONTWALL)
             rigidbody.AddForce(afterFrontWallBounceGravity * Vector3.down);
         else
             rigidbody.AddForce(afterFloorBounceGravity * Vector3.down);
@@ -60,25 +60,21 @@ public class MagicalBallScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Racket"))
         {
-            StartCoroutine(RacketHit()); 
-            ballState = BallLastInterraction.RACKET;
+            StartCoroutine(RacketArcadeHit()); 
+            ballInterractionState = BallLastInterraction.RACKET;
         }
         else if (other.gameObject.CompareTag("FrontWall") || other.gameObject.CompareTag("Brick"))
         {
             Bounce(other.GetContact(0));
-            ballState = BallLastInterraction.FRONTWALL;
+            ballInterractionState = BallLastInterraction.FRONTWALL;
         }
         else if(other.gameObject.CompareTag("Floor"))
         {
-            if (ballState == BallLastInterraction.FRONTWALL)
+            if (ballInterractionState == BallLastInterraction.FRONTWALL)
             {
                 MagicalBounce();
-                ballState = BallLastInterraction.FLOOR;
+                ballInterractionState = BallLastInterraction.FLOOR;
             }
-            //else if(isResetable)
-            //{
-            //    ResetBall();
-            //}
             else
             {
                 Bounce(other.GetContact(0));
@@ -111,43 +107,31 @@ public class MagicalBallScript : MonoBehaviour
         rigidbody.velocity = Vector3.Normalize(returnPoint.position - gameObject.transform.position) * magicalBounceSpeed;
     }
 
-    private IEnumerator RacketHit()
+    private IEnumerator RacketArcadeHit()
     {
         Transform currentPosition = gameObject.transform;
-        GameObject.Find("RacketManager").GetComponent<RacketManagerScript>().OnHitEvent(gameObject);
+        GameObject.Find("RacketManager").GetComponent<RacketManager>().OnHitEvent(gameObject);
         yield return new WaitForFixedUpdate();
 
-        Vector3 newVelocity = GameObject.Find("RacketManager").GetComponent<RacketManagerScript>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
+        Vector3 newVelocity = GameObject.Find("RacketManager").GetComponent<RacketManager>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
 
         rigidbody.position = currentPosition.position + newVelocity * Time.fixedDeltaTime * hitSpeedMultiplier;
         rigidbody.velocity = ClampVelocity(newVelocity * hitSpeedMultiplier);
     }
 
-    private Vector3 ClampVelocity(Vector3 calculateVelocity)
+    private Vector3 ClampVelocity(Vector3 velocity)
     {
-        if (calculateVelocity.magnitude < minSpeed)
+        if (velocity.magnitude < minSpeed)
         {
-            return minSpeed * Vector3.Normalize(calculateVelocity);
+            return minSpeed * Vector3.Normalize(velocity);
         }
-        else if (calculateVelocity.magnitude > maxSpeed)
+        else if (velocity.magnitude > maxSpeed)
         {
-            return maxSpeed * Vector3.Normalize(calculateVelocity);
+            return maxSpeed * Vector3.Normalize(velocity);
         }
         else
-            return calculateVelocity;
+            return velocity;
     }
 }
 
 
-
-
-
-//public void ResetBall() //Changera avec l'insertion propre des Managers
-//{
-//    ballState = BallLastInterraction.NONE;
-//    Debug.Log(transform.position);
-//    Debug.Log(resetPosition);
-//    transform.position = resetPosition;
-//    Debug.Log(transform.position);
-//    rigidbody.velocity = Vector3.zero;
-//}
