@@ -14,7 +14,8 @@ public class MagicalBallScriptV3 : MonoBehaviour
     {
         BASICARCADE,
         BASICPHYSIC,
-        MEDIUMPHYSIC
+        MEDIUMPHYSIC,
+        MIXED
     }
     
     [Header("Racket Settings")]
@@ -22,10 +23,16 @@ public class MagicalBallScriptV3 : MonoBehaviour
     public float hitMaxSpeed;
     public float hitMinSpeed;
     public float hitSpeedMultiplier;
+
+    [Header("Racket Physics Settings")]
     public float racketFriction;
 
+    [Header("Racket Mixed Physics Settings")]
+    [Range(0, 1)]
+    public float mixRatio;
+
     [Header("Slow Return Settings")]
-    public float slowness;              //Modider le nom?
+    public float slowness;              
 
     [Header("Gravity Settings")]
     public float gravity;
@@ -59,31 +66,36 @@ public class MagicalBallScriptV3 : MonoBehaviour
 
         if (ballState == BallState.NORMAL)
             rigidbody.AddForce(gravity * Vector3.down);
-        else if (ballState == BallState.SLOW)                                   // A changer
+        else if (ballState == BallState.SLOW)                                   
             rigidbody.AddForce(gravity / (slowness * slowness) * Vector3.down);
-        
     }
 
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Racket"))
         {
+            Vector3 newVelocity = Vector3.zero;
+
             switch (physicsUsed)
             {
                 case RacketInteractionType.BASICARCADE:
-                    RacketArcadeHit();
+                    newVelocity = RacketArcadeHit();
                     break;
                 
                 case RacketInteractionType.BASICPHYSIC:
-                    RacketBasicPhysicHit(other);
+                    newVelocity = RacketBasicPhysicHit(other);
                     break;
                     
                 case RacketInteractionType.MEDIUMPHYSIC:
-                    RacketMediumPhysicHit(other);
+                    newVelocity = RacketMediumPhysicHit(other);
+                    break;
+                case RacketInteractionType.MIXED:
+                    newVelocity = RacketMixedHit(other);
                     break;
             }
             
-
+            rigidbody.velocity = ClampVelocity(hitSpeedMultiplier * newVelocity);
+            GameObject.Find("RacketManager").GetComponent<RacketManager>().OnHitEvent(gameObject);  // Ignore collision pour quelque frame.
             ballState = BallState.NORMAL;
         }
         else if (other.gameObject.CompareTag("FrontWall") || other.gameObject.CompareTag("Brick"))
@@ -94,6 +106,9 @@ public class MagicalBallScriptV3 : MonoBehaviour
         else
             StandardBounce(other.GetContact(0));        // Util?
     }
+
+
+    //////////////////////////////////    Wall-Floor Interaction     /////////////////////////////////////////////////
 
     /// Méthode qui calcul le rebond de la balle (calcul vectorielle basique) et modifie la trajectoire en conséquence
     /// contactPoint : données de collision entre la balle et l'autre objet
@@ -119,47 +134,6 @@ public class MagicalBallScriptV3 : MonoBehaviour
         rigidbody.velocity = new Vector3(sideVelocity, verticalVelocity, -depthVelocity) / slowness;
     }
 
-    private void RacketArcadeHit()
-    {
-        Transform currentPosition = gameObject.transform;
-        GameObject.Find("RacketManager").GetComponent<RacketManager>().OnHitEvent(gameObject);
-        
-
-        Vector3 newVelocity = GameObject.Find("RacketManager").GetComponent<RacketManager>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
-
-        newVelocity = ClampVelocity(newVelocity * hitSpeedMultiplier);
-        rigidbody.position = currentPosition.position + newVelocity  * Time.fixedDeltaTime;
-        rigidbody.velocity = newVelocity;
-    }
-
-    private void RacketBasicPhysicHit(Collision other) // Ajout d'un seuil pour pouvoir jouer avec la balle?
-    {
-        Vector3 racketVelocity = GameObject.Find("RacketManager").GetComponent<RacketManager>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
-        Vector3 relativeVelocity = lastVelocity - racketVelocity;
-        Vector3 contactPointNormal = Vector3.Normalize(other.GetContact(0).normal);
-
-        Vector3 normalVelocity = Vector3.Dot(contactPointNormal, relativeVelocity) * contactPointNormal;
-        Vector3 tangentVelocity = (relativeVelocity - normalVelocity) * (1 - racketFriction);        // Ajouter frottement
-
-        rigidbody.velocity = ClampVelocity(hitSpeedMultiplier * (-normalVelocity + tangentVelocity));
-
-        GameObject.Find("RacketManager").GetComponent<RacketManager>().OnHitEvent(gameObject);  // Ignore collision pour quelque frame.
-    }
-
-    private void RacketMediumPhysicHit(Collision other) // Ajout d'un seuil pour pouvoir jouer avec la balle?
-    {
-        Vector3 racketVelocity = GameObject.Find("RacketManager").GetComponent<RacketManager>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
-        Vector3 relativeVelocity = lastVelocity - racketVelocity;
-        Vector3 contactPointNormal = Vector3.Normalize(other.GetContact(0).normal);
-
-        Vector3 normalVelocity = (2 * Vector3.Dot(contactPointNormal, racketVelocity) - Vector3.Dot(contactPointNormal, lastVelocity)) * hitSpeedMultiplier * contactPointNormal;
-        Vector3 tangentVelocity = (lastVelocity - Vector3.Dot(contactPointNormal, lastVelocity) * contactPointNormal) * (1 - racketFriction);        // Ajouter frottement
-
-        rigidbody.velocity = ClampVelocity(hitSpeedMultiplier * (normalVelocity + tangentVelocity));
-
-        GameObject.Find("RacketManager").GetComponent<RacketManager>().OnHitEvent(gameObject);  // Ignore collision pour quelque frame.
-    }
-
     private float CalculateVerticalBounceVelocity(Collision collision)
     {
         Vector3 collisionPoint = collision.GetContact(0).point;
@@ -173,6 +147,45 @@ public class MagicalBallScriptV3 : MonoBehaviour
         returnHorizontalDirection = Vector3.Normalize(returnHorizontalDirection);
         return Vector3.Dot(depthVelocity * Vector3.back, returnHorizontalDirection) * Vector3.Dot(returnHorizontalDirection, Vector3.right);
     }
+
+
+    //////////////////////////////////////////    Racket Interraction     /////////////////////////////////////////////////
+
+    private Vector3 RacketArcadeHit()
+    {
+        return GameObject.Find("RacketManager").GetComponent<RacketManager>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
+    }
+
+    private Vector3 RacketBasicPhysicHit(Collision collision)       // Ajout d'un seuil pour pouvoir jouer avec la balle?
+    {
+        Vector3 racketVelocity = GameObject.Find("RacketManager").GetComponent<RacketManager>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
+        Vector3 relativeVelocity = lastVelocity - racketVelocity;
+        Vector3 contactPointNormal = Vector3.Normalize(collision.GetContact(0).normal);
+
+        Vector3 normalVelocity = Vector3.Dot(contactPointNormal, relativeVelocity) * contactPointNormal;
+        Vector3 tangentVelocity = (relativeVelocity - normalVelocity) * (1 - racketFriction);        // Ajouter frottement
+
+        return -normalVelocity + tangentVelocity;
+    }
+
+    private Vector3 RacketMediumPhysicHit(Collision collision) // Ajout d'un seuil pour pouvoir jouer avec la balle?
+    {
+        Vector3 racketVelocity = GameObject.Find("RacketManager").GetComponent<RacketManager>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
+        Vector3 relativeVelocity = lastVelocity - racketVelocity;
+        Vector3 contactPointNormal = Vector3.Normalize(collision.GetContact(0).normal);
+
+        Vector3 normalVelocity = (2 * Vector3.Dot(contactPointNormal, racketVelocity) - Vector3.Dot(contactPointNormal, lastVelocity)) * contactPointNormal;
+        Vector3 tangentVelocity = (lastVelocity - Vector3.Dot(contactPointNormal, lastVelocity) * contactPointNormal) * (1 - racketFriction);        // Ajouter frottement
+
+        return normalVelocity + tangentVelocity;
+    }
+
+    private Vector3 RacketMixedHit(Collision collision)
+    {
+        return RacketArcadeHit() * (1 - mixRatio) + RacketBasicPhysicHit(collision) * mixRatio;
+    }
+
+    //////////////////////////////////////////    Utility Methods     /////////////////////////////////////////////////
 
     private Vector3 ClampVelocity(Vector3 velocity)        //Nom à modifier
     {
