@@ -949,7 +949,7 @@ PrefabInstance:
     - target: {fileID: 8776666389479398576, guid: 8bac73acdc443c24ca4708c31bda1424,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8776666389479398576, guid: 8bac73acdc443c24ca4708c31bda1424,
         type: 3}
@@ -1334,7 +1334,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1504574215
 MonoBehaviour:
@@ -1413,7 +1413,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6ef1e2de3b2198f45905734da68f33d6, type: 2}
+  - {fileID: 2100000, guid: 76ef915999a2ef646801d202973ab1d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1671,7 +1671,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6ef1e2de3b2198f45905734da68f33d6, type: 2}
+  - {fileID: 2100000, guid: 76ef915999a2ef646801d202973ab1d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1947,7 +1947,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6ef1e2de3b2198f45905734da68f33d6, type: 2}
+  - {fileID: 2100000, guid: 76ef915999a2ef646801d202973ab1d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2016,17 +2016,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3472f620cc6a0d741bf5d65b184ce56a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switchPhysic: 0
+  physicsUsed: 0
   hitMaxSpeed: 0
   hitMinSpeed: 100
   hitSpeedMultiplier: 2
+  racketFriction: 0
   slowness: 1
   gravity: 9.81
-  depthVelocity: 10
+  depthVelocity: 2
   zFloorBounceTarget: {fileID: 66839987}
   xReturnTarget: {fileID: 979044267}
   bounciness: 1
-  frottementDynamique: 0
+  dynamicFriction: 0
 --- !u!33 &4875086584255880602
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2128,4 +2129,4 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2

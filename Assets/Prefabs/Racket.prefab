@@ -75,10 +75,9 @@ GameObject:
   - component: {fileID: 8776666389479398582}
   - component: {fileID: 2276729969747601092}
   - component: {fileID: 2276729969747601091}
-  - component: {fileID: 23626869708483880}
   m_Layer: 0
   m_Name: Racket
-  m_TagString: Untagged
+  m_TagString: Racket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +113,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &8776666389479398577
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -191,20 +190,6 @@ MonoBehaviour:
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
---- !u!114 &23626869708483880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8776666389479398583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fec6fdfeef717e41ad0e7a120636f75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swingVelocity: {x: 0, y: 1, z: 1}
-  swingDuration: 1
 --- !u!1001 &1594891332979368864
 PrefabInstance:
   m_ObjectHideFlags: 0
