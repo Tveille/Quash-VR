@@ -3974,11 +3974,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrickMoving (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 6069188586322574767, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
-        type: 3}
-      propertyPath: m_TagString
-      value: Wall
-      objectReference: {fileID: 0}
     - target: {fileID: 6069188586322574763, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4036,11 +4031,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6069188586322574676, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
         type: 3}
-      propertyPath: waypoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6069188586322574676, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
-        type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 541461432409219818}
@@ -4049,16 +4039,6 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 2117962334}
-    - target: {fileID: 6069188586322574676, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
-        type: 3}
-      propertyPath: waypoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 1042120614}
-    - target: {fileID: 6069188586322574676, guid: 83a37e87fbf1902478faa2c6a4bbfd17,
-        type: 3}
-      propertyPath: scoreValue
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83a37e87fbf1902478faa2c6a4bbfd17, type: 3}
 --- !u!4 &677301588 stripped
