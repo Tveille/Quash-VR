@@ -74,7 +74,7 @@ Material:
     - _BumpScale: 1
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DissolveDistanceRange: 1.5
+    - _DissolveDistanceRange: 3
     - _DstBlend: 0
     - _EmissionBrightness: 0.5
     - _EnvironmentReflections: 1
@@ -82,12 +82,12 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _GlowEffect: 1
-    - _GridAlpha: 0.8
+    - _GridAlpha: 2.1
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 0.75
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
