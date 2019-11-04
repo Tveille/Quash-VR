@@ -11,10 +11,6 @@ namespace TalesFromTheRift
 		// Optional: Input Object to receive text 
 		public GameObject inputObject;
 
-		public void Start(){
-			CanvasKeyboard.Open(CanvasKeyboardObject, inputObject != null ? inputObject : gameObject);
-		}
-
 		public void OpenKeyboard() 
 		{		
 			CanvasKeyboard.Open(CanvasKeyboardObject, inputObject != null ? inputObject : gameObject);

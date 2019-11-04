@@ -19,6 +19,9 @@ EditorBuildSettings:
     guid: de0faacfee83c6e478f1a105c477a395
   - enabled: 0
     path: Assets/Scenes/VincentScene/Scene_Prototype1_00.unity
+=======
+    path: Assets/Scenes/VincentScene/Scene_Prototype_00.unity
+>>>>>>> Stashed changes
     guid: 008bfaef953af2746adc33cec6fd0f2c
   - enabled: 1
     path: Assets/Scenes/FrancoisTestScene/TestScene4Francois00.unity
