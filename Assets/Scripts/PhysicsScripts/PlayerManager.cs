@@ -15,13 +15,13 @@ public class PlayerManager : MonoBehaviour
     public GameObject Player2;
 
     
-    public void OnPlayer1RightActionCall()
-    {
-        GameObject.Find("RacketManager").GetComponent<RacketManager>().OnActionCall(PlayerID.PLAYER1);
-    }
+    //public void OnPlayer1RightActionCall()
+    //{
+    //    GameObject.Find("RacketManager").GetComponent<RacketManager>().OnActionCall(PlayerID.PLAYER1);
+    //}
 
-    public void OnPlayer1RightStopCall()
-    {
-        GameObject.Find("RacketManager").GetComponent<RacketManager>().OnStopCall(PlayerID.PLAYER1);
-    }
+    //public void OnPlayer1RightStopCall()
+    //{
+    //    GameObject.Find("RacketManager").GetComponent<RacketManager>().OnStopCall(PlayerID.PLAYER1);
+    //}
 }

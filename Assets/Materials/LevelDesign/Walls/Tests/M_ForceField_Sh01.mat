@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_ForceField_Sh01
-  m_Shader: {fileID: -6465566751694194690, guid: f2d039e2724d5d0488c730be44f77a56,
+  m_Shader: {fileID: -6465566751694194690, guid: abcd69b03f9bc8143b218f521181f9c6,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
