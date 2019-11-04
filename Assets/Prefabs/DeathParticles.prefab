@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 243362976759743018}
   - component: {fileID: 243362976759743017}
   - component: {fileID: 243362976759743016}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CubeParticleSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243362976759743191}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7379065283189228697}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!198 &243362976759743017
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4940,7 +4940,7 @@ GameObject:
   - component: {fileID: 6813600750761643788}
   - component: {fileID: 1109581561626509888}
   - component: {fileID: 475801354995207935}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ImpactParticleSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4954,13 +4954,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2393955395108640817}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7379065283189228697}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!198 &1109581561626509888
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -9895,7 +9895,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7379065283189228697}
   - component: {fileID: 122636700359703505}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: DeathParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}

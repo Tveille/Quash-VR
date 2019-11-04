@@ -16,6 +16,7 @@ TagManager:
   - Floor
   - FrontWall
   - Brick
+  - Impact
   layers:
   - Default
   - TransparentFX
@@ -26,9 +27,9 @@ TagManager:
   - 
   - 
   - PostProcess
-  - 
-  - 
-  - 
+  - Ball
+  - Brick
+  - FX
   - 
   - 
   - 

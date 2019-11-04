@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8869060308091424485}
   - component: {fileID: 2347905088174473026}
   - component: {fileID: 4099883810102832645}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4822,7 +4822,7 @@ GameObject:
   - component: {fileID: 2841564005628909741}
   - component: {fileID: 6836635786285611342}
   - component: {fileID: 5868084408550702173}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Particle System (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9633,7 +9633,7 @@ GameObject:
   - component: {fileID: 2054576940513517521}
   - component: {fileID: 2033737361293426406}
   - component: {fileID: 6685130275718003727}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FX_Bounce
   m_TagString: Untagged
   m_Icon: {fileID: 0}

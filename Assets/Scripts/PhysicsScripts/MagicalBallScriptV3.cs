@@ -116,13 +116,13 @@ public class MagicalBallScriptV3 : MonoBehaviour
     {
         Vector3 normal = Vector3.Normalize(contactPoint.normal);
         float normalVelocity = Vector3.Dot(normal, lastVelocity);
-        Debug.Log(normalVelocity * normal);
+        //Debug.Log(normalVelocity * normal);
         Vector3 tangent = Vector3.Normalize(lastVelocity - normalVelocity * normal);
         float tangentVelocity = Vector3.Dot(tangent, lastVelocity);
-        Debug.Log(tangentVelocity * tangent);
+        //Debug.Log(tangentVelocity * tangent);
 
         rigidbody.velocity = ((1 - dynamicFriction) * tangentVelocity * tangent - bounciness * normalVelocity * normal);
-        Debug.Log(rigidbody.velocity);
+        //Debug.Log(rigidbody.velocity);
     }
 
     private void MagicalBounce3(Collision collision)
