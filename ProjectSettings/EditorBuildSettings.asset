@@ -18,9 +18,13 @@ EditorBuildSettings:
     path: Assets/Scenes/PlaytestScene.unity
     guid: de0faacfee83c6e478f1a105c477a395
   - enabled: 1
+<<<<<<< Updated upstream
     path: Assets/Scenes/TristanTestScene/Menu.unity
     guid: acbe7b5099526764d9a7ccbc5fdc3514
   - enabled: 0
     path: Assets/Scenes/VincentScene/Scene_Prototype1_00.unity
+=======
+    path: Assets/Scenes/VincentScene/Scene_Prototype_00.unity
+>>>>>>> Stashed changes
     guid: 008bfaef953af2746adc33cec6fd0f2c
   m_configObjects: {}
