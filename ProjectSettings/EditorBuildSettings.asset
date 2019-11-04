@@ -12,12 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/BasicScene.unity
     guid: 24148b2bda2376c4188f5d50a74cf057
   - enabled: 0
-    path: Assets/Scenes/FrancoisTestScene/FrancoisTestScene.unity
-    guid: 9d6e0119961d5a44b9708208f0e30286
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Scenes/PlaytestScene.unity
     guid: de0faacfee83c6e478f1a105c477a395
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/VincentScene/Scene_Prototype1_00.unity
     guid: 008bfaef953af2746adc33cec6fd0f2c
+  - enabled: 1
+    path: Assets/Scenes/FrancoisTestScene/TestScene4Francois00.unity
+    guid: f7f2e161968a4b241a0af297497714e1
   m_configObjects: {}
