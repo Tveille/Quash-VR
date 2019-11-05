@@ -36,3 +36,9 @@ sysinfo.txt
 *.unitypackage
 
 ProjectSettings/ProBuilderSettings.json
+
+Assets/HoudiniEngineAssetCache/Baked/QuashWall 1.meta
+
+Assets/HoudiniEngineAssetCache/Baked/QuashWall.meta
+
+Assets/HoudiniEngineAssetCache/Working.meta
