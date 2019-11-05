@@ -79,6 +79,8 @@ public class MagicBallRacketInterractionTests : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        AudioManager.instance.PlayHitSound(other.gameObject.tag, other.GetContact(0).point, Quaternion.LookRotation(other.GetContact(0).normal), lastVelocity.magnitude);
+
         if (other.gameObject.CompareTag("Racket"))
         {
             Vector3 newVelocity = Vector3.zero;
@@ -102,7 +104,7 @@ public class MagicBallRacketInterractionTests : MonoBehaviour
             }
 
             rigidbody.velocity = ClampVelocity(hitSpeedMultiplier * newVelocity);
-            GameObject.Find("RacketManager").GetComponent<RacketManager>().OnHitEvent(gameObject);  // Ignore collision pour quelque frame.
+            GameObject.Find("RacketManager").GetComponent<RacketManager>().OnHitEvent(gameObject);  // Ignore collision pour quelques frames.
             ballState = BallState.NORMAL;
         }
         else if (other.gameObject.CompareTag("FrontWall") || other.gameObject.CompareTag("Brick"))
@@ -112,6 +114,9 @@ public class MagicBallRacketInterractionTests : MonoBehaviour
         }
         else
             StandardBounce(other.GetContact(0));        // Util?
+
+
+        BallEventManager.instance?.OnBallCollision(new BallCollisionInfo(other.gameObject.tag, other.GetContact(0).point, other.GetContact(0).normal,lastVelocity));
     }
 
 
