@@ -13,13 +13,14 @@ GameObject:
   - component: {fileID: 4092726656090709496}
   - component: {fileID: 4092726656090709497}
   - component: {fileID: 4092726656090709498}
+  - component: {fileID: 4814904514538576673}
   - component: {fileID: 4092726656090709482}
-  - component: {fileID: 4846540663908327197}
   - component: {fileID: 5308233519700140204}
   - component: {fileID: 9067365113629159228}
   - component: {fileID: 3632173787704927066}
   - component: {fileID: 7874847342574634107}
-  m_Layer: 0
+  - component: {fileID: 8799386132471918862}
+  m_Layer: 9
   m_Name: MagicBall3
   m_TagString: Ball
   m_Icon: {fileID: 0}
@@ -34,7 +35,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4092726656090709477}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.351, y: 1.134, z: 8.76}
+  m_LocalPosition: {x: 0.351, y: 1.134, z: 8.566}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 5405717006173697799}
@@ -115,8 +116,8 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
---- !u!114 &4092726656090709482
+  m_CollisionDetection: 3
+--- !u!114 &4814904514538576673
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,22 +126,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 4092726656090709477}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3472f620cc6a0d741bf5d65b184ce56a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e7329262ded6914aa74f53be6bd3488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  physicsUsed: 1
-  hitMaxSpeed: 100
-  hitMinSpeed: 5
-  hitSpeedMultiplier: 6
-  racketFriction: 0
-  slowness: 3
+  physicsUsed: 2
+  hitMaxSpeed: 30
+  hitMinSpeed: 0.1
+  hitSpeedMultiplier: 3
+  racketFriction: 1
+  mixRatio: 0
+  maxYAngle: 0
+  maxZAngle: 0
+  magnitudeSlope: 0
+  minMagnitude: 0
+  maxMagnitude: 0
+  slowness: 2
   gravity: 9.81
-  depthVelocity: 20
+  depthVelocity: 10
   zFloorBounceTarget: {fileID: 6265009429193403791}
   xReturnTarget: {fileID: 6265009428486687771}
   bounciness: 0.8
   dynamicFriction: 0
---- !u!114 &4846540663908327197
+--- !u!114 &4092726656090709482
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,27 +156,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 4092726656090709477}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ebdd94f02426434bade0b1f633f608e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3472f620cc6a0d741bf5d65b184ce56a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounciness: 0.95
-  switchPhysic: 1
-  maxSpeed: 12
-  minSpeed: 3
-  hitSpeedMultiplier: 5
-  initialGravity: 9.81
-  afterRacketHitGravity: 9.81
-  afterFrontWallBounceGravity: 9.81
-  afterFloorBounceGravity: 9.81
-  verticalCompensationSlope: -1
-  verticalCompensationOffset: 5
-  vcIsPositive: 1
-  depthCompensationSlope: -1
-  depthCompensationOffset: 7
-  verticalBounceSlope: 1
-  verticalBounceOffset: 0
-  attractionStrength: 0
-  targetPoint: {fileID: 0}
+  physicsUsed: 0
+  hitMaxSpeed: 50
+  hitMinSpeed: 10
+  hitSpeedMultiplier: 6
+  racketFriction: 0
+  mixRatio: 0
+  slowness: 2
+  gravity: 9.81
+  depthVelocity: 10
+  zFloorBounceTarget: {fileID: 6265009429193403791}
+  xReturnTarget: {fileID: 6265009428486687771}
+  bounciness: 0.7
+  dynamicFriction: 0
 --- !u!114 &5308233519700140204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,6 +276,25 @@ MonoBehaviour:
   objectToHighlight: {fileID: 0}
   objectHighlighter: {fileID: 0}
   objectToAffect: {fileID: 0}
+--- !u!114 &8799386132471918862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4092726656090709477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2768b78909232d843b86fd7f63baec24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceFXprefab: {fileID: 565995459955419888, guid: 1871c528be518d1418d139ffbaf1537d,
+    type: 3}
+  Impactprefab: {fileID: 2194597433777538208, guid: a4b20a9794e29dd46aec1255019e3eb8,
+    type: 3}
+  fxPosition: {x: 0, y: 0, z: 0}
+  impactPosition: {x: 0, y: 0, z: 0}
+  maxCooldown: 2
 --- !u!1 &6265009428105279488
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,8 +318,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6265009428105279488}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 5.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6265009428486687771}
@@ -331,7 +352,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6265009428486687770}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalPosition: {x: 1, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6265009428105279489}
@@ -361,7 +382,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6265009429193403790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 13}
+  m_LocalPosition: {x: 0, y: 0, z: 12.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6265009428105279489}
@@ -377,7 +398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5405717006173697799}
   - component: {fileID: 2592738227546291876}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
