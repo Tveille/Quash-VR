@@ -68,7 +68,7 @@ Material:
     - Vector1_939CDD3C: 0.8
     - Vector1_9F1E5E16: 0
     - Vector1_A885E10: 1
-    - Vector1_B8A54333: -1
+    - Vector1_B8A54333: 0
     - Vector1_CB25D541: 0
     - Vector1_F55BCBA5: 0.5
     - Vector1_FFAEB007: -6.08
@@ -78,7 +78,7 @@ Material:
     - _BumpScale: 1
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DissolveDistanceRange: 1
+    - _DissolveDistanceRange: 2.5
     - _DstBlend: 0
     - _EmissionBrightness: 2.5
     - _EnvironmentReflections: 1
