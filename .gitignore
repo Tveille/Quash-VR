@@ -34,33 +34,3 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-
-ProjectSettings/ProBuilderSettings.json
-
-Assets/HoudiniEngineAssetCache/Baked/QuashWall 1.meta
-
-Assets/HoudiniEngineAssetCache/Baked/QuashWall.meta
-
-Assets/HoudiniEngineAssetCache/Working.meta
-
-Assets/HoudiniEngineAssetCache/Baked/QuashWall/Materials.meta
-
-Assets/HoudiniEngineAssetCache/Baked/QuashWall/Meshes.meta
-
-Assets/HoudiniEngineAssetCache/Working/HDA_Acordeon 1.meta
-
-Assets/HoudiniEngineAssetCache/Working/HDA_Acordeon.meta
-
-Assets/HoudiniEngineAssetCache/Working/HDA_QuashEnvironment_00.meta
-
-Assets/HoudiniEngineAssetCache/Working/HDA_QuashEnvironment_01.meta
-
-Assets/HoudiniEngineAssetCache/Working/HDA_QuashEnvironment_02.meta
-
-Assets/HoudiniEngineAssetCache/Working/QuashWall 1.meta
-
-Assets/HoudiniEngineAssetCache/Working/QuashWall.meta
-
-Assets/HoudiniEngineAssetCache/Working/v_trinel_unitytest 1.meta
-
-Assets/HoudiniEngineAssetCache/Working/v_trinel_unitytest.meta
