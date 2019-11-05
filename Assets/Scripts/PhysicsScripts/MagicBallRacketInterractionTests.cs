@@ -114,6 +114,9 @@ public class MagicBallRacketInterractionTests : MonoBehaviour
         }
         else
             StandardBounce(other.GetContact(0));        // Util?
+
+
+        BallEventManager.instance?.OnBallCollision(other.gameObject.tag);
     }
 
 
