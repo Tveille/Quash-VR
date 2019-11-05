@@ -6,69 +6,102 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-
-    public SoundClass[] sounds;
+    #region SingletonPart
+    public static AudioManager instance;
 
     private void Awake()
     {
-
-        foreach (SoundClass s in sounds)
+        if (instance)
         {
-            s.source = gameObject.AddComponent<AudioSource>();
-
-            s.source.clip = s.clip;
-            //s.source.outputAudioMixerGroup = s.output;
-            s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
-            s.source.loop = s.loop;
-            s.source.spatialBlend = s.spatialBlend;
-            s.source.panStereo = s.panStereo;
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
     }
+    #endregion
 
-    public void Play(string name)
+    public SoundClass[] sounds;
+
+    public void PlayHitSound(string tag, Vector3 spawnPosition, Quaternion spawnRotation, float hitIntensity)
     {
-        SoundClass s = Array.Find(sounds, sound => sound.name == name);
+        SoundClass sound = Array.Find(sounds, s => s.name == tag);
 
-        if (s == null)
+        if (sound == null)
         {
             Debug.LogWarning("SOUND NOT FOUND");
             return;
         }
-
-        s.source.Play();
-    }
-
-    public void Stop(string name)
-    {
-        SoundClass s = Array.Find(sounds, sound => sound.name == name);
-
-        if (s == null)
+        if(Time.time < sound.lastPlayTime + sound.cooldown)
         {
-            Debug.LogWarning("SOUND NOT FOUND");
             return;
         }
 
-        s.source.Stop();
+        GameObject hitSoundGameObject = (GameObject)PoolManager.instance.SpawnFromPool("AudioSource", spawnPosition, spawnRotation);
+        AudioSource hitSoundSource = hitSoundGameObject.GetComponent<AudioSource>();
+
+        SetAudioSource(hitSoundSource, sound);
+        AdjustPitch(hitSoundSource, sound, hitIntensity);
+
+        hitSoundSource.Play();
     }
 
-    public bool isPlaying(string name)
+    private void SetAudioSource(AudioSource source, SoundClass sound)
     {
-        SoundClass s = Array.Find(sounds, sound => sound.name == name);
-
-        if (s == null)
-        {
-            Debug.LogWarning("SOUND NOT FOUND");
-            return false;
-        }
-
-        return s.source.isPlaying;
+        source.clip = sound.clip;
+        //source.outputAudioMixerGroup = sound.output;          //util?
+        source.volume = sound.volume;
+        source.pitch = sound.pitch;
+        source.loop = sound.loop;
+        source.spatialBlend = sound.spatialBlend;
+        source.panStereo = sound.panStereo;
     }
 
-    // TO PLAY A SOUND IN ANOTHER SCRIPT :
-    //
-    // FindObjectOfType<AudioManager>().Play("name");
-    // FindObjectOfType<AudioManager>().Stop("name");
-    //
-    //"name" is equal to the string of the sound you want to play
+    private void AdjustPitch(AudioSource source, SoundClass sound, float hitIntensity)          // A améliorer
+    {
+        source.pitch *= hitIntensity * sound.hitPitchRatio;
+
+        if (source.pitch < sound.minPitch)
+            source.pitch = sound.minPitch;
+        else if (source.pitch > sound.maxPitch)
+            source.pitch = sound.maxPitch;
+    }
 }
+
+// TO PLAY A SOUND IN ANOTHER SCRIPT :
+//
+// FindObjectOfType<AudioManager>().Play("name");
+// FindObjectOfType<AudioManager>().Stop("name");
+//
+//"name" is equal to the string of the sound you want to play
+
+// VIEILLE METHODE
+//
+//public void Stop(string name)
+//{
+//    SoundClass s = Array.Find(sounds, sound => sound.name == name);
+
+//    if (s == null)
+//    {
+//        Debug.LogWarning("SOUND NOT FOUND");
+//        return;
+//    }
+
+//    s.source.Stop();
+//}
+
+//public bool isPlaying(string name)
+//{
+//    SoundClass s = Array.Find(sounds, sound => sound.name == name);
+
+//    if (s == null)
+//    {
+//        Debug.LogWarning("SOUND NOT FOUND");
+//        return false;
+//    }
+
+//    return s.source.isPlaying;
+//}
