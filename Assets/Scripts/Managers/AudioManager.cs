@@ -28,7 +28,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayHitSound(string tag, Vector3 spawnPosition, Quaternion spawnRotation, float hitIntensity)
     {
-        SoundClass sound = Array.Find(sounds, s => s.name == tag);
+        SoundClass sound = Array.Find(sounds, s => s.tag == tag);
 
         if (sound == null)
         {
@@ -44,7 +44,7 @@ public class AudioManager : MonoBehaviour
         AudioSource hitSoundSource = hitSoundGameObject.GetComponent<AudioSource>();
 
         SetAudioSource(hitSoundSource, sound);
-        AdjustPitch(hitSoundSource, sound, hitIntensity);
+        //AdjustPitch(hitSoundSource, sound, hitIntensity);
 
         hitSoundSource.Play();
     }

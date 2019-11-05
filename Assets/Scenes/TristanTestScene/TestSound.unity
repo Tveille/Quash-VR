@@ -98,7 +98,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -22771,11 +22771,16 @@ MonoBehaviour:
   - name: SFX_RacketHit
     tag: Racket
     clip: {fileID: 8300000, guid: 90bce3c41d7f9d843982e81bde164062, type: 3}
+    cooldown: 0
     volume: 1
     pitch: 1
     loop: 0
     spatialBlend: 0
     panStereo: 0
+    hitPitchRatio: 1
+    minPitch: 1
+    maxPitch: 1
+    lastPlayTime: 0
 --- !u!4 &1304411084
 Transform:
   m_ObjectHideFlags: 0
@@ -45548,16 +45553,6 @@ PrefabInstance:
     - target: {fileID: 6265009428105279489, guid: 810d4eeb5c53aaa4ca935464b561083a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 447419759829247794, guid: 810d4eeb5c53aaa4ca935464b561083a,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2585579738352331630, guid: 810d4eeb5c53aaa4ca935464b561083a,
-        type: 3}
-      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
