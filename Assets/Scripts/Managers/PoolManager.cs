@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+
 public class PoolManager : MonoBehaviour
 {
-    [System.Serializable]
-    public class Pool
-    {
-        public string tag;
-        public GameObject prefab;
-        public int size;
-    }
+    public PoolSettings poolList;
+    public Dictionary<string, Queue<GameObject>> poolDictionary;
+
 
     public static PoolManager instance;
+
+
 
     private void Awake()
     {
@@ -28,14 +29,11 @@ public class PoolManager : MonoBehaviour
         }
     }
 
-    public List<Pool> pools;
-    public Dictionary<string, Queue<GameObject>> poolDictionary;
-
     private void Start()
     {
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
-        foreach (Pool pool in pools)
+        foreach (Pool pool in poolList.pools)
         {
             Queue<GameObject> objectPool = new Queue<GameObject>();
 
