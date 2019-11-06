@@ -68,7 +68,7 @@ Material:
     - _Cull: 2
     - _Cutoff: 0.5
     - _DstBlend: 0
-    - _EmissiveBrightness: 1
+    - _EmissiveBrightness: 0.2
     - _EnvironmentReflections: 1
     - _FresnelPower: 0.75
     - _GlossMapScale: 0
