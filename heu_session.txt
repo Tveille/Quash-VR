@@ -1,1 +1,0 @@
-{"_HAPISession":{"type":1,"id":2158258490448},"_serverProcessID":258672,"_initialized":true,"_pipeName":"hapi","_sessionClassType":"HoudiniEngineUnity.HEU_SessionHAPI","_isDefaultSession":true};
