@@ -79,7 +79,7 @@ public class MagicBallRacketInterractionTests : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        AudioManager.instance.PlayHitSound(other.gameObject.tag, other.GetContact(0).point, Quaternion.LookRotation(other.GetContact(0).normal), lastVelocity.magnitude);
+        AudioManager.instance?.PlayHitSound(other.gameObject.tag, other.GetContact(0).point, Quaternion.LookRotation(other.GetContact(0).normal), lastVelocity.magnitude);
 
         if (other.gameObject.CompareTag("Racket"))
         {
