@@ -1,9 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRTK;
 
 public class RacketManager : MonoBehaviour
 {
+    #region Singleton
+    public static RacketManager instance;
+
+    private void Awake()
+    {
+        if (instance)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+    #endregion
+
     //public GameObject racketPrefab;
     //public Transform racketSpawn;
 
@@ -28,8 +47,8 @@ public class RacketManager : MonoBehaviour
     private float dTMinus1;
     private float dTMinus2;
 
-    private Coroutine actualCoroutine;
-
+    private Coroutine[] grabCallCoroutine = new Coroutine[2];
+    private Coroutine racketAttractionCoroutine;
 
     private void Start()
     {
@@ -52,6 +71,8 @@ public class RacketManager : MonoBehaviour
         rotationTMinus1 = racket.transform.rotation;
 
         dTMinus1 = 1;
+
+        SetupEventSuscription();
     }
 
     void FixedUpdate()
@@ -139,21 +160,24 @@ public class RacketManager : MonoBehaviour
 
     //////////////////////////////////////////////     Distant Grab     //////////////////////////////////////////////
     
-    public void OnActionCall(PlayerID callingPlayerID)
+    public void RacketGrabCall(PlayerID callingPlayerID)
     {
-        actualCoroutine = StartCoroutine(PerformAction(callingPlayerID));
+        grabCallCoroutine[(int)callingPlayerID] = StartCoroutine(AttemptAttraction(callingPlayerID));
     }
 
-    private IEnumerator PerformAction(PlayerID callingPlayerID)
+    private IEnumerator AttemptAttraction(PlayerID callingPlayerID)
     {
-        // Abonnement au release
         while (true)
         {
             if (!isBeingGrabbed && !isGrabbed)
             {
                 isBeingGrabbed = true;
+
+                racket.GetComponent<Rigidbody>().useGravity = false;
+                racket.GetComponent<Rigidbody>().isKinematic = true;
+
                 userID = callingPlayerID;
-                StartCoroutine(racket.GetComponent<TestRacketBehaviour>().RacketCallBack(userID));
+                racketAttractionCoroutine = StartCoroutine(racket.GetComponent<RacketBehaviour>().RacketCallBack(userID));
                 break;
             }
 
@@ -162,23 +186,54 @@ public class RacketManager : MonoBehaviour
     }
 
 
-    public void OnStopCall(PlayerID callingPlayerID)
+    public void StopRacketGrabCall(PlayerID callingPlayerID)
     {
         if (userID == callingPlayerID)
         {
             if (isBeingGrabbed)
             {
-                StopCoroutine(racket.GetComponent<TestRacketBehaviour>().RacketCallBack(callingPlayerID));
+                StopCoroutine(racketAttractionCoroutine);
+                racket.GetComponent<Rigidbody>().useGravity = true;
+                racket.GetComponent<Rigidbody>().isKinematic = false;
+                racket.GetComponent<Rigidbody>().velocity = GetVelocity();
+                racket.GetComponent<Rigidbody>().angularVelocity = GetAngularVelocity();
             }
             if (isGrabbed)
             {
-                // Ajouter le cas du grab
+                return;
             }
         }
         else
         {
-            StopCoroutine(actualCoroutine);                                                  //Probleme stopper la bonne Coroutine ( mettre les coroutine dans des variables.
+            StopCoroutine(grabCallCoroutine[(int)callingPlayerID]);                                                  //Probleme stopper la bonne Coroutine ( mettre les coroutine dans des variables.
         }
+    }
+
+    public bool GetGrabStatus()
+    {
+        return isGrabbed;
+    }
+
+    public void OnVRTKGrab(object sender, ObjectInteractEventArgs e)
+    {
+        StopCoroutine(racketAttractionCoroutine);
+        isGrabbed = true;
+    }
+
+    public void OnVRTKGrabRelease(object sender, ObjectInteractEventArgs e)
+    {
+        racket.GetComponent<Rigidbody>().useGravity = true;
+        racket.GetComponent<Rigidbody>().isKinematic = false;
+        racket.GetComponent<Rigidbody>().velocity = GetVelocity();
+        racket.GetComponent<Rigidbody>().angularVelocity = GetAngularVelocity();
+
+        isGrabbed = false;
+    }
+
+    public void SetupEventSuscription()
+    {
+        PlayerManager.instance.GetRightController(PlayerID.PLAYER1).GetComponent<VRTK_InteractGrab>().ControllerGrabInteractableObject += OnVRTKGrab;
+        PlayerManager.instance.GetRightController(PlayerID.PLAYER1).GetComponent<VRTK_InteractGrab>().ControllerUngrabInteractableObject += OnVRTKGrabRelease;
     }
 }
 
