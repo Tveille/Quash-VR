@@ -70,7 +70,7 @@ Material:
     - _DstBlend: 0
     - _EmissiveBrightness: 0.2
     - _EnvironmentReflections: 1
-    - _FresnelPower: 0.75
+    - _FresnelPower: 0.5
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0

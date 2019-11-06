@@ -79,7 +79,7 @@ public class MagicBallRacketInterractionTests : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        AudioManager.instance.PlayHitSound(other.gameObject.tag, other.GetContact(0).point, Quaternion.LookRotation(other.GetContact(0).normal), lastVelocity.magnitude);
+        AudioManager.instance?.PlayHitSound(other.gameObject.tag, other.GetContact(0).point, Quaternion.LookRotation(other.GetContact(0).normal), GameObject.Find("RacketManager").GetComponent<RacketManager>().GetVelocity().magnitude);
 
         if (other.gameObject.CompareTag("Racket"))
         {
@@ -134,7 +134,7 @@ public class MagicBallRacketInterractionTests : MonoBehaviour
         Debug.Log(tangentVelocity * tangent);
 
         rigidbody.velocity = ((1 - dynamicFriction) * tangentVelocity * tangent - bounciness * normalVelocity * normal);
-        Debug.Log(rigidbody.velocity);
+        //Debug.Log(rigidbody.velocity);
     }
 
     private void MagicalBounce3(Collision collision)
