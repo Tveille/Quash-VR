@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4092726656090709497}
   - component: {fileID: 4092726656090709498}
   - component: {fileID: 4814904514538576673}
-  - component: {fileID: 4092726656090709482}
   - component: {fileID: 5308233519700140204}
   - component: {fileID: 9067365113629159228}
   - component: {fileID: 3632173787704927066}
@@ -146,31 +145,6 @@ MonoBehaviour:
   zFloorBounceTarget: {fileID: 6265009429193403791}
   xReturnTarget: {fileID: 6265009428486687771}
   bounciness: 0.8
-  dynamicFriction: 0
---- !u!114 &4092726656090709482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4092726656090709477}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3472f620cc6a0d741bf5d65b184ce56a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  physicsUsed: 0
-  hitMaxSpeed: 50
-  hitMinSpeed: 10
-  hitSpeedMultiplier: 6
-  racketFriction: 0
-  mixRatio: 0
-  slowness: 2
-  gravity: 9.81
-  depthVelocity: 10
-  zFloorBounceTarget: {fileID: 6265009429193403791}
-  xReturnTarget: {fileID: 6265009428486687771}
-  bounciness: 0.7
   dynamicFriction: 0
 --- !u!114 &5308233519700140204
 MonoBehaviour:
@@ -318,7 +292,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6265009428105279488}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 5.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
