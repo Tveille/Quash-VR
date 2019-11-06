@@ -10,9 +10,9 @@ public class RacketManager : MonoBehaviour
     public GameObject racket;
     public float deltaHitTime = 0.5f; //Valeur A twik
 
-    //private bool isBeingGrabbed;
-    //private bool isGrabbed;
-    //private PlayerID userID;
+    private bool isBeingGrabbed;
+    private bool isGrabbed;
+    private PlayerID userID;
 
     private Vector3 positionTMinus1;
     private Quaternion rotationTMinus1;
@@ -28,30 +28,16 @@ public class RacketManager : MonoBehaviour
     private float dTMinus1;
     private float dTMinus2;
 
-
-    //private Vector3 positionTMinus3Bis;
-    //private Vector3 positionTMinus3;
-    //private Vector3 positionTMinus2;
-    //private Vector3 positionTMinus1;
-
-    //private Quaternion rotationTMinus3Bis;
-    //private Quaternion rotationTMinus3;
-    //private Quaternion rotationTMinus2;
-    //private Quaternion rotationTMinus1;
-
-    //private float lastFixedDeltaTMinus2Bis;
-    //private float lastFixedDeltaTMinus2;
-    //private float lastFixedDeltaccelerationTMinus1;
-    //private float lastFixedDeltaT;                  // Peut être ailleur?
+    private Coroutine actualCoroutine;
 
 
     private void Start()
     {
-        //racket = Instantiate(racketPrefab, racketSpawn) as GameObject;
+        racket = Instantiate(racketPrefab, racketSpawn) as GameObject;
 
-        //isBeingGrabbed = false;
-        //isGrabbed = false;
-        //userID = PlayerID.NONE;
+        isBeingGrabbed = false;
+        isGrabbed = false;
+        userID = PlayerID.NONE;
 
         positionTMinus1 = racket.transform.position;
 
@@ -150,49 +136,51 @@ public class RacketManager : MonoBehaviour
         }
         Physics.IgnoreCollision(racket.GetComponent<Collider>(), hitObject.GetComponent<Collider>(), false);
     }
+
+    //////////////////////////////////////////////     Distant Grab     //////////////////////////////////////////////
+    
+    public void OnActionCall(PlayerID callingPlayerID)
+    {
+        actualCoroutine = StartCoroutine(PerformAction(callingPlayerID));
+    }
+
+    private IEnumerator PerformAction(PlayerID callingPlayerID)
+    {
+        // Abonnement au release
+        while (true)
+        {
+            if (!isBeingGrabbed && !isGrabbed)
+            {
+                isBeingGrabbed = true;
+                userID = callingPlayerID;
+                StartCoroutine(racket.GetComponent<TestRacketBehaviour>().RacketCallBack(userID));
+                break;
+            }
+
+            yield return new WaitForFixedUpdate();
+        }
+    }
+
+
+    public void OnStopCall(PlayerID callingPlayerID)
+    {
+        if (userID == callingPlayerID)
+        {
+            if (isBeingGrabbed)
+            {
+                StopCoroutine(racket.GetComponent<TestRacketBehaviour>().RacketCallBack(callingPlayerID));
+            }
+            if (isGrabbed)
+            {
+                // Ajouter le cas du grab
+            }
+        }
+        else
+        {
+            StopCoroutine(actualCoroutine);                                                  //Probleme stopper la bonne Coroutine ( mettre les coroutine dans des variables.
+        }
+    }
 }
 
 
 
-//public void OnActionCall(PlayerID callingPlayerID)
-//{
-//    StartCoroutine(PerformAction(callingPlayerID));
-//}
-
-//private IEnumerator PerformAction(PlayerID callingPlayerID)
-//{
-//    // Abonnement au release
-//    while (true)
-//    {
-//        if (!isBeingGrabbed && !isGrabbed)
-//        {
-//            isBeingGrabbed = true;
-//            userID = callingPlayerID;
-//            StartCoroutine(racket.GetComponent<TestRacketBehaviour>().RacketCallBack(userID));
-//            break;
-//        }
-
-//        yield return new WaitForFixedUpdate();
-//    }
-//}
-
-
-
-//public void OnStopCall(PlayerID callingPlayerID)
-//{
-//    if (userID == callingPlayerID)
-//    {
-//        if (isBeingGrabbed)
-//        {
-//            StopCoroutine(racket.GetComponent<TestRacketBehaviour>().RacketCallBack(callingPlayerID));
-//        }
-//        if (isGrabbed)
-//        {
-//            // Ajouter le cas du grab
-//        }
-//    }
-//    else
-//    {
-//        StopCoroutine(PerformAction(callingPlayerID));                                                  //Probleme stopper la bonne Coroutine ( mettre les coroutine dans des variables.
-//    }
-//}

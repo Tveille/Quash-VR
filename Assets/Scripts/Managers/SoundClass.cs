@@ -27,13 +27,13 @@ public class SoundClass
     public float panStereo = 0.0f;
 
     [Range(0.0f, 1.0f)]
-    public float hitPitchRatio;
+    public float maxHitMagnitude;
 
     [Range(0.0f, 1.0f)]
-    public float minPitch;
+    public float minVolume;
 
     [Range(0.0f, 1.0f)]
-    public float maxPitch;
+    public float maxVolume;
 
     [HideInInspector]
     public float lastPlayTime = 0;
