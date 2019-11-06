@@ -14,15 +14,18 @@ public class BallImpactDestruction : MonoBehaviour
     [Header("Deflagration zone")]
     public List<Transform> psTransform;
     public float maxRadius;
-    public SphereCollider sphereCol;
+    //public SphereCollider sphereCol;
+
+    public LayerMask layerMask;
+    public int numberOfDivision;
 
 
     private void Awake()
     {
-        if (sphereCol == null)
-        {
-            sphereCol = GetComponent<SphereCollider>();
-        }
+        //if (sphereCol == null)
+        //{
+        //    sphereCol = GetComponent<SphereCollider>();
+        //}
 
         for (int i = 0; i < psTransform.Count; i++)
         {
@@ -38,7 +41,69 @@ public class BallImpactDestruction : MonoBehaviour
         }
 
         impactPercent = minRadius + ((maxRadius - minRadius) * impactCurve.Evaluate(impactCurentTime));
-        sphereCol.radius = impactPercent;
+        //sphereCol.radius = impactPercent;
+
+        //Debug.DrawRay(transform.position, transform.up * impactPercent, Color.green);
+
+
+        for (int j = 0; j < numberOfDivision; j++)
+        {
+            Debug.DrawRay(transform.position,
+                transform.TransformDirection(new Vector3(0f + (1f / (float)numberOfDivision) * j, 1f - (1f / (float)numberOfDivision) * j, 0f)).normalized * impactPercent, Color.blue);
+
+            RaycastHit hit;
+
+            if (Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(0f + (1f / (float)numberOfDivision) * j, 1f - (1f / (float)numberOfDivision) * j, -0f)).normalized, out hit,impactPercent, layerMask))
+            {
+                Debug.Log("HitSomething");
+
+                BrickManager.Instance.DeadBrick(hit.collider.gameObject, 1);
+            }
+        }
+
+        for (int j = 0; j < numberOfDivision; j++)
+        {
+            Debug.DrawRay(transform.position,
+                transform.TransformDirection(new Vector3(1f - (1f / (float)numberOfDivision) * j, 0f - (1f / (float)numberOfDivision) * j, 0f)).normalized * impactPercent, Color.blue);
+            
+            RaycastHit hit;
+
+            if (Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(1f - (1f / (float)numberOfDivision) * j, 0f - (1f / (float)numberOfDivision) * j, 0f)).normalized, out hit,impactPercent, layerMask))
+            {
+                BrickManager.Instance.DeadBrick(hit.collider.gameObject, 1);
+            }
+        }
+
+        for (int j = 0; j < numberOfDivision; j++)
+        {
+            Debug.DrawRay(transform.position,
+                transform.TransformDirection(new Vector3(0f - (1f / (float)numberOfDivision) * j, -1f + (1f / (float)numberOfDivision) * j, 0f)).normalized * impactPercent, Color.blue);
+            
+            RaycastHit hit;
+
+            if (Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(0f - (1f / (float)numberOfDivision) * j, -1f + (1f / (float)numberOfDivision) * j, 0f)).normalized, out hit,impactPercent, layerMask))
+            {
+                BrickManager.Instance.DeadBrick(hit.collider.gameObject, 1);
+            }
+        }
+
+        for (int j = 0; j < numberOfDivision; j++)
+        {
+            Debug.DrawRay(transform.position,
+                transform.TransformDirection(new Vector3(-1f + (1f / (float)numberOfDivision) * j, 0f + (1f / (float)numberOfDivision) * j, 0f)).normalized * impactPercent, Color.blue);
+
+            RaycastHit hit;
+
+            if (Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(-1f + (1f / (float)numberOfDivision) * j, 0f + (1f / (float)numberOfDivision) * j, 0f)).normalized, out hit,impactPercent, layerMask))
+            {
+                BrickManager.Instance.DeadBrick(hit.collider.gameObject, 1);
+            }
+        }
+
+
+
+
+
     }
 
     private void OnCollisionEnter(Collision collision)

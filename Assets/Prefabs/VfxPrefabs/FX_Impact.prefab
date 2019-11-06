@@ -4821,8 +4821,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2194597433777538211}
   - component: {fileID: 2194597433777538210}
-  - component: {fileID: 6325804322144330960}
-  - component: {fileID: 2194597433777538212}
   - component: {fileID: 2194597433777538213}
   m_Layer: 11
   m_Name: FX_Impact
@@ -4901,41 +4899,10 @@ MonoBehaviour:
   - {fileID: 2194597435136433616}
   - {fileID: 9061633549341240904}
   maxRadius: 1.2
-  sphereCol: {fileID: 2194597433777538212}
---- !u!114 &6325804322144330960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2194597433777538208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fb32d79debbb494da9f9342b5214a85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particles:
-  - {fileID: 2194597433887369179}
-  - {fileID: 2194597434138172793}
-  - {fileID: 2194597435539746224}
-  - {fileID: 2194597435330866729}
-  - {fileID: 2194597434011940895}
-  - {fileID: 2194597433492395572}
-  - {fileID: 2194597435136433618}
-  - {fileID: 7738813519121852249}
---- !u!135 &2194597433777538212
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2194597433777538208}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.1
-  m_Center: {x: 0, y: 0, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  numberOfDivision: 6
 --- !u!54 &2194597433777538213
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33889,7 +33856,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6164562157608746053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.466, y: 0, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 2194597433777538211}
