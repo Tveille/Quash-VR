@@ -33,7 +33,7 @@ public class RacketManager : MonoBehaviour
 
     private void Start()
     {
-        racket = Instantiate(racketPrefab, racketSpawn) as GameObject;
+        //racket = Instantiate(racketPrefab, racketSpawn) as GameObject;
 
         isBeingGrabbed = false;
         isGrabbed = false;

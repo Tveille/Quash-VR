@@ -64,7 +64,7 @@ public class AudioManager : MonoBehaviour
     {
         source.volume *= hitIntensity / sound.maxHitMagnitude;
 
-        if (source.volume < sound.minvolume)
+        if (source.volume < sound.minVolume)
             source.volume = sound.minVolume;
         else if (source.volume > sound.maxVolume)
             source.volume = sound.maxVolume;
