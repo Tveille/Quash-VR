@@ -6,9 +6,8 @@ using UnityEngine.Audio;
 [System.Serializable]
 public class SoundClass
 {
-    public string name;     //util?
-    public string tag;
 
+    public string tag;
     public AudioClip clip;
     public float cooldown;
     //public AudioMixerGroup output;            // ça aussi?
@@ -26,14 +25,13 @@ public class SoundClass
     [Range(-1.0f, 1.0f)]
     public float panStereo = 0.0f;
 
-    [Range(0.0f, 1.0f)]
-    public float hitPitchRatio;
+    public float maxHitMagnitude;
 
     [Range(0.0f, 1.0f)]
-    public float minPitch;
+    public float minVolume;
 
     [Range(0.0f, 1.0f)]
-    public float maxPitch;
+    public float maxVolume;
 
     [HideInInspector]
     public float lastPlayTime = 0;

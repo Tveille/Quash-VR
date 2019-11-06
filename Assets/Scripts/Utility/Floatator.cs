@@ -7,6 +7,7 @@ public class Floatator : MonoBehaviour
     [Header("Global settings")]
     [SerializeField] bool beginOnStart = true;
     [SerializeField] bool loop = true;
+    [SerializeField] bool randomStart = false;
     [Header("Floating settings")]
     [SerializeField] float floatDuration = 1;
     [SerializeField] Vector3 localTargetPos;
@@ -19,6 +20,7 @@ public class Floatator : MonoBehaviour
     private void Start()
     {
         iniPos = transform.localPosition;
+        if (randomStart) duration = Random.Range(0.0f, floatDuration);
         canCount = beginOnStart;
     }
 
