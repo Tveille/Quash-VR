@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Prefabs/UI.meta
-guid: c8091073545167941a917b4e48f7e638
-=======
-guid: 36ad45894d658554eb694eb4c0c387f9
->>>>>>> 8ce3ee4eaf2dbbdcdcf92ab3033d1fb6cc3f630b:Assets/HoudiniEngineAssetCache/Baked/Acordeon.meta
+guid: 203a21c69f0f5aa489a81ebdd4866952
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

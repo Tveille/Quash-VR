@@ -40,11 +40,11 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        GameObject hitSoundGameObject = (GameObject)PoolManager.instance.SpawnFromPool("AudioSource", spawnPosition, spawnRotation);
+        GameObject hitSoundGameObject = (GameObject)PoolManager.instance?.SpawnFromPool("AudioSource", spawnPosition, spawnRotation);
         AudioSource hitSoundSource = hitSoundGameObject.GetComponent<AudioSource>();
 
         SetAudioSource(hitSoundSource, sound);
-        //AdjustPitch(hitSoundSource, sound, hitIntensity);
+        AdjustVolume(hitSoundSource, sound, hitIntensity);
 
         hitSoundSource.Play();
     }
@@ -60,7 +60,7 @@ public class AudioManager : MonoBehaviour
         source.panStereo = sound.panStereo;
     }
 
-    private void AdjustPitch(AudioSource source, SoundClass sound, float hitIntensity)          // A améliorer
+    private void AdjustVolume(AudioSource source, SoundClass sound, float hitIntensity)          // A améliorer
     {
         source.volume *= hitIntensity / sound.maxHitMagnitude;
 
