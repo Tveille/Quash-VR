@@ -13922,20 +13922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33827d41a20fa64e81d792d142f9f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds:
-  - name: rgb
-    tag: Thuis zjbgizgrhiz
-    clip: {fileID: 8300000, guid: d53053a416c413d40ae35d3b3d2c8277, type: 3}
-    cooldown: 0
-    volume: 0
-    pitch: 0
-    loop: 0
-    spatialBlend: 0
-    panStereo: 0
-    hitPitchRatio: 0
-    minPitch: 0
-    maxPitch: 0
-    lastPlayTime: 0
+  soundList: {fileID: 11400000, guid: 41d22224e97d1e646a2dc55fcd56c5c0, type: 2}
 --- !u!4 &866283514
 Transform:
   m_ObjectHideFlags: 0

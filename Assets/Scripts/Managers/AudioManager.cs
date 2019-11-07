@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-
+using Malee;
 
 public class AudioManager : MonoBehaviour
 {
     #region SingletonPart
     public static AudioManager instance;
+
 
     private void Awake()
     {
@@ -25,18 +26,28 @@ public class AudioManager : MonoBehaviour
     }
     #endregion
 
-    public SoundClass[] sounds;
+    public SoundClass soundList;
+    private SoundSettings selectedSound;
 
     public void PlayHitSound(string tag, Vector3 spawnPosition, Quaternion spawnRotation, float hitIntensity)
     {
-        SoundClass sound = Array.Find(sounds, s => s.tag == tag);
+        for (int i = 0; i < soundList.sounds.Length; i++)
+        {
+            if (tag == soundList.sounds[i].tag.ToString())
+            {
+                selectedSound = soundList.sounds[i];
+                break;
+            }
 
-        if (sound == null)
+        }
+
+        if (selectedSound.clip == null)
         {
             Debug.LogWarning("SOUND NOT FOUND");
             return;
         }
-        if(Time.time < sound.lastPlayTime + sound.cooldown)
+
+        if (Time.time < selectedSound.lastPlayTime + selectedSound.cooldown)
         {
             return;
         }
@@ -44,13 +55,13 @@ public class AudioManager : MonoBehaviour
         GameObject hitSoundGameObject = (GameObject)PoolManager.instance?.SpawnFromPool("AudioSource", spawnPosition, spawnRotation);
         AudioSource hitSoundSource = hitSoundGameObject.GetComponent<AudioSource>();
 
-        SetAudioSource(hitSoundSource, sound);
-        AdjustVolume(hitSoundSource, sound, hitIntensity);
+        SetAudioSource(hitSoundSource, selectedSound);
+        AdjustVolume(hitSoundSource, selectedSound, hitIntensity);
 
         hitSoundSource.Play();
     }
 
-    private void SetAudioSource(AudioSource source, SoundClass sound)
+    private void SetAudioSource(AudioSource source, SoundSettings sound)
     {
         source.clip = sound.clip;
         //source.outputAudioMixerGroup = sound.output;          //util?
@@ -61,7 +72,7 @@ public class AudioManager : MonoBehaviour
         source.panStereo = sound.panStereo;
     }
 
-    private void AdjustVolume(AudioSource source, SoundClass sound, float hitIntensity)          // A améliorer
+    private void AdjustVolume(AudioSource source, SoundSettings sound, float hitIntensity)          // A améliorer
     {
         source.volume *= hitIntensity / sound.maxHitMagnitude;
 

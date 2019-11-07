@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4af21a1be78f83547bc1b00707414dc1, type: 3}
   m_Name: Pool List
   m_EditorClassIdentifier: 
-  pools: []
+  pools:
+  - tag: thkthjj
+    prefab: {fileID: 0}
+    size: 1
