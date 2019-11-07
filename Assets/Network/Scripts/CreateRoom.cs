@@ -31,13 +31,14 @@ public class CreateRoom : MonoBehaviourPunCallbacks
         RoomOptions options = new RoomOptions();
         options.MaxPlayers = 2;
         PhotonNetwork.JoinOrCreateRoom(_roomName.text, options, TypedLobby.Default);
+        
     }
 
     public override void OnCreatedRoom(){
       Debug.Log("Created room successfully.");
-        Debug.Log(_roomName.text);
+      Debug.Log(_roomName.text);
       roomCanvases.CurrentRoomCanvas.Show();
-        roomCanvases.CreateOrJoinRoomCanvas.Hide();
+      roomCanvases.CreateOrJoinRoomCanvas.Hide();
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message){
