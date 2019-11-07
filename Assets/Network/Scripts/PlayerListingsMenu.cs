@@ -40,10 +40,13 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
 
     private void AddPlayerListing(Player player){
         PlayerListing listing = Instantiate(_playerListing, content);
+        
             if (listing != null){
                 listing.SetPlayerInfo(player);
                 _listings.Add(listing);
             }
+
+        Debug.Log(listing);
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer){
