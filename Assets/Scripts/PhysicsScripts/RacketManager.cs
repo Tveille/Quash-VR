@@ -72,7 +72,7 @@ public class RacketManager : MonoBehaviour
 
         dTMinus1 = 1;
 
-        SetupEventSuscription();
+        //StartCoroutine(SetupEventSuscription());
     }
 
     void FixedUpdate()
@@ -131,9 +131,9 @@ public class RacketManager : MonoBehaviour
         return (currentPosition - previousPosition) / deltaTime;
     }
 
-    private Vector3 CalculateAngularVelocity(Quaternion currentRotation, Quaternion lastRotation, float deltaTime)
+    private Vector3 CalculateAngularVelocity(Quaternion currentRotation, Quaternion lastRotation, float deltaTime)      // Trouver la bonne formule...
     {
-        return (currentRotation.eulerAngles - lastRotation.eulerAngles) / deltaTime;
+        return Vector3.zero;
     }
 
     private Vector3 CalculateAcceleration(Vector3 velocity2, Vector3 velocity1, float deltaTime2, float deltaTime1)
@@ -192,6 +192,7 @@ public class RacketManager : MonoBehaviour
         {
             if (isBeingGrabbed)
             {
+                isBeingGrabbed = false;
                 StopCoroutine(racketAttractionCoroutine);
                 racket.GetComponent<Rigidbody>().useGravity = true;
                 racket.GetComponent<Rigidbody>().isKinematic = false;
@@ -200,13 +201,21 @@ public class RacketManager : MonoBehaviour
             }
             if (isGrabbed)
             {
-                return;
+                racket.GetComponent<RacketBehaviour>().BecomeUngrabbed();
+
+                racket.GetComponent<Rigidbody>().useGravity = true;
+                racket.GetComponent<Rigidbody>().isKinematic = false;
+                racket.GetComponent<Rigidbody>().velocity = GetVelocity();
+                racket.GetComponent<Rigidbody>().angularVelocity = GetAngularVelocity();
+
+                isGrabbed = false;
             }
         }
         else
         {
             StopCoroutine(grabCallCoroutine[(int)callingPlayerID]);                                                  //Probleme stopper la bonne Coroutine ( mettre les coroutine dans des variables.
         }
+        Debug.Log(GetAngularVelocity());
     }
 
     public bool GetGrabStatus()
@@ -214,27 +223,37 @@ public class RacketManager : MonoBehaviour
         return isGrabbed;
     }
 
-    public void OnVRTKGrab(object sender, ObjectInteractEventArgs e)
+    public void OnRacketGrab()
     {
-        StopCoroutine(racketAttractionCoroutine);
         isGrabbed = true;
+        isBeingGrabbed = false;
     }
 
-    public void OnVRTKGrabRelease(object sender, ObjectInteractEventArgs e)
-    {
-        racket.GetComponent<Rigidbody>().useGravity = true;
-        racket.GetComponent<Rigidbody>().isKinematic = false;
-        racket.GetComponent<Rigidbody>().velocity = GetVelocity();
-        racket.GetComponent<Rigidbody>().angularVelocity = GetAngularVelocity();
+    //public void OnVRTKGrab(object sender, ObjectInteractEventArgs e)
+    //{
+    //    StopCoroutine(racketAttractionCoroutine);
+    //    isGrabbed = true;
+    //}
 
-        isGrabbed = false;
-    }
+    //public void OnGrabRelease(object sender, ObjectInteractEventArgs e)
+    //{
+    //    racket.GetComponent<Rigidbody>().useGravity = true;
+    //    racket.GetComponent<Rigidbody>().isKinematic = false;
+    //    racket.GetComponent<Rigidbody>().velocity = GetVelocity();
+    //    racket.GetComponent<Rigidbody>().angularVelocity = GetAngularVelocity();
 
-    public void SetupEventSuscription()
-    {
-        PlayerManager.instance.GetRightController(PlayerID.PLAYER1).GetComponent<VRTK_InteractGrab>().ControllerGrabInteractableObject += OnVRTKGrab;
-        PlayerManager.instance.GetRightController(PlayerID.PLAYER1).GetComponent<VRTK_InteractGrab>().ControllerUngrabInteractableObject += OnVRTKGrabRelease;
-    }
+    //    isGrabbed = false;
+    //}
+
+    // C'est de la merde...
+    //public IEnumerator SetupEventSuscription()
+    //{
+    //    yield return new WaitForFixedUpdate();
+    //    yield return new WaitForFixedUpdate();
+    //    Debug.Log(QPlayerManager.instance.GetRightController(PlayerID.PLAYER1).ToString());
+    //    QPlayerManager.instance.GetRightController(PlayerID.PLAYER1).GetComponent<VRTK_InteractGrab>().ControllerGrabInteractableObject += OnVRTKGrab;
+    //    QPlayerManager.instance.GetRightController(PlayerID.PLAYER1).GetComponent<VRTK_InteractGrab>().ControllerUngrabInteractableObject += OnVRTKGrabRelease;
+    //}
 }
 
 
