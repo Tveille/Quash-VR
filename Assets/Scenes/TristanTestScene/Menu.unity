@@ -1253,7 +1253,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!1 &227064572
 GameObject:
@@ -5061,7 +5061,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 576415247}
-  - component: {fileID: 576415248}
   m_Layer: 5
   m_Name: _Content
   m_TagString: Untagged
@@ -5093,21 +5092,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 4, y: 2.5}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &576415248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 576415246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de925532a568fc7429d20e6871792308, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: {fileID: 451449331}
-  _playerListing: {fileID: -693392574943863421, guid: 255b804da88dd2c49b08c343e1376f71,
-    type: 3}
 --- !u!1 &591859142
 GameObject:
   m_ObjectHideFlags: 0
@@ -7192,6 +7176,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1110452252}
+  - component: {fileID: 1110452253}
   m_Layer: 5
   m_Name: "\u25A0\u25A0 Create Room \u25A0\u25A0"
   m_TagString: Untagged
@@ -7219,6 +7204,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 4, y: 2.5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1110452253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110452251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de925532a568fc7429d20e6871792308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: {fileID: 451449331}
+  _playerListing: {fileID: -693392574943863421, guid: 255b804da88dd2c49b08c343e1376f71,
+    type: 3}
 --- !u!1 &1110704220
 GameObject:
   m_ObjectHideFlags: 0
@@ -7916,7 +7916,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1939270137}
         m_MethodName: SetActive
@@ -11430,7 +11430,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!1 &1921655620
 GameObject:
@@ -11614,7 +11614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4099ebff1487c344ebffc65e91fda2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerListingsMenu: {fileID: 576415248}
+  playerListingsMenu: {fileID: 1110452253}
   leaveRoomMenu: {fileID: 186722527}
 --- !u!114 &1939270140
 MonoBehaviour:
@@ -11683,7 +11683,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!1 &1950352280
 GameObject:
