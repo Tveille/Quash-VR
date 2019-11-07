@@ -3,27 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-[System.Serializable]
-public class SoundClass
-{
 
-    public string tag;
+[CreateAssetMenu(fileName = "Sound List.asset", menuName = "Custom/Sound List", order = 100)]
+public class SoundClass : ScriptableObject
+{
+    public SoundSettings[] sounds;
+}
+
+
+[System.Serializable]
+public struct SoundSettings
+{
+    public enum Tags { Brick, Impact, Wall, Floor, Racket, FrontWall }
+    public Tags tag;
+
     public AudioClip clip;
     public float cooldown;
     //public AudioMixerGroup output;            // ça aussi?
 
     [Range(0.0f, 1.0f)]
-    public float volume = 1;
+    public float volume;
     [Range(0.1f, 3.0f)]
-    public float pitch = 1.0f;
+    public float pitch;
 
     public bool loop;
 
     [Range(0.0f, 1.0f)]
-    public float spatialBlend = 0.0f;
+    public float spatialBlend;
 
     [Range(-1.0f, 1.0f)]
-    public float panStereo = 0.0f;
+    public float panStereo;
 
     public float maxHitMagnitude;
 
@@ -34,5 +43,5 @@ public class SoundClass
     public float maxVolume;
 
     [HideInInspector]
-    public float lastPlayTime = 0;
+    public float lastPlayTime;
 }

@@ -19,9 +19,6 @@ public class BrickManager : MonoBehaviour
     [Header("Destructible Bricks per Wall")]
     public List<int> DestructibeBricksPerLayer;
 
-    [Header("Death")]
-    public GameObject deathParticle;
-
     //Mise en static
     public static BrickManager Instance;
 
@@ -43,7 +40,7 @@ public class BrickManager : MonoBehaviour
 
         brickToDestroy.SetActive(false);
 
-        Instantiate(deathParticle, brickPos, Quaternion.identity);
+        PoolManager.instance.SpawnFromPool("CubeDeathFX", brickPos, Quaternion.identity);
 
         IncrementScore(brickValue);
     }

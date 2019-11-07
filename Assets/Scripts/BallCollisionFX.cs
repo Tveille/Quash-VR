@@ -5,19 +5,15 @@ using VRTK;
 
 public class BallCollisionFX : MonoBehaviour
 {
-    public GameObject bounceFXprefab;
-    public GameObject Impactprefab;
-
-    public Vector3 fxPosition;
-    public Vector3 impactPosition;
+    private Vector3 impactPosition;
 
     private float currentCooldown = 0f;
-    public float maxCooldown;
+    public float cooldownBetweenTwoImpactFX;
     private bool canSpawn = false;
 
     private void Update()
     {
-        if (currentCooldown < maxCooldown)
+        if (currentCooldown < cooldownBetweenTwoImpactFX)
         {
             currentCooldown += Time.deltaTime;
         }
@@ -29,11 +25,11 @@ public class BallCollisionFX : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        impactPosition = collision.GetContact(0).point;
+
         if (collision.gameObject.tag == "Wall")
         {
-            fxPosition = collision.GetContact(0).point;
-
-            Instantiate(bounceFXprefab, fxPosition, collision.gameObject.transform.rotation);
+            PoolManager.instance.SpawnFromPool("BounceFX", impactPosition, collision.gameObject.transform.rotation);
         }
 
         if (collision.gameObject.tag == "Brick" || collision.gameObject.tag == "FrontWall")
@@ -42,12 +38,14 @@ public class BallCollisionFX : MonoBehaviour
 
             if (canSpawn)
             {
-                impactPosition = collision.GetContact(0).point;
-
-                Instantiate(Impactprefab, impactPosition, Quaternion.identity);
-
+                PoolManager.instance.SpawnFromPool("ImpactFX", impactPosition, Quaternion.identity);
                 canSpawn = false;
             }
+        }
+
+        if (collision.gameObject.tag == "Brick")
+        {
+            BrickManager.Instance.DeadBrick(collision.gameObject, 1);
         }
     }
 

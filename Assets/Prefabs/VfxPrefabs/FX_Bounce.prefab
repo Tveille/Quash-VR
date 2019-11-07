@@ -9633,6 +9633,7 @@ GameObject:
   - component: {fileID: 2054576940513517521}
   - component: {fileID: 2033737361293426406}
   - component: {fileID: 6685130275718003727}
+  - component: {fileID: 6447179351986710273}
   m_Layer: 11
   m_Name: FX_Bounce
   m_TagString: Untagged
@@ -14444,3 +14445,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &6447179351986710273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9143336028572837621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fb32d79debbb494da9f9342b5214a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles:
+  - {fileID: 2033737361293426406}
+  - {fileID: 2347905088174473026}
+  - {fileID: 6836635786285611342}

@@ -1,12 +1,6 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Prefabs/MainMenu.meta
-guid: 512ad775361aeef479e29bc465dd46d3
-folderAsset: yes
-DefaultImporter:
-=======
-guid: af3a18e1d71ea0b4aa15ff823248fcd1
+guid: 58f791378df5ec443a772977301f5bc8
 PrefabImporter:
->>>>>>> b418c755991d6c24135dfbaea51f40fdaa8d2e35:Assets/Prefabs/Managers.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

@@ -11,10 +11,11 @@ public class SurrogateTest : MonoBehaviour {
 	[SerializeField, Reorderable(surrogateType = typeof(GameObject), surrogateProperty = "gameObject")]
 	private MyClassArray myClassArray;
 
-	[System.Serializable]
-	public class MyClass {
+    [System.Serializable]
+    public class MyClass {
 
-		public string name;
+        public string name;
+
 		public GameObject gameObject;
 	}
 

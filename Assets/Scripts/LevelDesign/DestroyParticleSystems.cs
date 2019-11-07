@@ -28,7 +28,7 @@ public class DestroyParticleSystems : MonoBehaviour
 
         if (isEverythingDead)
         {
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
     }
 }

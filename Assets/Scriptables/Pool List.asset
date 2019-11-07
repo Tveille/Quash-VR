@@ -16,3 +16,14 @@ MonoBehaviour:
   - tag: AudioSource
     prefab: {fileID: 414941099223655605, guid: d5a31ec5219a2dc448cd66587b3eb2d7, type: 3}
     size: 5
+  - tag: ImpactFX
+    prefab: {fileID: 2194597433777538208, guid: a4b20a9794e29dd46aec1255019e3eb8,
+      type: 3}
+    size: 2
+  - tag: BounceFX
+    prefab: {fileID: 565995459955419888, guid: 1871c528be518d1418d139ffbaf1537d, type: 3}
+    size: 5
+  - tag: CubeDeathFX
+    prefab: {fileID: 5170862702514152613, guid: 15c9a258f05c0bd46a7baca3257ea527,
+      type: 3}
+    size: 20

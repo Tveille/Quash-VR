@@ -17,7 +17,7 @@ public class PoolInspector : Editor
         poolsArray = serializedObject.FindProperty("pools");
 
         myPoolList = new ReorderableList(poolsArray);
-        myPoolList.surrogate = new ReorderableList.Surrogate(typeof(GameObject), AppendObject);
+        //myPoolList.surrogate = new ReorderableList.Surrogate(typeof(GameObject), AppendObject);
     }
 
     public override void OnInspectorGUI()

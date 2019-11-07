@@ -18,6 +18,11 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
         GetCurrentRoomPlayers();
     }
 
+    public void Update()
+    {
+        Debug.Log(_listings.Count);
+    }
+
     public void FirstInitialize(RoomCanvasGroup canvases){
         _roomsCanvases = canvases;
     }
@@ -40,14 +45,18 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
 
     private void AddPlayerListing(Player player){
         PlayerListing listing = Instantiate(_playerListing, content);
+        
             if (listing != null){
                 listing.SetPlayerInfo(player);
                 _listings.Add(listing);
             }
+
+        Debug.Log(listing);
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer){
        AddPlayerListing(newPlayer);
+       Debug.Log(_listings);
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer){

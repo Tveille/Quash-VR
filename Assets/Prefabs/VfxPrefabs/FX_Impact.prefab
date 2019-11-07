@@ -51,7 +51,7 @@ ParticleSystem:
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
-  useRigidbodyForVelocity: 1
+  useRigidbodyForVelocity: 0
   startDelay:
     serializedVersion: 2
     minMaxState: 0
@@ -4870,11 +4870,11 @@ MonoBehaviour:
       time: 0
       value: 0
       inSlope: 0.008086254
-      outSlope: -0
+      outSlope: 0.0029635483
       tangentMode: 1
       weightedMode: 2
       inWeight: 0
-      outWeight: 1
+      outWeight: 0.79583335
     - serializedVersion: 3
       time: 1
       value: 1
@@ -4889,20 +4889,21 @@ MonoBehaviour:
     m_RotationOrder: 4
   impactMaxTime: 1.5
   impactCurentTime: 0
-  psTransform:
-  - {fileID: 2194597433887369177}
-  - {fileID: 2194597434138172791}
-  - {fileID: 2194597435539746222}
-  - {fileID: 2194597435330866727}
-  - {fileID: 2194597434011940893}
-  - {fileID: 2194597433492395570}
-  - {fileID: 2194597435136433616}
-  - {fileID: 9061633549341240904}
+  ps:
+  - {fileID: 2194597433887369179}
+  - {fileID: 2194597434138172793}
+  - {fileID: 2194597435539746224}
+  - {fileID: 2194597435330866729}
+  - {fileID: 2194597434011940895}
+  - {fileID: 2194597433492395572}
+  - {fileID: 2194597435136433618}
+  - {fileID: 7738813519121852249}
   maxRadius: 1.2
   layerMask:
     serializedVersion: 2
     m_Bits: 1024
-  numberOfDivision: 6
+  numberOfDivision: 8
+  raycastOffset: 0.05
 --- !u!54 &2194597433777538213
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4970,7 +4971,7 @@ ParticleSystem:
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
-  useRigidbodyForVelocity: 1
+  useRigidbodyForVelocity: 0
   startDelay:
     serializedVersion: 2
     minMaxState: 0
@@ -9790,7 +9791,7 @@ ParticleSystem:
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
-  useRigidbodyForVelocity: 1
+  useRigidbodyForVelocity: 0
   startDelay:
     serializedVersion: 2
     minMaxState: 0
@@ -14601,7 +14602,7 @@ ParticleSystem:
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
-  useRigidbodyForVelocity: 1
+  useRigidbodyForVelocity: 0
   startDelay:
     serializedVersion: 2
     minMaxState: 0
@@ -19412,7 +19413,7 @@ ParticleSystem:
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
-  useRigidbodyForVelocity: 1
+  useRigidbodyForVelocity: 0
   startDelay:
     serializedVersion: 2
     minMaxState: 0
@@ -24223,7 +24224,7 @@ ParticleSystem:
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
-  useRigidbodyForVelocity: 1
+  useRigidbodyForVelocity: 0
   startDelay:
     serializedVersion: 2
     minMaxState: 0
@@ -29052,7 +29053,7 @@ ParticleSystem:
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
-  useRigidbodyForVelocity: 1
+  useRigidbodyForVelocity: 0
   startDelay:
     serializedVersion: 2
     minMaxState: 0
@@ -33881,7 +33882,7 @@ ParticleSystem:
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
-  useRigidbodyForVelocity: 1
+  useRigidbodyForVelocity: 0
   startDelay:
     serializedVersion: 2
     minMaxState: 0
