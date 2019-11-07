@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4af21a1be78f83547bc1b00707414dc1, type: 3}
   m_Name: Pool List
   m_EditorClassIdentifier: 
-  pools: []
+  pools:
+  - tag: AudioSource
+    prefab: {fileID: 414941099223655605, guid: d5a31ec5219a2dc448cd66587b3eb2d7, type: 3}
+    size: 5
