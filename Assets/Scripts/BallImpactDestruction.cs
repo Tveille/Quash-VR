@@ -12,26 +12,24 @@ public class BallImpactDestruction : MonoBehaviour
     private float minRadius = 0.1f;
 
     [Header("Deflagration zone")]
-    public List<Transform> psTransform;
+    public List<ParticleSystem> ps;
     public float maxRadius;
     //public SphereCollider sphereCol;
 
     public LayerMask layerMask;
     public int numberOfDivision;
-
+    private float raycastOffset = 0.05f;
 
     private void Awake()
     {
-        //if (sphereCol == null)
-        //{
-        //    sphereCol = GetComponent<SphereCollider>();
-        //}
+        impactCurentTime = 0;
 
-        for (int i = 0; i < psTransform.Count; i++)
+        for (int i = 0; i < ps.Count; i++)
         {
-            psTransform[i].localScale = new Vector3(maxRadius, maxRadius, maxRadius);
+            ps[i].transform.localScale = new Vector3(maxRadius, maxRadius, maxRadius);
         }
     }
+
 
     private void Update()
     {
@@ -39,36 +37,52 @@ public class BallImpactDestruction : MonoBehaviour
         {
             impactCurentTime += Time.deltaTime;
         }
+        else
+        {
+            impactCurentTime = 0;
+
+            this.gameObject.SetActive(false);
+        }
 
         impactPercent = minRadius + ((maxRadius - minRadius) * impactCurve.Evaluate(impactCurentTime));
-        //sphereCol.radius = impactPercent;
 
-        //Debug.DrawRay(transform.position, transform.up * impactPercent, Color.green);
+        Vector3 originPos = new Vector3(transform.position.x, transform.position.y, transform.position.z + raycastOffset);
+
+        //RaycastHit hitback;
+
+        //Debug.DrawRay(originPos,
+        //        transform.TransformDirection(transform.forward).normalized * 0.1f, Color.green);
+
+        //if (Physics.Raycast(originPos, transform.TransformDirection(transform.forward).normalized, out hitback, 0.1f, layerMask))
+        //{
+        //    Debug.Log("HitSomething");
+
+        //    BrickManager.Instance.DeadBrick(hitback.collider.gameObject, 1);
+        //}
 
 
+        #region MyRaycast
         for (int j = 0; j < numberOfDivision; j++)
         {
-            Debug.DrawRay(transform.position,
+            Debug.DrawRay(originPos,
                 transform.TransformDirection(new Vector3(0f + (1f / (float)numberOfDivision) * j, 1f - (1f / (float)numberOfDivision) * j, 0f)).normalized * impactPercent, Color.blue);
 
             RaycastHit hit;
 
-            if (Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(0f + (1f / (float)numberOfDivision) * j, 1f - (1f / (float)numberOfDivision) * j, -0f)).normalized, out hit,impactPercent, layerMask))
+            if (Physics.Raycast(originPos, transform.TransformDirection(new Vector3(0f + (1f / (float)numberOfDivision) * j, 1f - (1f / (float)numberOfDivision) * j, 0f)).normalized, out hit,impactPercent, layerMask))
             {
-                Debug.Log("HitSomething");
-
                 BrickManager.Instance.DeadBrick(hit.collider.gameObject, 1);
             }
         }
 
         for (int j = 0; j < numberOfDivision; j++)
         {
-            Debug.DrawRay(transform.position,
+            Debug.DrawRay(originPos,
                 transform.TransformDirection(new Vector3(1f - (1f / (float)numberOfDivision) * j, 0f - (1f / (float)numberOfDivision) * j, 0f)).normalized * impactPercent, Color.blue);
             
             RaycastHit hit;
 
-            if (Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(1f - (1f / (float)numberOfDivision) * j, 0f - (1f / (float)numberOfDivision) * j, 0f)).normalized, out hit,impactPercent, layerMask))
+            if (Physics.Raycast(originPos, transform.TransformDirection(new Vector3(1f - (1f / (float)numberOfDivision) * j, 0f - (1f / (float)numberOfDivision) * j, 0f)).normalized, out hit,impactPercent, layerMask))
             {
                 BrickManager.Instance.DeadBrick(hit.collider.gameObject, 1);
             }
@@ -76,12 +90,12 @@ public class BallImpactDestruction : MonoBehaviour
 
         for (int j = 0; j < numberOfDivision; j++)
         {
-            Debug.DrawRay(transform.position,
+            Debug.DrawRay(originPos,
                 transform.TransformDirection(new Vector3(0f - (1f / (float)numberOfDivision) * j, -1f + (1f / (float)numberOfDivision) * j, 0f)).normalized * impactPercent, Color.blue);
             
             RaycastHit hit;
 
-            if (Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(0f - (1f / (float)numberOfDivision) * j, -1f + (1f / (float)numberOfDivision) * j, 0f)).normalized, out hit,impactPercent, layerMask))
+            if (Physics.Raycast(originPos, transform.TransformDirection(new Vector3(0f - (1f / (float)numberOfDivision) * j, -1f + (1f / (float)numberOfDivision) * j, 0f)).normalized, out hit,impactPercent, layerMask))
             {
                 BrickManager.Instance.DeadBrick(hit.collider.gameObject, 1);
             }
@@ -89,25 +103,17 @@ public class BallImpactDestruction : MonoBehaviour
 
         for (int j = 0; j < numberOfDivision; j++)
         {
-            Debug.DrawRay(transform.position,
+            Debug.DrawRay(originPos,
                 transform.TransformDirection(new Vector3(-1f + (1f / (float)numberOfDivision) * j, 0f + (1f / (float)numberOfDivision) * j, 0f)).normalized * impactPercent, Color.blue);
 
             RaycastHit hit;
 
-            if (Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(-1f + (1f / (float)numberOfDivision) * j, 0f + (1f / (float)numberOfDivision) * j, 0f)).normalized, out hit,impactPercent, layerMask))
+            if (Physics.Raycast(originPos, transform.TransformDirection(new Vector3(-1f + (1f / (float)numberOfDivision) * j, 0f + (1f / (float)numberOfDivision) * j, 0f)).normalized, out hit,impactPercent, layerMask))
             {
                 BrickManager.Instance.DeadBrick(hit.collider.gameObject, 1);
             }
         }
-
-
-
-
-
+        #endregion
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        BrickManager.Instance.DeadBrick(collision.gameObject, 1);
-    }
 }

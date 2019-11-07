@@ -14,34 +14,34 @@ public class SoundClass : ScriptableObject
 [System.Serializable]
 public struct SoundSettings
 {
-    public enum Tags { Brick, Impact, Wall, Bullet, Racket }
+    public enum Tags { Brick, Impact, Wall, Floor, Racket, FrontWall }
     public Tags tag;
 
     public AudioClip clip;
     public float cooldown;
     //public AudioMixerGroup output;            // ça aussi?
 
-    //[Range(0.0f, 1.0f)]
+    [Range(0.0f, 1.0f)]
     public float volume;
-    //[Range(0.1f, 3.0f)]
+    [Range(0.1f, 3.0f)]
     public float pitch;
 
     public bool loop;
 
-    //[Range(0.0f, 1.0f)]
+    [Range(0.0f, 1.0f)]
     public float spatialBlend;
 
-    //[Range(-1.0f, 1.0f)]
+    [Range(-1.0f, 1.0f)]
     public float panStereo;
 
     public float maxHitMagnitude;
 
-    //[Range(0.0f, 1.0f)]
+    [Range(0.0f, 1.0f)]
     public float minVolume;
 
-    //[Range(0.0f, 1.0f)]
+    [Range(0.0f, 1.0f)]
     public float maxVolume;
 
-    //[HideInInspector]
+    [HideInInspector]
     public float lastPlayTime;
 }
