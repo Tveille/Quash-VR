@@ -34,7 +34,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4092726656090709477}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.351, y: 1.134, z: 8.566}
+  m_LocalPosition: {x: 2.75, y: 1.134, z: -16.44}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 5405717006173697799}
@@ -131,7 +131,7 @@ MonoBehaviour:
   physicsUsed: 2
   hitMaxSpeed: 30
   hitMinSpeed: 0.1
-  hitSpeedMultiplier: 3
+  hitSpeedMultiplier: 2
   racketFriction: 1
   mixRatio: 0
   maxYAngle: 0
@@ -262,13 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2768b78909232d843b86fd7f63baec24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceFXprefab: {fileID: 565995459955419888, guid: 1871c528be518d1418d139ffbaf1537d,
-    type: 3}
-  Impactprefab: {fileID: 2194597433777538208, guid: a4b20a9794e29dd46aec1255019e3eb8,
-    type: 3}
-  fxPosition: {x: 0, y: 0, z: 0}
-  impactPosition: {x: 0, y: 0, z: 0}
-  maxCooldown: 2
+  cooldownBetweenTwoImpactFX: 0
 --- !u!1 &6265009428105279488
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,7 +320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6265009428486687770}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 5}
+  m_LocalPosition: {x: 3.5, y: 0, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6265009428105279489}
@@ -356,7 +350,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6265009429193403790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 12.11}
+  m_LocalPosition: {x: 2.5, y: 0, z: -12.890001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6265009428105279489}
