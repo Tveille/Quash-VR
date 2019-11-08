@@ -42,11 +42,6 @@ public class BallCollisionFX : MonoBehaviour
                 canSpawn = false;
             }
         }
-
-        if (collision.gameObject.tag == "Brick")
-        {
-            BrickManager.Instance.DeadBrick(collision.gameObject, 1);
-        }
     }
 
 

@@ -12,11 +12,23 @@ public class BrickMovingBehaviour : MonoBehaviour
     public int scoreValue;
 
     [Header("Waypoint")]
-    [Tooltip("Drop your waypoints here")]
-    public List<Waypoint> waypoints;
-    private int waypointIndex;
+    [Tooltip("Enter waypoints positions here")]
+    public Vector3[] waypoints;
 
+    private int waypointIndex;
     private Vector3 refVector;
+
+    [Header("Waiting Parameters")]
+    public bool hasToWait;
+    public float waitFor;
+
+    [Header("Move Modifiers")]
+    [Range(0, 1)]
+    [Tooltip("Damping strength")]
+    public float smoothTime;
+    [Tooltip("Speed of the brick")]
+    [Range(0.1f, 10)]
+    public float speed;
     private bool isWaiting;
 
     [Header("Pattern")]
@@ -27,9 +39,9 @@ public class BrickMovingBehaviour : MonoBehaviour
 
     private void Awake()
     {
-        if(waypoints.Count != 0)
+        if(waypoints.Length != 0)
         {
-            this.transform.position = waypoints[waypointIndex].transform.position;
+            this.transform.position = waypoints[waypointIndex];
 
             waypointIndex++;
         }
@@ -45,16 +57,16 @@ public class BrickMovingBehaviour : MonoBehaviour
     /// </summary>
     private void Moving()
     {
-        this.transform.position = Vector3.SmoothDamp(this.transform.position, waypoints[waypointIndex].transform.position, ref refVector, waypoints[waypointIndex].smoothTime,
-            waypoints[waypointIndex].speed);
+        this.transform.position = Vector3.SmoothDamp(this.transform.position, waypoints[waypointIndex], ref refVector, smoothTime,
+            speed);
 
-        if(this.transform.position == waypoints[waypointIndex].transform.position)
+        if(this.transform.position == waypoints[waypointIndex])
         {
             //Debug.Log("Reached");
-            if (waypoints[waypointIndex].hasToWait)
+            if (hasToWait)
             {
                 isWaiting = true;
-                StartCoroutine(WaitUntil(waypoints[waypointIndex].waitFor));
+                StartCoroutine(WaitUntil(waitFor));
             }
             else
             {
@@ -85,7 +97,7 @@ public class BrickMovingBehaviour : MonoBehaviour
             }
             else
             {
-                if (waypointIndex < waypoints.Count - 1)
+                if (waypointIndex < waypoints.Length - 1)
                 {
                     waypointIndex++;
                 }
@@ -98,7 +110,7 @@ public class BrickMovingBehaviour : MonoBehaviour
         }
         else
         {
-            if (waypointIndex < waypoints.Count - 1)
+            if (waypointIndex < waypoints.Length - 1)
             {
                 waypointIndex++;
             }
@@ -117,8 +129,6 @@ public class BrickMovingBehaviour : MonoBehaviour
 
         NextWaypoint();
     }
-
-
 
 
     private void OnCollisionEnter(Collision collision)

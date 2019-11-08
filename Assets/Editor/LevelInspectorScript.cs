@@ -108,11 +108,11 @@ public class LevelInspectorScript : Editor
 
         EditorGUILayout.BeginVertical("box");
 
-       myTarget.Settings = (LevelSettings) EditorGUILayout.ObjectField("Level Settings", myTarget.Settings, 
-                                                                                    typeof(LevelSettings), false);
+       //myTarget.Settings = (LevelSettings) EditorGUILayout.ObjectField("Level Settings", myTarget.Settings, 
+                                                                                    //typeof(LevelSettings), false);
 
        if(myTarget.Settings != null){
-           Editor.CreateEditor(myTarget.Settings).OnInspectorGUI();
+           //Editor.CreateEditor(myTarget.Settings).OnInspectorGUI();
        } else {
            EditorGUILayout.HelpBox("Tu dois attacher un levelsettings.asset", MessageType.Warning);
        }

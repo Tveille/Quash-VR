@@ -23,7 +23,7 @@ public static class MenuItems
             "Asset", 
             "Nom du LevelSettings");
         if (path != ""){
-            EditorUtilityScene.CreateAsset<LevelSettings>(path);
+            //EditorUtilityScene.CreateAsset<LevelSettings>(path);
         }
     }
 }
