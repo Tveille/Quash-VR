@@ -17,24 +17,24 @@ public class RacketBehaviour : MonoBehaviour
         rigidbody = gameObject.GetComponent<Rigidbody>();
     }
 
-    public IEnumerator RacketCallBack(PlayerID userID)
+    public IEnumerator RacketCallBack(RacketUserInfo racketUserInfo)
     {
         returnStartingTime = Time.time;
 
-        while (!RacketManager.instance.GetGrabStatus())     // Condition à modifier
+        while (RacketManager.instance.GetGrabStatus() != GrabState.GRABBED)     // Condition à modifier
         {
-            Vector3 destinationVector = QPlayerManager.instance.GetRightController(PlayerID.PLAYER1).transform.position - gameObject.transform.position;
+            Vector3 destinationVector = QPlayerManager.instance.GetController(racketUserInfo.userID, racketUserInfo.userHand).transform.position - gameObject.transform.position;
 
             if (destinationVector.magnitude <= maxGrabDistance)
             {
-                BecomeGrabbed();
+                BecomeGrabbed(racketUserInfo);
                 break;
             }
 
             float remainingTime = returnDuration - (Time.time - returnStartingTime);
             
             if (remainingTime <= 0)
-                gameObject.transform.position = QPlayerManager.instance.GetRightController(PlayerID.PLAYER1).transform.position;
+                gameObject.transform.position = QPlayerManager.instance.GetController(racketUserInfo.userID, racketUserInfo.userHand).transform.position;
             else
                 gameObject.transform.position += destinationVector * Time.fixedDeltaTime / remainingTime;
                 
@@ -42,10 +42,10 @@ public class RacketBehaviour : MonoBehaviour
         }
     }
 
-    public void BecomeGrabbed()
+    public void BecomeGrabbed(RacketUserInfo racketUserInfo)
     {
         RacketManager.instance.OnRacketGrab();
-        transform.parent = QPlayerManager.instance.GetRightController(PlayerID.PLAYER1).transform;
+        transform.parent = QPlayerManager.instance.GetController(racketUserInfo.userID, racketUserInfo.userHand).transform;
         
         if (grabDefaultTransform == null)
         {
