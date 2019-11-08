@@ -1,7 +1,21 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
+
+public struct RacketUserInfo
+{
+    public PlayerID userID;
+    public PlayerHand userHand;
+}
+
+public enum GrabState
+{
+    UNUSED,
+    ATTRACTED,
+    GRABBED
+}
 
 public class RacketManager : MonoBehaviour
 {
@@ -29,9 +43,10 @@ public class RacketManager : MonoBehaviour
     public GameObject racket;
     public float deltaHitTime = 0.5f; //Valeur A twik
 
-    private bool isBeingGrabbed;
-    private bool isGrabbed;
-    private PlayerID userID;
+    //private bool isBeingGrabbed;
+    //private bool isGrabbed;
+    private GrabState grabState;
+    private RacketUserInfo racketUserInfo;
 
     private Vector3 positionTMinus1;
     private Quaternion rotationTMinus1;
@@ -54,9 +69,10 @@ public class RacketManager : MonoBehaviour
     {
         //racket = Instantiate(racketPrefab, racketSpawn) as GameObject;
 
-        isBeingGrabbed = false;
-        isGrabbed = false;
-        userID = PlayerID.NONE;
+        //isBeingGrabbed = false;
+        //isGrabbed = false;
+        grabState = GrabState.UNUSED;
+        racketUserInfo.userID = PlayerID.NONE;
 
         positionTMinus1 = racket.transform.position;
 
@@ -160,24 +176,26 @@ public class RacketManager : MonoBehaviour
 
     //////////////////////////////////////////////     Distant Grab     //////////////////////////////////////////////
     
-    public void RacketGrabCall(PlayerID callingPlayerID)
+    public void RacketGrabCall(PlayerID callingPlayerID, PlayerHand callingPlayerHand)
     {
-        grabCallCoroutine[(int)callingPlayerID] = StartCoroutine(AttemptAttraction(callingPlayerID));
+        grabCallCoroutine[(int)callingPlayerID] = StartCoroutine(AttemptAttraction(callingPlayerID, callingPlayerHand));
     }
 
-    private IEnumerator AttemptAttraction(PlayerID callingPlayerID)
+    private IEnumerator AttemptAttraction(PlayerID callingPlayerID, PlayerHand playerHand)
     {
         while (true)
         {
-            if (!isBeingGrabbed && !isGrabbed)
+            if (grabState == GrabState.UNUSED)
             {
-                isBeingGrabbed = true;
+                grabState = GrabState.ATTRACTED;
 
                 racket.GetComponent<Rigidbody>().useGravity = false;
                 racket.GetComponent<Rigidbody>().isKinematic = true;
 
-                userID = callingPlayerID;
-                racketAttractionCoroutine = StartCoroutine(racket.GetComponent<RacketBehaviour>().RacketCallBack(userID));
+                racketUserInfo.userID = callingPlayerID;
+                racketUserInfo.userHand = playerHand;
+
+                racketAttractionCoroutine = StartCoroutine(racket.GetComponent<RacketBehaviour>().RacketCallBack(racketUserInfo));
                 break;
             }
 
@@ -188,18 +206,17 @@ public class RacketManager : MonoBehaviour
 
     public void StopRacketGrabCall(PlayerID callingPlayerID)
     {
-        if (userID == callingPlayerID)
+        if (racketUserInfo.userID == callingPlayerID)
         {
-            if (isBeingGrabbed)
+            if (grabState == GrabState.ATTRACTED)
             {
-                isBeingGrabbed = false;
                 StopCoroutine(racketAttractionCoroutine);
                 racket.GetComponent<Rigidbody>().useGravity = true;
                 racket.GetComponent<Rigidbody>().isKinematic = false;
                 racket.GetComponent<Rigidbody>().velocity = GetVelocity();
                 racket.GetComponent<Rigidbody>().angularVelocity = GetAngularVelocity();
             }
-            if (isGrabbed)
+            if (grabState == GrabState.GRABBED)
             {
                 racket.GetComponent<RacketBehaviour>().BecomeUngrabbed();
 
@@ -207,28 +224,34 @@ public class RacketManager : MonoBehaviour
                 racket.GetComponent<Rigidbody>().isKinematic = false;
                 racket.GetComponent<Rigidbody>().velocity = GetVelocity();
                 racket.GetComponent<Rigidbody>().angularVelocity = GetAngularVelocity();
-
-                isGrabbed = false;
             }
+
+            grabState = GrabState.UNUSED;
+            racketUserInfo.userID = PlayerID.NONE;
         }
-        else
+        else if(callingPlayerID != PlayerID.NONE)
         {
             StopCoroutine(grabCallCoroutine[(int)callingPlayerID]);                                                  //Probleme stopper la bonne Coroutine ( mettre les coroutine dans des variables.
         }
-        Debug.Log(GetAngularVelocity());
+        //Debug.Log(GetAngularVelocity());
     }
 
-    public bool GetGrabStatus()
+    public GrabState GetGrabStatus()
     {
-        return isGrabbed;
+        return grabState;
+    }
+
+    public RacketUserInfo GetRacketUserInfo()
+    {
+        return racketUserInfo;
     }
 
     public void OnRacketGrab()
     {
-        isGrabbed = true;
-        isBeingGrabbed = false;
+        grabState = GrabState.GRABBED;
     }
 
+   
     //public void OnVRTKGrab(object sender, ObjectInteractEventArgs e)
     //{
     //    StopCoroutine(racketAttractionCoroutine);
