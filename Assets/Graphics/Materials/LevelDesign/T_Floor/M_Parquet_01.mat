@@ -126,12 +126,14 @@ Material:
     - Vector1_31E91E1D: 0
     - Vector1_50AF118C: 0.55
     - Vector1_79DF8750: 0
+    - Vector1_B294EBF3: 0
     - _AlphaClip: 0
     - _Blend: 0
+    - _Brightness: 3.5
     - _BumpScale: 1
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DissolveDistanceRange: 1
+    - _DissolveDistanceRange: 5
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0

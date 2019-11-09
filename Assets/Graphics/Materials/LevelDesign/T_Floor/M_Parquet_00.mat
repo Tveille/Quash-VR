@@ -135,8 +135,10 @@ Material:
     - Vector1_50AF118C: 0.55
     - Vector1_79DF8750: 0
     - Vector1_A9191FBF: 0
+    - Vector1_EF28BB9B: 0
     - _AlphaClip: 0
     - _Blend: 0
+    - _Brightness: 0.7
     - _BumpScale: 1
     - _Cull: 2
     - _Cutoff: 0.5
