@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6069188586322574761}
   - component: {fileID: 6069188586322574676}
   - component: {fileID: 6069188586322574760}
+  - component: {fileID: -5188070917267993746}
   m_Layer: 0
   m_Name: BrickMoving
   m_TagString: Wall
@@ -96,8 +97,12 @@ MonoBehaviour:
   wallLayerID: 0
   scoreValue: 2
   waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {x: 0.33333334, y: 0.33333334, z: 3e-45}
+  - {x: 3e-45, y: 6e-45, z: 0}
+  hasToWait: 0
+  waitFor: 0
+  smoothTime: 0
+  speed: 0
   turningBack: 0
 --- !u!65 &6069188586322574760
 BoxCollider:
@@ -112,3 +117,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.19685039, y: 0.19685039, z: 0.19685039}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-5188070917267993746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6069188586322574767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e223981b92914f4a98e06c19d4e2540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  category: 0
+  itemName: MovingBrick
+  inspectedScript: {fileID: 6069188586322574767}

@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   racket: {fileID: 0}
-  deltaHitTime: 2
+  deltaHitTime: 1
 --- !u!1 &3387151942400940763
 GameObject:
   m_ObjectHideFlags: 0

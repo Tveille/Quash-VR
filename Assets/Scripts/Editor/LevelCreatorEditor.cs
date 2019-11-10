@@ -6,7 +6,8 @@ using UnityEditor;
 
 public class LevelCreatorEditor : Editor
 {
-    public enum Mode{
+    public enum Mode
+    {
         View,
         Paint,
         Edit,

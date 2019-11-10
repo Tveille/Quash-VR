@@ -5,8 +5,8 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     [Header("Récupération de la configuration du level")]
-    public LevelsScriptable registeredLevels;
-    public LevelSettings levelConfig;
+    public LevelsScriptable[] registeredLevels;
+    public LevelSettings currentLevelConfig;
 
 
     [Header("Level Parameters")]
@@ -63,7 +63,7 @@ public class LevelManager : MonoBehaviour
         currentLayer += 1;
         NextPos = new Vector3(0, 0, startPos.z + (layerDiffPosition * currentLayer));
 
-        if (currentLayer >= levelConfig.levelWallBuilds.walls.Length)
+        if (currentLayer >= currentLevelConfig.levelWallBuilds.walls.Length)
         {
             isThereAnotherLayer = false;
         }
@@ -79,8 +79,8 @@ public class LevelManager : MonoBehaviour
     /// <param name="selectedLevel"></param>
     public void ConfigDistribution(int selectedLevel)
     {
-        levelConfig = registeredLevels.levels[selectedLevel];
-        BrickManager.Instance.levelWallsConfig = levelConfig.levelWallBuilds;
-        ZoneManager.Instance.levelZoneConfig = levelConfig.levelZoneConfig;
+        currentLevelConfig = registeredLevels[selectedLevel].level;
+        BrickManager.Instance.levelWallsConfig = currentLevelConfig.levelWallBuilds;
+        ZoneManager.Instance.levelZoneConfig = currentLevelConfig.levelZoneConfig;
     }
 }
