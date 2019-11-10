@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1468535345705263772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1433109375258001764}
+  - component: {fileID: 6538805861387698752}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1433109375258001764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468535345705263772}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2113905627460504248}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6538805861387698752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468535345705263772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ad5eee9581d184e983dbe939b91303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  registeredLevels: {fileID: 0}
+  currentLayer: -1
+  isThereAnotherLayer: 0
+  layerDiffPosition: 0
+  levelTrans: {fileID: 0}
+  startPos: {x: 0, y: 0, z: 0}
+  NextPos: {x: 0, y: 0, z: 0}
+  refVector: {x: 0, y: 0, z: 0}
+  smoothTime: 0.015
+  sMaxSpeed: 0.1
+  changePositionReady: 0
 --- !u!1 &1504735476317143586
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,12 +319,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24abdb100342635488d3553581085881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
-  displayScore: {fileID: 0}
+  levelWallsConfig: {fileID: 0}
   totalBricskOnLayer: 0
   currentBricksOnLayer: 0
   totalBricskInLevel: 0
-  DestructibeBricksPerLayer: 
 --- !u!1 &7025568103452848686
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,6 +356,7 @@ Transform:
   - {fileID: 7772564229853388258}
   - {fileID: 3387151942400940765}
   - {fileID: 3387151942383946481}
+  - {fileID: 1433109375258001764}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

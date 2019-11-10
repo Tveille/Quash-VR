@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Level Settings Asset", menuName = "Custom/LevelConfig", order = 120)]
+[CreateAssetMenu(fileName = "Level", menuName = "Custom/Level", order = 120)]
 [System.Serializable]
 public class LevelsScriptable : ScriptableObject
 {
-
-    public Sprite background;
-    
+    public LevelSettings[] levels;
 }
 
 public class LevelSettings

@@ -5,9 +5,8 @@ using TMPro;
 
 public class BrickManager : MonoBehaviour
 {
-    [Header("Score")]
-    public float score;
-    public TextMeshProUGUI displayScore;
+    [Header("Récupération de la configuration du level")]
+    public WallBuilds levelWallsConfig;
 
     [Header("Number of bricks on the current layer")]
     public int totalBricskOnLayer;
@@ -16,11 +15,9 @@ public class BrickManager : MonoBehaviour
     [Header("Number of bricks in the level")]
     public int totalBricskInLevel;
 
-    [Header("Destructible Bricks per Wall")]
-    public List<int> DestructibeBricksPerLayer;
 
-    //Mise en static
     public static BrickManager Instance;
+
 
 
 
@@ -28,6 +25,7 @@ public class BrickManager : MonoBehaviour
     {
         Instance = this;
     }
+
 
     /// <summary>
     /// Détruit la brique
@@ -42,20 +40,17 @@ public class BrickManager : MonoBehaviour
 
         PoolManager.instance.SpawnFromPool("CubeDeathFX", brickPos, Quaternion.identity);
 
-        IncrementScore(brickValue);
+        ScoreManager.Instance.IncrementScore(brickValue);
     }
 
-
-    /// <summary>
-    /// Incremente le score
-    /// </summary>
-    /// <param name="brickValue">Brick value for the score</param>
-    private void IncrementScore(int brickValue)
+    void UpdateBrickLevel()
     {
-        score += brickValue;
+        currentBricksOnLayer -= 1;
 
-        string textScore = score.ToString();
-
-        displayScore.text = textScore;
+        if(currentBricksOnLayer <= 0)
+        {
+            LevelManager.Instance.SetNextLayer();
+        }
     }
+
 }

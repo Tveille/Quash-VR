@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class ZoneManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Récupération de la configuration du level")]
+    public LayerZoneConfigurations levelZoneConfig;
 
-    // Update is called once per frame
-    void Update()
+
+    public static ZoneManager Instance;
+
+
+
+
+
+    private void Awake()
     {
-        
+        Instance = this;
     }
 }

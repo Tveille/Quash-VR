@@ -1,18 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [Header("Score")]
+    public float score;
+    public TextMeshProUGUI displayScore;
+
+
+
+    public static ScoreManager Instance;
+
+
+
+
+    private void Awake()
     {
-        
+        Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Incremente le score
+    /// </summary>
+    /// <param name="brickValue">Brick value for the score</param>
+    public void IncrementScore(int brickValue)
     {
-        
+        score += brickValue;
+
+        string textScore = score.ToString();
+
+        displayScore.text = textScore;
     }
 }
