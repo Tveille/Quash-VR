@@ -63,7 +63,6 @@ public class BallManager : MonoBehaviour, IGrabCaller
         if (grabBehaviour)
         {
             ballGrabInfo.grabState = GrabState.ATTRACTED;
-            ball.GetComponent<Rigidbody>().useGravity = false;
             ball.GetComponent<Rigidbody>().isKinematic = true;
             attractionCoroutine = StartCoroutine(grabBehaviour.Attraction(this));
         }
@@ -77,7 +76,6 @@ public class BallManager : MonoBehaviour, IGrabCaller
             if (ballGrabInfo.userID == playerID)
             {
                 StopCoroutine(attractionCoroutine);
-                ball.GetComponent<Rigidbody>().useGravity = true;
                 ball.GetComponent<Rigidbody>().isKinematic = false;
                 ball.GetComponent<Rigidbody>().velocity = ball.GetComponent<PhysicInfo>().GetVelocity();
                 ball.GetComponent<Rigidbody>().angularVelocity = ball.GetComponent<PhysicInfo>().GetAngularVelocity();
@@ -88,7 +86,6 @@ public class BallManager : MonoBehaviour, IGrabCaller
             if (ballGrabInfo.userID == playerID)
             {
                 ball.GetComponent<CustomGrabBehaviour>().BecomeUngrabbed(this);
-                ball.GetComponent<Rigidbody>().useGravity = true;
                 ball.GetComponent<Rigidbody>().isKinematic = false;
                 ball.GetComponent<Rigidbody>().velocity = ball.GetComponent<PhysicInfo>().GetVelocity();
                 ball.GetComponent<Rigidbody>().angularVelocity = ball.GetComponent<PhysicInfo>().GetAngularVelocity();

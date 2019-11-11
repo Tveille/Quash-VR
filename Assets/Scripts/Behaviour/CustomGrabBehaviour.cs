@@ -11,7 +11,8 @@ public struct GrabInfo
 
 public class CustomGrabBehaviour : MonoBehaviour
 {
-    public Transform grabDefaultTransform;
+    public Vector3 grabDefaultPosition;
+    public Vector3 grabDefaultRotation;
     public float maxGrabDistance;
     public float returnDuration;
     
@@ -62,16 +63,8 @@ public class CustomGrabBehaviour : MonoBehaviour
         GrabInfo grabInfo = grabCaller.GetGrabInfo();
         transform.parent = QPlayerManager.instance.GetController(grabInfo.userID, grabInfo.userHand).transform;
 
-        if (grabDefaultTransform == null)
-        {
-            transform.localPosition = Vector3.zero;
-            transform.localEulerAngles = Vector3.zero;
-        }
-        else
-        {
-            transform.localPosition = grabDefaultTransform.localPosition;
-            transform.rotation = grabDefaultTransform.localRotation;
-        }
+        transform.localPosition = grabDefaultPosition;
+        transform.localEulerAngles = grabDefaultRotation;
     }
 
     public void BecomeUngrabbed(IGrabCaller grabCaller)
