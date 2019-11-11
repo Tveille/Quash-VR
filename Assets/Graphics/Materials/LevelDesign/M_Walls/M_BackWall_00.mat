@@ -48,6 +48,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SGDistorsionEffect_A407CF31_Texture2DB728BC50_154932956:
+        m_Texture: {fileID: 2800000, guid: e930fa8142e087c42b3870532d002ff0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -62,10 +66,12 @@ Material:
     - Vector1_939CDD3C: 0.8
     - Vector1_9E5813AD: 2
     - Vector1_B4FB73F7: 2
+    - Vector1_B6D36EEB: 0.65
     - Vector1_B8A54333: 0.05
     - Vector1_CDE9BC16: 1
     - Vector1_F55BCBA5: 0.5
     - Vector1_FFAEB007: 0.2
+    - _Alpha: 0.3
     - _AlphaClip: 0
     - _Blend: 0
     - _Brightness: 0.8
@@ -101,6 +107,7 @@ Material:
     - Vector2_1E530CB: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_51F2E13A: {r: 6, g: 6, b: 0, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _CheckerboardFreq: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FresnelColor: {r: 2.9960785, g: 1.427451, b: 0, a: 0}
