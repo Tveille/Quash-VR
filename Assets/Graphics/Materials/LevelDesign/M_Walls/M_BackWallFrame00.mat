@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8489968723067332234
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
@@ -7,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_BackWall_00
-  m_Shader: {fileID: -6465566751694194690, guid: 7218bd9e88f9d634d88def69a32213ea,
+  m_Name: M_BackWallFrame00
+  m_Shader: {fileID: -6465566751694194690, guid: e1a5ae90ef398c447bf64c5f59d82b95,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,10 +33,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _BackWallMask:
-        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -53,69 +62,34 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_1A775B25: 0.5
-    - Vector1_21AC8E70: 5
-    - Vector1_2DD77E5F: 2
-    - Vector1_3207FA27: 0.5
-    - Vector1_72828DE0: 10
-    - Vector1_7CEAB2E0: 0
-    - Vector1_939CDD3C: 0.8
-    - Vector1_9E5813AD: 2
-    - Vector1_B4FB73F7: 2
-    - Vector1_B8A54333: 0.05
-    - Vector1_CDE9BC16: 1
-    - Vector1_F55BCBA5: 0.5
-    - Vector1_FFAEB007: 0.2
     - _AlphaClip: 0
     - _Blend: 0
-    - _Brightness: 0.8
     - _BumpScale: 1
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DissolveAmount: 1.3
     - _DstBlend: 0
+    - _EmissiveBrightness: 0.2
     - _EnvironmentReflections: 1
+    - _FresnelPower: 0.5
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _GlowPower: 1
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _TwirlDensity: 0.2
-    - _TwirlSpeed: 1
-    - _TwirlStrength: 8
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_2BF9F4BF: {r: 0.29288447, g: 0.8207547, b: 0, a: 0}
-    - Color_9D9EAABD: {r: 1, g: 0, b: 0.042179562, a: 0}
-    - Color_E6BFC838: {r: 0.735849, g: 0.02429692, b: 0.02429692, a: 0}
-    - Color_EDC520B5: {r: 0.6588235, g: 3.576471, b: 5.992157, a: 0}
-    - Vector2_51F2E13A: {r: 6, g: 6, b: 0, a: 0}
+    - _AlbedoColor: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FresnelColor: {r: 1, g: 0.82689786, b: 0, a: 0}
+    - _EmissiveColor: {r: 0.9309582, g: 0.94509804, b: 0.02352941, a: 0}
+    - _FresnelColor: {r: 2.1185474, g: 0, b: 0.22183743, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _TwirlCenter: {r: 2.5, g: 3.5, b: 0, a: 0}
-    - _WallColor: {r: 2.297397, g: 0, b: 0, a: 0}
---- !u!114 &6978877813672492810
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
