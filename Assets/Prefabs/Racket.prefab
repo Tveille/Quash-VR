@@ -103,9 +103,10 @@ GameObject:
   - component: {fileID: 8776666389479398576}
   - component: {fileID: 4399109570885919351}
   - component: {fileID: 8776666389479398577}
-  - component: {fileID: 1729096855404403915}
   - component: {fileID: 2276729969747601092}
   - component: {fileID: 2276729969747601091}
+  - component: {fileID: 4020382040936136103}
+  - component: {fileID: 8941561773894964827}
   m_Layer: 0
   m_Name: Racket
   m_TagString: Racket
@@ -159,21 +160,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.1, z: 1.06}
   m_Center: {x: 0, y: 0, z: 0.22}
---- !u!114 &1729096855404403915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8776666389479398583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd34d8b89f6152f44a8bf782f6f27e00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grabDefaultTransform: {fileID: 0}
-  maxGrabDistance: 0
-  returnDuration: 0
 --- !u!114 &2276729969747601092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,6 +211,33 @@ MonoBehaviour:
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
+--- !u!114 &4020382040936136103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8776666389479398583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd70f963b6f4ee14694498c02e4aee48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8941561773894964827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8776666389479398583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccb77968e15aaca44b89aead633d3d5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabDefaultTransform: {fileID: 0}
+  maxGrabDistance: 0
+  returnDuration: 0
 --- !u!1001 &1594891332979368864
 PrefabInstance:
   m_ObjectHideFlags: 0

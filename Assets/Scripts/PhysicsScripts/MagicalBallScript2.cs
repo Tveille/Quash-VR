@@ -145,7 +145,7 @@ public class MagicalBallScript2 : MonoBehaviour
         Transform currentPosition = gameObject.transform;
         GameObject.Find("RacketManager").GetComponent<RacketManager>().OnHitEvent(gameObject);
        
-        Vector3 newVelocity = GameObject.Find("RacketManager").GetComponent<RacketManager>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
+        Vector3 newVelocity = RacketManager.instance.racket.GetComponent<PhysicInfo>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
 
         rigidbody.position = currentPosition.position + newVelocity * Time.fixedDeltaTime * hitSpeedMultiplier;
         rigidbody.velocity = ClampVelocity(newVelocity * hitSpeedMultiplier);
@@ -153,7 +153,7 @@ public class MagicalBallScript2 : MonoBehaviour
 
     private void RacketBasicPhysicHit(Collision other) // Ajout d'un seuil pour pouvoir jouer avec la balle?
     {
-        Vector3 racketVelocity = GameObject.Find("RacketManager").GetComponent<RacketManager>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
+        Vector3 racketVelocity = RacketManager.instance.racket.GetComponent<PhysicInfo>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
         Vector3 relativeVelocity = lastVelocity - racketVelocity;
         Vector3 contactPointNormal = Vector3.Normalize(other.GetContact(0).normal);
 

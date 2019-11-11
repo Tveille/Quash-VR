@@ -67,7 +67,7 @@ public class SimpleBallPhysics : MonoBehaviour
         yield return new WaitForFixedUpdate();
 
         //Debug.Log("Debug Coroutine");
-        Vector3 newVelocity = GameObject.Find("RacketManager").GetComponent<RacketManager>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
+        Vector3 newVelocity = RacketManager.instance.racket.GetComponent<PhysicInfo>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
 
         rigidBody.position = currentPosition.position + newVelocity * Time.fixedDeltaTime * velocityMultiplier;
         rigidBody.velocity = newVelocity * velocityMultiplier;
