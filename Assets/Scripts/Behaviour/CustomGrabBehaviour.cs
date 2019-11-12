@@ -21,6 +21,8 @@ public class CustomGrabBehaviour : MonoBehaviourPunCallbacks, IPunObservable
     private Rigidbody rigidbody;
     private bool hasRigidbody;
     private float returnStartingTime;
+    IGrabCaller grabCaller2;
+    public int grabInt;
 
 
     private void Start()
@@ -34,10 +36,11 @@ public class CustomGrabBehaviour : MonoBehaviourPunCallbacks, IPunObservable
 
     public IEnumerator Attraction(IGrabCaller grabCaller)
     {
+        grabCaller2 = grabCaller;
         GrabInfo grabInfo = grabCaller.GetGrabInfo();
         returnStartingTime = Time.time;
 
-        while (grabInfo.grabState != GrabState.GRABBED)     
+        while (grabInt != 3)//(grabInfo.grabState != GrabState.GRABBED)     
         {
             Vector3 destinationVector = QPlayerManager.instance.GetController(grabInfo.userID, grabInfo.userHand).transform.position - gameObject.transform.position;
 
@@ -69,11 +72,21 @@ public class CustomGrabBehaviour : MonoBehaviourPunCallbacks, IPunObservable
         transform.localEulerAngles = grabDefaultRotation;
     }
 
+    void Update()
+    {
+        if (grabCaller2 != null){
+            GrabInfo grabInfo = grabCaller2.GetGrabInfo();
+            grabInt = (int)grabInfo.grabState;
+        }
+        
+    }
+
     public void BecomeUngrabbed(IGrabCaller grabCaller)
     {
         transform.parent = null;
         grabCaller.OnUngrab();
     }
+
 
     #region IPunObservable implementation
 
@@ -81,14 +94,17 @@ public class CustomGrabBehaviour : MonoBehaviourPunCallbacks, IPunObservable
         if (stream.IsWriting){
             stream.SendNext(transform.position);
             stream.SendNext(transform.rotation);
+            stream.SendNext(grabInt);
             //stream.SendNext(transform.parent);
         }
         else{
             transform.position = (Vector3)stream.ReceiveNext();
             transform.rotation = (Quaternion)stream.ReceiveNext();
+            grabInt = (int)stream.ReceiveNext();
             //transform.parent = (Transform)stream.ReceiveNext();
         }
     }
 
     #endregion
+    
 }

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon;
+using Photon.Pun;
 using VRTK;
 
 public enum PlayerID 
@@ -24,7 +26,7 @@ public enum GrabState
     GRABBED
 }
 
-public class QPlayerManager : MonoBehaviour
+public class QPlayerManager : MonoBehaviourPun
 {
     #region Singleton
     public static QPlayerManager instance;
@@ -52,11 +54,13 @@ public class QPlayerManager : MonoBehaviour
 
     private GameObject player2RightController;
     private GameObject player2LeftController;
+    private int refNumber;
 
     private void Start()
     {
         StartCoroutine(SetupControllers());
     }
+
 
 
     public GameObject GetController(PlayerID playerID, PlayerHand playerHand)         //A editer pour chaque cas player
@@ -187,6 +191,10 @@ public class QPlayerManager : MonoBehaviour
                 BallManager.instance.BallResetStopCall(playerID);
             }
         }
+    }
+
+    private void ConvertInByte(byte grabByte){
+        GrabState newGrab = (GrabState)grabByte;
     }
     
 }
