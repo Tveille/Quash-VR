@@ -6,8 +6,6 @@ namespace VRTK
     using System.Collections.Generic;
     using GrabAttachMechanics;
     using SecondaryControllerGrabActions;
-        using Photon;
-    using Photon.Pun;
 
     /// <summary>
     /// Event Payload
@@ -62,7 +60,7 @@ namespace VRTK
     /// `VRTK/Examples/013_Controller_UsingAndGrabbingMultipleObjects` shows multiple objects that can be grabbed by holding the buttons or grabbed by toggling the button click and also has objects that can have their Using state toggled to show how multiple items can be turned on at the same time.
     /// </example>
     [AddComponentMenu("VRTK/Scripts/Interactions/Interactables/VRTK_InteractableObject")]
-    public class VRTK_InteractableObject : MonoBehaviourPun, IPunObservable
+    public class VRTK_InteractableObject : MonoBehaviour
     {
         /// <summary>
         /// The interaction type.
@@ -1604,20 +1602,5 @@ namespace VRTK
                 InteractableObjectUnused += methodCallback;
             }
         }
-
-            #region  IPunObservable implementation
-
-    void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info){
-        if (stream.IsWriting){
-            stream.SendNext(transform.position);
-            stream.SendNext(transform.rotation);
-        }
-        else{
-            transform.position = (Vector3)stream.ReceiveNext();
-            transform.rotation = (Quaternion)stream.ReceiveNext();
-        }
-    }
-
-    #endregion
     }
 }

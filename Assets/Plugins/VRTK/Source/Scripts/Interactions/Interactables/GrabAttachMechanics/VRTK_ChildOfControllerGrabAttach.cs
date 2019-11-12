@@ -2,8 +2,6 @@
 namespace VRTK.GrabAttachMechanics
 {
     using UnityEngine;
-    using Photon;
-    using Photon.Pun;
 
     /// <summary>
     /// Sets the grabbed Interactable Object to be a child of the grabbing object.
