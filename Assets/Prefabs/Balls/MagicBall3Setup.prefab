@@ -289,7 +289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb77968e15aaca44b89aead633d3d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabDefaultTransform: {fileID: 0}
+  grabDefaultPosition: {x: 0, y: 0, z: 0}
+  grabDefaultRotation: {x: 0, y: 0, z: 0}
   maxGrabDistance: 0
   returnDuration: 0
 --- !u!1 &6265009428105279488
