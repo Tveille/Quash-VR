@@ -56,7 +56,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2276729969633534001}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -0.1479}
+  m_LocalPosition: {x: 0, y: 0, z: 0.552}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8776666389479398576}
@@ -103,9 +103,8 @@ GameObject:
   - component: {fileID: 8776666389479398576}
   - component: {fileID: 4399109570885919351}
   - component: {fileID: 8776666389479398577}
-  - component: {fileID: 1729096855404403915}
-  - component: {fileID: 2276729969747601092}
-  - component: {fileID: 2276729969747601091}
+  - component: {fileID: 4020382040936136103}
+  - component: {fileID: 8941561773894964827}
   m_Layer: 0
   m_Name: Racket
   m_TagString: Racket
@@ -159,7 +158,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.1, z: 1.06}
   m_Center: {x: 0, y: 0, z: 0.22}
---- !u!114 &1729096855404403915
+--- !u!114 &4020382040936136103
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,46 +167,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8776666389479398583}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd34d8b89f6152f44a8bf782f6f27e00, type: 3}
+  m_Script: {fileID: 11500000, guid: fd70f963b6f4ee14694498c02e4aee48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabDefaultTransform: {fileID: 0}
-  maxGrabDistance: 0
-  returnDuration: 0
---- !u!114 &2276729969747601092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8776666389479398583}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  disableWhenIdle: 1
-  allowedNearTouchControllers: 0
-  allowedTouchControllers: 0
-  ignoredColliders: []
-  isGrabbable: 1
-  holdButtonToGrab: 0
-  stayGrabbedOnTeleport: 1
-  validDrop: 1
-  grabOverrideButton: 0
-  allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 0}
-  secondaryGrabActionScript: {fileID: 0}
-  isUsable: 0
-  holdButtonToUse: 1
-  useOnlyIfGrabbed: 0
-  pointerActivatesUseAction: 0
-  useOverrideButton: 0
-  allowedUseControllers: 0
-  objectHighlighter: {fileID: 0}
-  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
-  usingState: 0
---- !u!114 &2276729969747601091
+--- !u!114 &8941561773894964827
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,15 +179,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8776666389479398583}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
+  m_Script: {fileID: 11500000, guid: ccb77968e15aaca44b89aead633d3d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  precisionGrab: 0
-  rightSnapHandle: {fileID: 2276729969633534000}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1
-  onGrabCollisionDelay: 0
+  grabDefaultPosition: {x: 0, y: 0, z: 0}
+  grabDefaultRotation: {x: 0, y: 0, z: 0}
+  maxGrabDistance: 0.2
+  returnDuration: 0.5
 --- !u!1001 &1594891332979368864
 PrefabInstance:
   m_ObjectHideFlags: 0

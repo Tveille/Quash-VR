@@ -113,7 +113,7 @@ public class MagicalBallScript : MonoBehaviour
         GameObject.Find("RacketManager").GetComponent<RacketManager>().OnHitEvent(gameObject);
         yield return new WaitForFixedUpdate();
 
-        Vector3 newVelocity = GameObject.Find("RacketManager").GetComponent<RacketManager>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
+        Vector3 newVelocity = RacketManager.instance.racket.GetComponent<PhysicInfo>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
 
         rigidbody.position = currentPosition.position + newVelocity * Time.fixedDeltaTime * hitSpeedMultiplier;
         rigidbody.velocity = ClampVelocity(newVelocity * hitSpeedMultiplier);
