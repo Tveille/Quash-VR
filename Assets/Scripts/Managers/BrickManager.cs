@@ -38,7 +38,7 @@ public class BrickManager : MonoBehaviour
 
         brickToDestroy.SetActive(false);
 
-        PoolManager.instance.SpawnFromPool("CubeDeathFX", brickPos, Quaternion.identity);
+        PoolManager.instance.SpawnFromPool("CubeImpactFX", brickPos, Quaternion.identity);
 
         ScoreManager.Instance.IncrementScore(brickValue);
     }
