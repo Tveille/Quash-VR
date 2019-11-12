@@ -79,7 +79,7 @@ public class MagicBallRacketInterractionTests : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        AudioManager.instance?.PlayHitSound(other.gameObject.tag, other.GetContact(0).point, Quaternion.LookRotation(other.GetContact(0).normal), GameObject.Find("RacketManager").GetComponent<RacketManager>().GetVelocity().magnitude);
+        AudioManager.instance?.PlayHitSound(other.gameObject.tag, other.GetContact(0).point, Quaternion.LookRotation(other.GetContact(0).normal), RacketManager.instance.racket.GetComponent<PhysicInfo>().GetVelocity().magnitude);
 
         if (other.gameObject.CompareTag("Racket"))
         {
@@ -104,7 +104,7 @@ public class MagicBallRacketInterractionTests : MonoBehaviour
             }
 
             rigidbody.velocity = ClampVelocity(hitSpeedMultiplier * newVelocity);
-            GameObject.Find("RacketManager").GetComponent<RacketManager>().OnHitEvent(gameObject);  // Ignore collision pour quelques frames.
+            RacketManager.instance.OnHitEvent(gameObject);  // Ignore collision pour quelques frames.
             ballState = BallState.NORMAL;
         }
         else if (other.gameObject.CompareTag("FrontWall") || other.gameObject.CompareTag("Brick"))
@@ -165,12 +165,12 @@ public class MagicBallRacketInterractionTests : MonoBehaviour
 
     private Vector3 RacketArcadeHit()
     {
-        return GameObject.Find("RacketManager").GetComponent<RacketManager>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
+        return RacketManager.instance.racket.GetComponent<PhysicInfo>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
     }
 
     private Vector3 RacketBasicPhysicHit(Collision collision)       // Ajout d'un seuil pour pouvoir jouer avec la balle?
     {
-        Vector3 racketVelocity = GameObject.Find("RacketManager").GetComponent<RacketManager>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
+        Vector3 racketVelocity = RacketManager.instance.racket.GetComponent<PhysicInfo>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
         Vector3 relativeVelocity = lastVelocity - racketVelocity;
         Vector3 contactPointNormal = Vector3.Normalize(collision.GetContact(0).normal);
 
@@ -182,7 +182,7 @@ public class MagicBallRacketInterractionTests : MonoBehaviour
 
     private Vector3 RacketMediumPhysicHit(Collision collision) // Ajout d'un seuil pour pouvoir jouer avec la balle?
     {
-        Vector3 racketVelocity = GameObject.Find("RacketManager").GetComponent<RacketManager>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
+        Vector3 racketVelocity = RacketManager.instance.racket.GetComponent<PhysicInfo>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
 
         Vector3 contactPointNormal = Vector3.Normalize(collision.GetContact(0).normal);
 
@@ -210,7 +210,7 @@ public class MagicBallRacketInterractionTests : MonoBehaviour
 
         Vector3 velocityDirection = Vector3.Normalize(new Vector3(Mathf.Cos(newYEulerRotation), 1 / Mathf.Tan(newZEulerRotation), Mathf.Sin(newYEulerRotation)));
 
-        float velocityMagnitude = GameObject.Find("RacketManager").GetComponent<RacketManager>().GetVelocity().magnitude;
+        float velocityMagnitude = RacketManager.instance.racket.GetComponent<PhysicInfo>().GetVelocity().magnitude;
         velocityMagnitude *= magnitudeSlope;
 
         if (velocityMagnitude > maxMagnitude)

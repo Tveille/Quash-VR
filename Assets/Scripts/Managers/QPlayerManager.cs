@@ -16,6 +16,14 @@ public enum PlayerHand
     LEFT
 }
 
+public enum GrabState
+{
+    UNUSED,
+    DELAYED,
+    ATTRACTED,
+    GRABBED
+}
+
 public class QPlayerManager : MonoBehaviour
 {
     #region Singleton
@@ -71,30 +79,10 @@ public class QPlayerManager : MonoBehaviour
         return  player1LeftController;
     }
 
-    public void OnPlayer1RightTriggerPress()
-    {
-        ActionCall(PlayerID.PLAYER1, PlayerHand.RIGHT);
-    }
-
-    public void OnPlayer1LeftTriggerPress()
-    {
-        ActionCall(PlayerID.PLAYER1, PlayerHand.LEFT);
-    }
-
-    public void OnPlayer2RightTriggerPress()
-    {
-        ActionCall(PlayerID.PLAYER2, PlayerHand.RIGHT);
-    }
-
-    public void OnPlayer2LeftTriggerPress()
-    {
-        ActionCall(PlayerID.PLAYER2, PlayerHand.LEFT);
-    }
-
     private IEnumerator SetupControllers()
     {
         yield return new WaitForFixedUpdate();
-        if(player1)
+        if (player1)
         {
             player1LeftController = player1?.GetComponentInChildren<LeftControllerGetter>().Get();
             player1RightController = player1?.GetComponentInChildren<RightControllerGetter>().Get();
@@ -106,30 +94,99 @@ public class QPlayerManager : MonoBehaviour
         }
     }
 
-    private void ActionCall(PlayerID playerID, PlayerHand playerHand)
+    ////////////////////////////////////    VRTKUnityEvents Called methods     /////////////////////////////////////
+
+    public void OnPlayer1RightTriggerPress()
     {
-        if(RacketManager.instance.GetGrabStatus() == GrabState.GRABBED)
+        ActionCall(PlayerID.PLAYER1, PlayerHand.RIGHT);
+    }
+
+    public void OnPlayer1RightTriggerRelease()
+    {
+        StopCall(PlayerID.PLAYER1, PlayerHand.RIGHT);
+    }
+
+    public void OnPlayer1LeftTriggerPress()
+    {
+        ActionCall(PlayerID.PLAYER1, PlayerHand.LEFT);
+    }
+
+    public void OnPlayer1LeftTriggerRelease()
+    {
+        StopCall(PlayerID.PLAYER1, PlayerHand.LEFT);
+    }
+
+    public void OnPlayer2RightTriggerPress()
+    {
+        ActionCall(PlayerID.PLAYER2, PlayerHand.RIGHT);
+    }
+
+    public void OnPlayer2RightTriggerRelease()
+    {
+        StopCall(PlayerID.PLAYER2, PlayerHand.RIGHT);
+    }
+
+    public void OnPlayer2LeftTriggerPress()
+    {
+        ActionCall(PlayerID.PLAYER2, PlayerHand.LEFT);
+    }
+
+    public void OnPlayer2LeftTriggerRelease()
+    {
+        StopCall(PlayerID.PLAYER2, PlayerHand.LEFT);
+    }
+
+
+    private void ActionCall(PlayerID playerID, PlayerHand playerHand)           //Rename
+    {
+        if(RacketManager.instance.GetGrabInfo().grabState == GrabState.GRABBED)
         {
-            if(RacketManager.instance.GetRacketUserInfo().userID == playerID)
+            if(RacketManager.instance.GetGrabInfo().userID == playerID)
             {
-                if (RacketManager.instance.GetRacketUserInfo().userHand == playerHand)
+                if (RacketManager.instance.GetGrabInfo().userHand == playerHand)
                     RacketManager.instance.StopRacketGrabCall(playerID);
                 else
-                    return; //Action ball?
+                {
+                    if(BallManager.instance.GetGrabInfo().grabState == GrabState.UNUSED)
+                    {
+                        BallManager.instance.BallResetCall(playerID, playerHand);
+                    }
+                }
             }
             else
             {
                 return; //A enlever?
             }
         }
-        else if(RacketManager.instance.GetGrabStatus() == GrabState.ATTRACTED)
+        else if(RacketManager.instance.GetGrabInfo().grabState == GrabState.ATTRACTED)
         {
-            if(RacketManager.instance.GetRacketUserInfo().userID == playerID)
+            if(RacketManager.instance.GetGrabInfo().userID == playerID)
                 RacketManager.instance.StopRacketGrabCall(playerID);
         }
-        else
+        else if(RacketManager.instance.GetGrabInfo().grabState == GrabState.UNUSED)
         {
             RacketManager.instance.RacketGrabCall(playerID, playerHand);
         }
+        
+        if (BallManager.instance.GetGrabInfo().grabState == GrabState.ATTRACTED)
+        {
+            BallManager.instance.BallResetStopCall(playerID);
+        }
+        else if (BallManager.instance.GetGrabInfo().grabState == GrabState.GRABBED)
+        {
+            BallManager.instance.BallResetStopCall(playerID);
+        }
     }
+
+    private void StopCall(PlayerID playerID, PlayerHand playerHand)             //Rename
+    {
+        if(BallManager.instance.GetGrabInfo().userID == playerID && BallManager.instance.GetGrabInfo().userHand == playerHand)
+        {
+            if(BallManager.instance.GetGrabInfo().grabState == GrabState.DELAYED)
+            {
+                BallManager.instance.BallResetStopCall(playerID);
+            }
+        }
+    }
+    
 }
