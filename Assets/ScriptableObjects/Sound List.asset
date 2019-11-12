@@ -15,7 +15,7 @@ MonoBehaviour:
   sounds:
   - tag: 4
     clip: {fileID: 8300000, guid: 90bce3c41d7f9d843982e81bde164062, type: 3}
-    cooldown: 0
+    cooldown: 1
     volume: 1
     pitch: 1
     loop: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
     lastPlayTime: 0
   - tag: 3
     clip: {fileID: 8300000, guid: a48251b919a89c84ca5f3bb10b3e3ce9, type: 3}
-    cooldown: 0
+    cooldown: 1
     volume: 1
     pitch: 1
     loop: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
     lastPlayTime: 0
   - tag: 2
     clip: {fileID: 8300000, guid: edcecaca37a6d67428766c2a020582eb, type: 3}
-    cooldown: 0
+    cooldown: 1
     volume: 1
     pitch: 1
     loop: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
     lastPlayTime: 0
   - tag: 5
     clip: {fileID: 8300000, guid: edcecaca37a6d67428766c2a020582eb, type: 3}
-    cooldown: 0
+    cooldown: 1
     volume: 1
     pitch: 1
     loop: 0

@@ -19,6 +19,8 @@ GameObject:
   - component: {fileID: 3632173787704927066}
   - component: {fileID: 7874847342574634107}
   - component: {fileID: 8799386132471918862}
+  - component: {fileID: 5346303631256717209}
+  - component: {fileID: 4434064512413737576}
   m_Layer: 9
   m_Name: MagicBall3
   m_TagString: Ball
@@ -34,7 +36,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4092726656090709477}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.059, y: -0.148, z: -3.665}
+  m_LocalPosition: {x: 2.861, y: 1.202, z: -11.342}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 5405717006173697799}
@@ -263,6 +265,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownBetweenTwoImpactFX: 0
+--- !u!114 &5346303631256717209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4092726656090709477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd70f963b6f4ee14694498c02e4aee48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4434064512413737576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4092726656090709477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccb77968e15aaca44b89aead633d3d5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabDefaultTransform: {fileID: 0}
+  maxGrabDistance: 0
+  returnDuration: 0
 --- !u!1 &6265009428105279488
 GameObject:
   m_ObjectHideFlags: 0

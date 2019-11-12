@@ -137,8 +137,8 @@ Material:
     - _CloudTiling: {r: 5, g: 5, b: 0, a: 0}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _ColorGradientOffset: {r: 0.02, g: 0.7, b: 0, a: 0}
-    - _ColorGradient_01: {r: 0, g: 1.059274, b: 0.3345948, a: 0}
-    - _ColorGradient_02: {r: 0, g: 2.828427, b: 2.665533, a: 0}
+    - _ColorGradient_01: {r: 0, g: 0.3745098, b: 0.11960784, a: 0}
+    - _ColorGradient_02: {r: 0, g: 0.3745098, b: 0.3529412, a: 0}
     - _DistorsionDir: {r: 0.1, g: 0, b: 0, a: 0}
     - _DistorsionTiling: {r: 1, g: 1, b: 0, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
