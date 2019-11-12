@@ -27,3 +27,7 @@ MonoBehaviour:
     prefab: {fileID: 5170862702514152613, guid: 15c9a258f05c0bd46a7baca3257ea527,
       type: 3}
     size: 20
+  - tag: CubeImpactFX
+    prefab: {fileID: 5227381701002517277, guid: c36e5b9fcb419a64e90e961470c5ba1d,
+      type: 3}
+    size: 35
