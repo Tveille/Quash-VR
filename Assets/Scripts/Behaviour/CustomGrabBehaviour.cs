@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon;
+using Photon.Pun;
 
 public struct GrabInfo
 {
@@ -9,7 +11,7 @@ public struct GrabInfo
     public GrabState grabState;
 }
 
-public class CustomGrabBehaviour : MonoBehaviour
+public class CustomGrabBehaviour : MonoBehaviourPunCallbacks, IPunObservable
 {
     public Vector3 grabDefaultPosition;
     public Vector3 grabDefaultRotation;
@@ -72,4 +74,21 @@ public class CustomGrabBehaviour : MonoBehaviour
         transform.parent = null;
         grabCaller.OnUngrab();
     }
+
+    #region IPunObservable implementation
+
+    void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info){
+        if (stream.IsWriting){
+            stream.SendNext(transform.position);
+            stream.SendNext(transform.rotation);
+            //stream.SendNext(transform.parent);
+        }
+        else{
+            transform.position = (Vector3)stream.ReceiveNext();
+            transform.rotation = (Quaternion)stream.ReceiveNext();
+            //transform.parent = (Transform)stream.ReceiveNext();
+        }
+    }
+
+    #endregion
 }
