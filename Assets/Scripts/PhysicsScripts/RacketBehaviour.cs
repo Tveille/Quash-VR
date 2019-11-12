@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon;
 
-public class RacketBehaviour : MonoBehaviour
+public class RacketBehaviour : MonoBehaviourPunCallbacks, IPunObservable
 {
     public Transform grabDefaultTransform;
     public float maxGrabDistance;
@@ -63,4 +65,25 @@ public class RacketBehaviour : MonoBehaviour
     {
         transform.parent = null;
     }
+
+    void Update(){
+        
+    }
+
+    #region  IPunObservable implementation
+
+    void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info){
+        if (stream.IsWriting){
+            stream.SendNext(transform.position);
+            stream.SendNext(transform.rotation);
+            //stream.SendNext(transform.parent);
+        }
+        else{
+            transform.position = (Vector3)stream.ReceiveNext();
+            transform.rotation = (Quaternion)stream.ReceiveNext();
+            //transform.parent = (Transform)stream.ReceiveNext();
+        }
+    }
+
+    #endregion
 }

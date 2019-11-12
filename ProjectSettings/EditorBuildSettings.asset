@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TristanTestScene/Menu.unity
     guid: acbe7b5099526764d9a7ccbc5fdc3514
+  - enabled: 1
+    path: Assets/Scenes/AlexisSceneLD/NetworkScene.unity
+    guid: 3e46967cea24f0a4e80fb0f4b72b5f80
   m_configObjects: {}
