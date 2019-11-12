@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using Malee.Editor;
+
 
 [CustomEditor(typeof(LevelScript))]
 public class LevelInspectorScript : Editor
 {
-
     public enum Mode
     {
         View,
@@ -29,6 +30,9 @@ public class LevelInspectorScript : Editor
     private LevelPiece pieceSelected;
     private GUIStyle titleStyle;
 
+    SerializedProperty editorSpaceProperty;
+    ReorderableList mySpace;
+
 
 
 
@@ -36,6 +40,10 @@ public class LevelInspectorScript : Editor
     public void OnEnable()
     {
         myTarget = (LevelScript)target;
+
+        editorSpaceProperty = serializedObject.FindProperty("editorSpace");
+        mySpace = new ReorderableList(editorSpaceProperty, false, false, true);
+
         InitLevel();
         ResetResizeValues();
         SubscribeEvents();
@@ -78,31 +86,32 @@ public class LevelInspectorScript : Editor
         mySerializedObject = new SerializedObject(myTarget);
         if (myTarget.Pieces == null || myTarget.Pieces.Length == 0)
         {
-            myTarget.Pieces = new LevelPiece[myTarget.TotalColumns * myTarget.TotalRows];
+            myTarget.Pieces = new LevelPiece[myTarget.TotalRows * myTarget.TotalColumns];
         }
-        myTarget.transform.hideFlags = HideFlags.NotEditable;
+       // myTarget.transform.hideFlags = HideFlags.NotEditable;
     }
 
     private void ResetResizeValues()
     {
-        newTotalColumns = myTarget.TotalColumns;
-        newTotalRows = myTarget.TotalRows;
+        newTotalColumns = myTarget.TotalRows;
+        newTotalRows = myTarget.TotalColumns;
     }
 
     private void ResizeLevel()
     {
         LevelPiece[] newPieces = new LevelPiece[newTotalColumns * newTotalRows];
-        for (int col = 0; col < myTarget.TotalColumns; col++)
+
+        for (int col = 0; col < myTarget.TotalRows; col++)
         {
-            for (int row = 0; row < myTarget.TotalRows; row++)
+            for (int row = 0; row < myTarget.TotalColumns; row++)
             {
                 if (col < newTotalColumns && row < newTotalRows)
                 {
-                    newPieces[col + row * newTotalColumns] = myTarget.Pieces[col + row * myTarget.TotalColumns];
+                    newPieces[col + row * newTotalColumns] = myTarget.Pieces[col + row * myTarget.TotalRows];
                 }
                 else
                 {
-                    LevelPiece piece = myTarget.Pieces[col + row * myTarget.TotalColumns];
+                    LevelPiece piece = myTarget.Pieces[col + row * myTarget.TotalRows];
                     if (piece != null)
                     {
                         Object.DestroyImmediate(piece.gameObject);
@@ -111,8 +120,8 @@ public class LevelInspectorScript : Editor
             }
         }
         myTarget.Pieces = newPieces;
-        myTarget.TotalColumns = newTotalColumns;
-        myTarget.TotalRows = newTotalRows;
+        myTarget.TotalRows = newTotalColumns;
+        myTarget.TotalColumns = newTotalRows;
     }
 
 
@@ -139,6 +148,8 @@ public class LevelInspectorScript : Editor
 
     private void DrawLevelDataGUI()
     {
+        Undo.RecordObject(myTarget, "Recording Changes");
+
         EditorGUILayout.LabelField("Data", titleStyle);
 
         EditorGUILayout.BeginVertical("box");
@@ -154,10 +165,35 @@ public class LevelInspectorScript : Editor
         {
             EditorGUILayout.HelpBox("Tu dois attacher un levelsettings.asset", MessageType.Warning);
         }
+
         myTarget.nameLevel = EditorGUILayout.TextField("Name of Level", myTarget.nameLevel);
         myTarget.background = (Sprite)EditorGUILayout.ObjectField("Background", myTarget.background,
                                                                                      typeof(Sprite), false);
 
+        myTarget.xGridPlacement = EditorGUILayout.FloatField("Placement de la grille en X", myTarget.xGridPlacement);
+        myTarget.yGridPlacement = EditorGUILayout.FloatField("Placement de la grille en Y", myTarget.yGridPlacement);
+        myTarget.zGridPlacement = EditorGUILayout.FloatField("Placement de la grille en Z", myTarget.zGridPlacement);
+
+        GUILayout.Space(16);
+
+        EditorGUI.BeginChangeCheck();
+        serializedObject.Update();
+
+
+        mySpace.DoLayoutList();
+
+        serializedObject.ApplyModifiedProperties();
+
+        if (EditorGUI.EndChangeCheck())
+        {
+
+        }
+
+        GUILayout.Space(16);
+
+        myTarget.CellSize = EditorGUILayout.Slider("Cell Size", myTarget.CellSize, 0.1f, 1f);
+        myTarget.TotalRows = (int)EditorGUILayout.Slider("Number of rows", myTarget.TotalRows, 0, (int)(myTarget.maxHeightSpace() / myTarget.CellSize));
+        myTarget.TotalColumns = (int)EditorGUILayout.Slider("Number of Columns", myTarget.TotalColumns, -2, (int)(myTarget.maxWidthSpace() / myTarget.CellSize));
 
 
         EditorGUILayout.EndHorizontal();
@@ -170,14 +206,16 @@ public class LevelInspectorScript : Editor
         EditorGUILayout.BeginHorizontal("box");
         EditorGUILayout.BeginVertical();
 
-        //newTotalColumns = EditorGUILayout.IntField("Columns", Mathf.Max(1, newTotalColumns));
-        newTotalRows = EditorGUILayout.IntField("Rows", Mathf.Max(1, newTotalRows));
+        newTotalColumns = EditorGUILayout.IntField("Multiplier", Mathf.Max(1, newTotalColumns));
+        //newTotalRows = EditorGUILayout.IntField("Multiplier", Mathf.Max(1, newTotalRows));
+
 
         EditorGUILayout.EndVertical();
         EditorGUILayout.BeginVertical();
 
         bool OldEnabled = GUI.enabled;
-        GUI.enabled = (newTotalColumns != myTarget.TotalColumns || newTotalRows != myTarget.TotalRows);
+        GUI.enabled = (newTotalColumns != myTarget.TotalRows || newTotalRows != myTarget.TotalColumns);
+
         bool buttonResize = GUILayout.Button("Resize", GUILayout.Height(2 * EditorGUIUtility.singleLineHeight));
         if (buttonResize)
         {
@@ -277,10 +315,16 @@ public class LevelInspectorScript : Editor
     {
         HandleUtility.AddDefaultControl(GUIUtility.GetControlID(FocusType.Passive));
         Camera camera = SceneView.currentDrawingSceneView.camera;
+
         Vector3 mousePosition = Event.current.mousePosition;
         mousePosition = new Vector2(mousePosition.x, camera.pixelHeight - mousePosition.y);
+
         Vector3 worldPos = camera.ScreenToWorldPoint(mousePosition);
         Vector3 gridPos = myTarget.WorldToGridCoordinates(worldPos);
+
+        Debug.Log("worldPos" + worldPos);
+        Debug.Log("gridPos" + gridPos);
+
         int col = (int)gridPos.x;
         int row = (int)gridPos.z;
 
@@ -299,10 +343,10 @@ public class LevelInspectorScript : Editor
 
                 Quaternion newPos = _scene.rotation;
 
-                newPos.x = 0.7f;
-                newPos.y = 0;
-                newPos.z = 0;
-                newPos.w = 0.7f;
+                newPos.x = 0f;
+                newPos.y = 0f;
+                newPos.z = 0f;
+                newPos.w = 0f;
 
                 _scene.rotation = newPos;
 
@@ -320,10 +364,10 @@ public class LevelInspectorScript : Editor
 
                 Quaternion newPos2 = _scene2.rotation;
 
-                newPos.x = 0.7f;
-                newPos.y = 0;
-                newPos.z = 0;
-                newPos.w = 0.7f;
+                newPos.x = 0f;
+                newPos.y = 0f;
+                newPos.z = 0f;
+                newPos.w = 0f;
 
                 _scene2.rotation = newPos;
 
@@ -347,9 +391,10 @@ public class LevelInspectorScript : Editor
             return;
         }
 
-        if (myTarget.Pieces[col + row * myTarget.TotalColumns] != null)
+
+        if (myTarget.Pieces[col + row * myTarget.TotalRows] != null)
         {
-            DestroyImmediate(myTarget.Pieces[col + row * myTarget.TotalColumns].gameObject);
+            DestroyImmediate(myTarget.Pieces[col + row * myTarget.TotalRows].gameObject);
         }
 
         Debug.LogFormat("GridPos {0},{1}", col, row);
@@ -360,7 +405,7 @@ public class LevelInspectorScript : Editor
         obj.name = string.Format("{0},{1},{2}", col, row, obj.name);
         obj.transform.position = myTarget.GridToWorldPoint(col, row);
         obj.hideFlags = HideFlags.HideInHierarchy;
-        myTarget.Pieces[col + row * myTarget.TotalColumns] = obj.GetComponent<LevelPiece>();
+        myTarget.Pieces[col + row * myTarget.TotalRows] = obj.GetComponent<LevelPiece>();
     }
 
     private void Erase(int col, int row)
@@ -370,9 +415,9 @@ public class LevelInspectorScript : Editor
             return;
         }
 
-        if (myTarget.Pieces[col + row * myTarget.TotalColumns] != null)
+        if (myTarget.Pieces[col + row * myTarget.TotalRows] != null)
         {
-            DestroyImmediate(myTarget.Pieces[col + row * myTarget.TotalColumns].gameObject);
+            DestroyImmediate(myTarget.Pieces[col + row * myTarget.TotalRows].gameObject);
         }
     }
 
