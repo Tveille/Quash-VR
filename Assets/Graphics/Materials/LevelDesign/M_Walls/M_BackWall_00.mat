@@ -95,7 +95,7 @@ Material:
     - _SrcBlend: 1
     - _Surface: 0
     - _TwirlDensity: 0.2
-    - _TwirlSpeed: 0.1
+    - _TwirlSpeed: 0.03
     - _TwirlStrength: 5
     - _WorkflowMode: 1
     - _ZWrite: 1
