@@ -9,15 +9,24 @@ public class LevelScript : MonoBehaviour
     [SerializeField]
     public string nameLevel;
 
-    [SerializeField]
     private int totalRows = 10; //x
 
-    [SerializeField]
     private int totalColumns = 10; //y
 
-    public const float GridSize = 0.5f;
+    public float CellSize = 0.5f;
     private readonly Color normalColor = Color.red;
-    private readonly Color selectedColor = Color.yellow;
+    private readonly Color selectedColor = Color.green;
+
+    public Vector3[] editorSpace = new Vector3[2];
+
+    public float xGridPlacement = 2f;
+    public float gridWidth;
+
+    public float yGridPlacement = 1f;
+    public float gridHeight;
+
+    public float zGridPlacement;
+
 
     [SerializeField]
     private LevelPiece[] pieces;
@@ -28,14 +37,9 @@ public class LevelScript : MonoBehaviour
     [SerializeField]
     private LevelSettings settings;
 
-    //Rigidbody rb;
 
 
 
-    void Awake()
-    {
-        //rb = GetComponent<Rigidbody>();
-    }
 
 
 
@@ -53,38 +57,111 @@ public class LevelScript : MonoBehaviour
 
 
 
-    public int TotalColumns
+    public int TotalRows
     {
         get { return totalRows; }
         set { totalRows = value; }
     }
 
-    public int TotalRows
+    public int TotalColumns
     {
         get { return totalColumns; }
         set { totalColumns = value; }
     }
 
 
+    public float maxWidthSpace()
+    {
+        return editorSpace[1].x - editorSpace[0].x;
+    }
+
+    private float colSpace()
+    {
+        return CellSize * (float)totalColumns;
+    }
+
+
+    public float maxHeightSpace()
+    {
+        return editorSpace[1].y - editorSpace[0].y;
+    }
+
+    private float rowSpace()
+    {
+        return CellSize * (float)totalRows;
+    }
+
 
     private void GridFrameGizmo(int cols, int rows)
     {
-        Gizmos.DrawLine(new Vector3(0, 0, 0), new Vector3(0, cols * GridSize, 0));
-        Gizmos.DrawLine(new Vector3(0, 0, 0), new Vector3(rows * GridSize, 0, 0));
-        Gizmos.DrawLine(new Vector3(rows * GridSize, 0, 0), new Vector3(rows * GridSize, cols * GridSize, 0));
-        Gizmos.DrawLine(new Vector3(0, cols * GridSize, 0), new Vector3(rows * GridSize, cols * GridSize, 0));
+        /* LEFT */
+        Gizmos.DrawLine(new Vector3(xGridPlacement * gridWidth,
+            yGridPlacement,
+            zGridPlacement),
+
+            new Vector3(xGridPlacement * gridWidth,
+            ((cols * CellSize) + yGridPlacement + CellSize) * gridHeight,
+            zGridPlacement));
+
+        /* RIGHT */
+        Gizmos.DrawLine(new Vector3(((rows * CellSize) + xGridPlacement + CellSize) * gridWidth,
+                    yGridPlacement,
+                    zGridPlacement),
+
+                    new Vector3(((rows * CellSize) + xGridPlacement + CellSize) * gridWidth,
+                    ((cols * CellSize) + yGridPlacement + CellSize) * gridHeight,
+                    zGridPlacement));
+
+        /* BOTTOM */
+        Gizmos.DrawLine(new Vector3(xGridPlacement * gridWidth,
+            yGridPlacement,
+            zGridPlacement),
+
+            new Vector3(((rows * CellSize) + CellSize + xGridPlacement) * gridWidth,
+            yGridPlacement,
+            zGridPlacement));
+
+
+
+        /* UP */
+        Gizmos.DrawLine(new Vector3(xGridPlacement * gridWidth,
+            ((cols * CellSize) + CellSize + yGridPlacement) * gridHeight,
+            zGridPlacement),
+
+            new Vector3(((rows * CellSize) + xGridPlacement + CellSize) * gridWidth,
+            ((cols * CellSize) + yGridPlacement + CellSize) * gridHeight,
+            zGridPlacement));
     }
 
     private void GridGizmo(int cols, int rows)
     {
-        for (int i = 1; i < rows; i++)
+        float widthOffset = (maxWidthSpace() - colSpace()) / 2;
+        float heightOffset = maxHeightSpace() - rowSpace();
+
+
+        for (int i = -1; i < cols + 2; i++)
         {
-            Gizmos.DrawLine(new Vector3(i * GridSize, 0, 0), new Vector3(i * GridSize, cols * GridSize, 0));
+            //COLUMNS
+            Gizmos.DrawLine(new Vector3(xGridPlacement + widthOffset + (i * CellSize),
+                yGridPlacement,
+                zGridPlacement),
+
+                new Vector3(xGridPlacement + widthOffset + (i * CellSize),
+                (rows * CellSize) + yGridPlacement,
+                zGridPlacement));
         }
 
-        for (int j = 1; j < cols; j++)
+
+        for (int j = 0; j < rows + 1; j++)
         {
-            Gizmos.DrawLine(new Vector3(0, j * GridSize, 0), new Vector3(rows * GridSize, j * GridSize, 0));
+            //ROWS
+            Gizmos.DrawLine(new Vector3(xGridPlacement + widthOffset - CellSize,
+            ((j * CellSize) + yGridPlacement),
+            zGridPlacement),
+
+            new Vector3((xGridPlacement + CellSize + widthOffset + (cols * CellSize)),
+            ((j * CellSize) + yGridPlacement),
+            zGridPlacement));
         }
     }
 
@@ -95,8 +172,8 @@ public class LevelScript : MonoBehaviour
         Gizmos.matrix = transform.localToWorldMatrix;
 
         Gizmos.color = normalColor;
-        GridGizmo(totalRows, totalColumns);
-        GridFrameGizmo(TotalColumns, totalColumns);
+        GridGizmo(TotalColumns, TotalRows);
+        //GridFrameGizmo(TotalRows, TotalColumns);
 
         Gizmos.color = oldColor;
         Gizmos.matrix = oldMatrix;
@@ -112,8 +189,9 @@ public class LevelScript : MonoBehaviour
     public Vector3 WorldToGridCoordinates(Vector3 point)
     {
         Vector3 gridPoint = new Vector3(
-            (int)((point.x - transform.position.x) / GridSize),
-             0.0f, (int)((point.z - transform.position.z) / GridSize));
+            (int)((point.x - transform.position.x) / CellSize),
+             (int)((point.y - transform.position.z) / CellSize), 
+             zGridPlacement);
         return gridPoint;
     }
 
@@ -126,9 +204,9 @@ public class LevelScript : MonoBehaviour
     public Vector3 GridToWorldPoint(int col, int row)
     {
         Vector3 worldPoint = new Vector3(
-            transform.position.x + (col * GridSize + GridSize / 2.0f),
-            0.0f,
-            transform.position.z + (row * GridSize + GridSize / 2.0f));
+            transform.position.x + (col * CellSize + CellSize / 2.0f),
+            transform.position.y + (row * CellSize + CellSize / 2.0f),
+            zGridPlacement);
         return worldPoint;
     }
 
@@ -142,9 +220,9 @@ public class LevelScript : MonoBehaviour
     public bool IsInsideGridBounds(Vector3 point)
     {
         float minX = transform.position.x;
-        float maxX = minX + totalRows * GridSize;
+        float maxX = minX + totalRows * CellSize;
         float minZ = transform.position.z;
-        float maxZ = minZ + totalColumns * GridSize;
+        float maxZ = minZ + totalColumns * CellSize;
         return (point.x >= minX && point.x <= maxX && point.z >= minZ && point.z <= maxZ);
     }
 
