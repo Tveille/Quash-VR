@@ -83,45 +83,47 @@ public class LevelInspectorScript : Editor
 
     private void InitLevel()
     {
-        mySerializedObject = new SerializedObject(myTarget);
-        if (myTarget.Pieces == null || myTarget.Pieces.Length == 0)
-        {
-            myTarget.Pieces = new LevelPiece[myTarget.TotalRows * myTarget.TotalColumns];
-        }
-       // myTarget.transform.hideFlags = HideFlags.NotEditable;
+        //mySerializedObject = new SerializedObject(myTarget);
+
+        //if (myTarget.Pieces == null || myTarget.Pieces.Length == 0)
+        //{
+        //    myTarget.Pieces = new LevelPiece[myTarget.TotalRows * myTarget.TotalColumns];
+        //}
+
+        // myTarget.transform.hideFlags = HideFlags.NotEditable;
     }
 
     private void ResetResizeValues()
     {
-        newTotalColumns = myTarget.TotalRows;
-        newTotalRows = myTarget.TotalColumns;
+        //newTotalColumns = myTarget.TotalRows;
+        //newTotalRows = myTarget.TotalColumns;
     }
 
     private void ResizeLevel()
     {
-        LevelPiece[] newPieces = new LevelPiece[newTotalColumns * newTotalRows];
+        //LevelPiece[] newPieces = new LevelPiece[newTotalColumns * newTotalRows];
 
-        for (int col = 0; col < myTarget.TotalRows; col++)
-        {
-            for (int row = 0; row < myTarget.TotalColumns; row++)
-            {
-                if (col < newTotalColumns && row < newTotalRows)
-                {
-                    newPieces[col + row * newTotalColumns] = myTarget.Pieces[col + row * myTarget.TotalRows];
-                }
-                else
-                {
-                    LevelPiece piece = myTarget.Pieces[col + row * myTarget.TotalRows];
-                    if (piece != null)
-                    {
-                        Object.DestroyImmediate(piece.gameObject);
-                    }
-                }
-            }
-        }
-        myTarget.Pieces = newPieces;
-        myTarget.TotalRows = newTotalColumns;
-        myTarget.TotalColumns = newTotalRows;
+        //for (int col = 0; col < myTarget.TotalRows; col++)
+        //{
+        //    for (int row = 0; row < myTarget.TotalColumns; row++)
+        //    {
+        //        if (col < newTotalColumns && row < newTotalRows)
+        //        {
+        //            newPieces[col + row * newTotalColumns] = myTarget.Pieces[col + row * myTarget.TotalRows];
+        //        }
+        //        else
+        //        {
+        //            LevelPiece piece = myTarget.Pieces[col + row * myTarget.TotalRows];
+        //            if (piece != null)
+        //            {
+        //                Object.DestroyImmediate(piece.gameObject);
+        //            }
+        //        }
+        //    }
+        //}
+        //myTarget.Pieces = newPieces;
+        //myTarget.TotalRows = newTotalColumns;
+        //myTarget.TotalColumns = newTotalRows;
     }
 
 
@@ -130,7 +132,7 @@ public class LevelInspectorScript : Editor
     public override void OnInspectorGUI()
     {
         DrawLevelDataGUI();
-        DrawLevelSizeGUI();
+        //DrawLevelSizeGUI();
         DrawPieceSelectedGUI();
 
         if (GUI.changed)
@@ -150,7 +152,7 @@ public class LevelInspectorScript : Editor
     {
         Undo.RecordObject(myTarget, "Recording Changes");
 
-        EditorGUILayout.LabelField("Data", titleStyle);
+        EditorGUILayout.LabelField("Grid Parameters", titleStyle);
 
         EditorGUILayout.BeginVertical("box");
 
@@ -193,7 +195,7 @@ public class LevelInspectorScript : Editor
 
         myTarget.CellSize = EditorGUILayout.Slider("Cell Size", myTarget.CellSize, 0.1f, 1f);
         myTarget.TotalRows = (int)EditorGUILayout.Slider("Number of rows", myTarget.TotalRows, 0, (int)(myTarget.maxHeightSpace() / myTarget.CellSize));
-        myTarget.TotalColumns = (int)EditorGUILayout.Slider("Number of Columns", myTarget.TotalColumns, -2, (int)(myTarget.maxWidthSpace() / myTarget.CellSize));
+        myTarget.TotalColumns = (int)EditorGUILayout.Slider("Number of Columns", myTarget.TotalColumns, 0, (int)(myTarget.maxWidthSpace() / myTarget.CellSize));
 
 
         EditorGUILayout.EndHorizontal();
@@ -206,7 +208,7 @@ public class LevelInspectorScript : Editor
         EditorGUILayout.BeginHorizontal("box");
         EditorGUILayout.BeginVertical();
 
-        newTotalColumns = EditorGUILayout.IntField("Multiplier", Mathf.Max(1, newTotalColumns));
+        //newTotalColumns = EditorGUILayout.IntField("Multiplier", Mathf.Max(1, newTotalColumns));
         //newTotalRows = EditorGUILayout.IntField("Multiplier", Mathf.Max(1, newTotalRows));
 
 
@@ -263,6 +265,7 @@ public class LevelInspectorScript : Editor
     {
         List<Mode> modes = EditorUtilityScene.GetListFromEnum<Mode>();
         List<string> modeLabels = new List<string>();
+
         foreach (Mode mode in modes)
         {
             modeLabels.Add(mode.ToString());
@@ -314,23 +317,24 @@ public class LevelInspectorScript : Editor
     private void EventHandler()
     {
         HandleUtility.AddDefaultControl(GUIUtility.GetControlID(FocusType.Passive));
+
         Camera camera = SceneView.currentDrawingSceneView.camera;
 
         Vector3 mousePosition = Event.current.mousePosition;
         mousePosition = new Vector2(mousePosition.x, camera.pixelHeight - mousePosition.y);
 
         Vector3 worldPos = camera.ScreenToWorldPoint(mousePosition);
+
         Vector3 gridPos = myTarget.WorldToGridCoordinates(worldPos);
 
-        Debug.Log("worldPos" + worldPos);
-        Debug.Log("gridPos" + gridPos);
+
 
         int col = (int)gridPos.x;
-        int row = (int)gridPos.z;
+        int row = (int)gridPos.y;
 
         if (myTarget.IsInsideGridBounds(col, row))
         {
-
+            
         }
 
 
@@ -385,9 +389,9 @@ public class LevelInspectorScript : Editor
 
     private void Paint(int col, int row)
     {
+
         if (!myTarget.IsInsideGridBounds(col, row) || pieceSelected == null)
         {
-
             return;
         }
 
@@ -399,12 +403,17 @@ public class LevelInspectorScript : Editor
 
         Debug.LogFormat("GridPos {0},{1}", col, row);
 
+
         GameObject obj = PrefabUtility.InstantiatePrefab(pieceSelected.gameObject) as GameObject;
 
         obj.transform.parent = myTarget.transform;
+
         obj.name = string.Format("{0},{1},{2}", col, row, obj.name);
+
         obj.transform.position = myTarget.GridToWorldPoint(col, row);
-        obj.hideFlags = HideFlags.HideInHierarchy;
+
+        //obj.hideFlags = HideFlags.HideInHierarchy;
+
         myTarget.Pieces[col + row * myTarget.TotalRows] = obj.GetComponent<LevelPiece>();
     }
 
