@@ -11,7 +11,7 @@ public class ObjectWindow : EditorWindow
 
 
     public static ObjectWindow instance;
-    private string path = "Assets/Prefabs/LevelItems";
+    private string path = "Assets/Prefabs/Bricks";
     private List<InfoLevelPiece> items;
     private Dictionary<InfoLevelPiece.Category, List<InfoLevelPiece>> categorizedItems;
     private Dictionary<InfoLevelPiece, Texture2D> previews;
@@ -58,6 +58,7 @@ public class ObjectWindow : EditorWindow
         items = EditorUtilityScene.GetAssetsWithScript<InfoLevelPiece>(path);
         categorizedItems = new Dictionary<InfoLevelPiece.Category, List<InfoLevelPiece>>();
         previews = new Dictionary<InfoLevelPiece, Texture2D>();
+
         foreach (InfoLevelPiece.Category category in categories)
         {
             categorizedItems.Add(category, new List<InfoLevelPiece>());
@@ -73,6 +74,7 @@ public class ObjectWindow : EditorWindow
     {
         categories = EditorUtilityScene.GetListFromEnum<InfoLevelPiece.Category>();
         categoryLabel = new List<string>();
+
         foreach (InfoLevelPiece.Category category in categories)
         {
             categoryLabel.Add(category.ToString());
@@ -83,9 +85,13 @@ public class ObjectWindow : EditorWindow
     {
         int index = (int)categorySelected;
         index = GUILayout.Toolbar(index, categoryLabel.ToArray(), tabStyle);
+
         categorySelected = categories[index];
     }
 
+    /// <summary>
+    /// Draw les items
+    /// </summary>
     private void DrawScroll()
     {
         if (categorizedItems[categorySelected].Count == 0)
@@ -93,14 +99,23 @@ public class ObjectWindow : EditorWindow
             EditorGUILayout.HelpBox("La catégorie est vide ! ", MessageType.Info);
             return;
         }
+
         int rowCapacity = Mathf.FloorToInt(position.width / (buttonWidth));
+
         scrollPosition = GUILayout.BeginScrollView(scrollPosition);
+
         int selectionGridIndex = -1;
         selectionGridIndex = GUILayout.SelectionGrid(selectionGridIndex, GetGUIContentsFromItems(), rowCapacity, GetGUIStyle());
+
         GetSelectedItem(selectionGridIndex);
+
         GUILayout.EndScrollView();
     }
 
+
+    /// <summary>
+    /// Génère une Dictionary de key "InfoLevelPiece" et d'élément Texture2D pour l'affichage en window
+    /// </summary>
     private void GeneratePreviews()
     {
         foreach (InfoLevelPiece item in items)
@@ -118,6 +133,7 @@ public class ObjectWindow : EditorWindow
         }
     }
 
+
     private GUIContent[] GetGUIContentsFromItems()
     {
         List<GUIContent> guiContents = new List<GUIContent>();
@@ -125,6 +141,7 @@ public class ObjectWindow : EditorWindow
         if (previews.Count == items.Count)
         {
             int totalItems = categorizedItems[categorySelected].Count;
+
             for (int i = 0; i < totalItems; i++)
             {
                 GUIContent guiContent = new GUIContent();
