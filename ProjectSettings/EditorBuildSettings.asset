@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/TristanTestScene/Menu.unity
     guid: acbe7b5099526764d9a7ccbc5fdc3514
   - enabled: 1
+    path: Assets/Scenes/AlexisSceneLD/NetworkScene.unity
+    guid: 5136f241a2f8faa4cb31c1bd7bc65ef8
+  - enabled: 0
     path: Assets/Scenes/ScenePlaytest.unity
     guid: 459eed0a4c2af3e4aafaa7fe404ff0a9
   - enabled: 0

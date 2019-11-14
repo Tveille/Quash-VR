@@ -37,7 +37,7 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
 
         if (PhotonNetwork.CurrentRoom == null || PhotonNetwork.CurrentRoom.Players == null)
             return;
-
+        
         foreach(KeyValuePair<int, Player> playerInfo in PhotonNetwork.CurrentRoom.Players){
             AddPlayerListing(playerInfo.Value);
         }        
