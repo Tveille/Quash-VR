@@ -201,6 +201,7 @@ GameObject:
   - component: {fileID: 3993434249537831826}
   - component: {fileID: 4702033048848065624}
   - component: {fileID: 1163696776}
+  - component: {fileID: 1226541883389966132}
   m_Layer: 0
   m_Name: LeftController
   m_TagString: Untagged
@@ -410,6 +411,190 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1163696776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150532118874212417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b7c8f5f1a0f45b4e99e3fbcbc5b94f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnTriggerPressed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: OnPlayer1LeftTriggerPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnTriggerReleased:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: OnPlayer1LeftTriggerRelease
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnTriggerTouchStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerTouchEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerHairlineStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerHairlineEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerClicked:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerUnclicked:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerAxisChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGripPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGripReleased:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGripTouchStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGripTouchEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGripHairlineStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGripHairlineEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGripClicked:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGripUnclicked:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGripAxisChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTouchpadPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTouchpadReleased:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTouchpadTouchStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTouchpadTouchEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTouchpadAxisChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnButtonOnePressed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnButtonOneReleased:
+    m_PersistentCalls:
+      m_Calls: []
+  OnButtonOneTouchStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnButtonOneTouchEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnButtonTwoPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnButtonTwoReleased:
+    m_PersistentCalls:
+      m_Calls: []
+  OnButtonTwoTouchStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnButtonTwoTouchEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStartMenuPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStartMenuReleased:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAliasPointerOn:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAliasPointerOff:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAliasPointerSet:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAliasGrabOn:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAliasGrabOff:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAliasUseOn:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAliasUseOff:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAliasUIClickOn:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAliasUIClickOff:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAliasMenuOn:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAliasMenuOff:
+    m_PersistentCalls:
+      m_Calls: []
+  OnControllerEnabled:
+    m_PersistentCalls:
+      m_Calls: []
+  OnControllerDisabled:
+    m_PersistentCalls:
+      m_Calls: []
+  OnControllerIndexChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnControllerModelAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+  OnControllerVisible:
+    m_PersistentCalls:
+      m_Calls: []
+  OnControllerHidden:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1226541883389966132
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1361,7 +1546,7 @@ Transform:
   m_Father: {fileID: 8166748994558718948}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2139520317
+--- !u!114 &1986463266
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2015,7 +2200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8166748994558718948
 Transform:
   m_ObjectHideFlags: 0
@@ -2255,15 +2440,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7801512562541541113}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7800561921727614459 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1587602180963074, guid: be540b97364be0a4890e39e62ac89ed1,
-    type: 3}
-  m_PrefabInstance: {fileID: 7801512562541541113}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7800370309141272087 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1391022766006510, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 3}
+  m_PrefabInstance: {fileID: 7801512562541541113}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7800561921727614459 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1587602180963074, guid: be540b97364be0a4890e39e62ac89ed1,
     type: 3}
   m_PrefabInstance: {fileID: 7801512562541541113}
   m_PrefabAsset: {fileID: 0}
