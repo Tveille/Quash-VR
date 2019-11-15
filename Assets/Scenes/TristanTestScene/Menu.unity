@@ -15685,6 +15685,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VRTK_Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8976967245826851535, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7801512562686851361, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
         type: 3}
       propertyPath: m_ClearFlags
