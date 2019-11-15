@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon;
+using Photon.Pun;
 
-public class MagicBallRacketInterractionTests : MonoBehaviour
+public class MagicBallRacketInterractionTests : MonoBehaviourPunCallbacks, IPunObservable
 {
     private enum BallState
     {
@@ -61,20 +63,25 @@ public class MagicBallRacketInterractionTests : MonoBehaviour
 
     private Vector3 lastVelocity;
 
+    PhotonView view;
+
     void Start()
     {
+        view = GetComponent<PhotonView>();
         rigidbody = GetComponent<Rigidbody>();
         ballState = BallState.NORMAL;
     }
 
     private void FixedUpdate()
     {
-        lastVelocity = rigidbody.velocity;  // Vitesse avant contact necessaire pour le calcul du rebond (méthode Bounce)
 
+        lastVelocity = rigidbody.velocity;  // Vitesse avant contact necessaire pour le calcul du rebond (méthode Bounce)
+        
         if (ballState == BallState.NORMAL)
             rigidbody.AddForce(gravity * Vector3.down);
         else if (ballState == BallState.SLOW)
             rigidbody.AddForce(gravity / (slowness * slowness) * Vector3.down);
+        
     }
 
     private void OnCollisionEnter(Collision other)
@@ -253,4 +260,21 @@ public class MagicBallRacketInterractionTests : MonoBehaviour
     {
         return slope * variable + offset;
     }
+
+    #region IPunObservable implementation
+    void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+{
+    if (stream.IsWriting)
+    {
+        stream.SendNext(transform.position);
+        stream.SendNext(transform.rotation);
+
+    }
+    else
+    {
+        transform.position = (Vector3)stream.ReceiveNext();
+        transform.rotation = (Quaternion)stream.ReceiveNext();
+    }
+}
+    #endregion
 }

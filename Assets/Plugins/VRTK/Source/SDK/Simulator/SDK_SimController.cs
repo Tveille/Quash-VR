@@ -291,7 +291,10 @@ namespace VRTK
         /// <returns>A GameObject containing the object that has a render model for the controller.</returns>
         public override GameObject GetControllerRenderModel(VRTK_ControllerReference controllerReference)
         {
-            return controllerReference.scriptAlias.transform.parent.Find("Hand").gameObject;
+            if (controllerReference.scriptAlias.transform.parent.Find("Hand").gameObject != null){
+                return controllerReference.scriptAlias.transform.parent.Find("Hand").gameObject;
+            }
+            return null;
         }
 
         /// <summary>
