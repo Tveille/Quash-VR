@@ -34,5 +34,11 @@ MonoBehaviour:
   - DestroySpaceship
   - Fire
   - RespawnSpaceship
+  - RacketArcadeHit
+  - RacketBasicPhysicHit
+  - RacketMediumPhysicHit
+  - RacketMixedHit
+  - HitUpdate
+  - OnHitCollision
   DisableAutoOpenWizard: 1
   ShowSettings: 1
