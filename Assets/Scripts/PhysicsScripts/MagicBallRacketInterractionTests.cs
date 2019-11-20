@@ -76,9 +76,9 @@ public class MagicBallRacketInterractionTests : MonoBehaviourPunCallbacks, IPunO
 
     private void FixedUpdate()
     {
-        view.RPC("HitUpdate", RpcTarget.All);
+      //  view.RPC("HitUpdate", RpcTarget.All);
         HitUpdate();
-        Debug.Log(view.IsMine);
+       // Debug.Log(view.IsMine);
     }
 
     [PunRPC]
