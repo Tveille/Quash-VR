@@ -64,6 +64,8 @@ public class MagicBallRacketInterractionTests : MonoBehaviourPunCallbacks, IPunO
     private Vector3 lastVelocity;
 
     PhotonView view;
+    Vector3 myVel;
+    
 
     void Start()
     {
@@ -74,45 +76,57 @@ public class MagicBallRacketInterractionTests : MonoBehaviourPunCallbacks, IPunO
 
     private void FixedUpdate()
     {
+        view.RPC("HitUpdate", RpcTarget.All);
+        HitUpdate();
+        Debug.Log(view.IsMine);
+    }
 
+    [PunRPC]
+    private void HitUpdate(){
         lastVelocity = rigidbody.velocity;  // Vitesse avant contact necessaire pour le calcul du rebond (méthode Bounce)
         
         if (ballState == BallState.NORMAL)
             rigidbody.AddForce(gravity * Vector3.down);
         else if (ballState == BallState.SLOW)
             rigidbody.AddForce(gravity / (slowness * slowness) * Vector3.down);
-        
     }
 
     private void OnCollisionEnter(Collision other)
     {
         AudioManager.instance?.PlayHitSound(other.gameObject.tag, other.GetContact(0).point, Quaternion.LookRotation(other.GetContact(0).normal), RacketManager.instance.racket.GetComponent<PhysicInfo>().GetVelocity().magnitude);
-
-        if (other.gameObject.CompareTag("Racket"))
+        
+        if (other.gameObject.CompareTag("Racket") )//&& view.IsMine)
         {
             Vector3 newVelocity = Vector3.zero;
 
             switch (physicsUsed)
             {
                 case RacketInteractionType.BASICARCADE:
+                   
                     newVelocity = RacketArcadeHit();
+                    myVel = newVelocity;
                     break;
 
                 case RacketInteractionType.BASICPHYSIC:
+                    
                     newVelocity = RacketBasicPhysicHit(other);
+                    myVel = newVelocity;
                     break;
 
                 case RacketInteractionType.MEDIUMPHYSIC:
+                    
                     newVelocity = RacketMediumPhysicHit(other);
+                    myVel = newVelocity;
+
                     break;
                 case RacketInteractionType.MIXED:
+        
                     newVelocity = RacketMixedHit(other);
+                    myVel = newVelocity;
                     break;
             }
-
-            rigidbody.velocity = ClampVelocity(hitSpeedMultiplier * newVelocity);
-            RacketManager.instance.OnHitEvent(gameObject);  // Ignore collision pour quelques frames.
-            ballState = BallState.NORMAL;
+             OnHitCollision(newVelocity);
+             view.RPC("OnHitCollision", RpcTarget.All, myVel);
         }
         else if (other.gameObject.CompareTag("FrontWall") || other.gameObject.CompareTag("Brick"))
         {
@@ -124,6 +138,14 @@ public class MagicBallRacketInterractionTests : MonoBehaviourPunCallbacks, IPunO
 
 
         BallEventManager.instance?.OnBallCollision(new BallCollisionInfo(other.gameObject.tag, other.GetContact(0).point, other.GetContact(0).normal,lastVelocity));
+    }
+
+    [PunRPC]
+    private void OnHitCollision(Vector3 direction){
+        direction = myVel;
+        rigidbody.velocity = ClampVelocity(hitSpeedMultiplier * direction);
+        RacketManager.instance.OnHitEvent(gameObject);  // Ignore collision pour quelques frames.
+        ballState = BallState.NORMAL;
     }
 
 
@@ -170,11 +192,13 @@ public class MagicBallRacketInterractionTests : MonoBehaviourPunCallbacks, IPunO
 
     //////////////////////////////////////////    Racket Interraction     /////////////////////////////////////////////////
 
+    [PunRPC]
     private Vector3 RacketArcadeHit()
     {
         return RacketManager.instance.racket.GetComponent<PhysicInfo>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
     }
 
+    [PunRPC]
     private Vector3 RacketBasicPhysicHit(Collision collision)       // Ajout d'un seuil pour pouvoir jouer avec la balle?
     {
         Vector3 racketVelocity = RacketManager.instance.racket.GetComponent<PhysicInfo>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
@@ -187,6 +211,7 @@ public class MagicBallRacketInterractionTests : MonoBehaviourPunCallbacks, IPunO
         return -normalVelocity + tangentVelocity;
     }
 
+    [PunRPC]
     private Vector3 RacketMediumPhysicHit(Collision collision) // Ajout d'un seuil pour pouvoir jouer avec la balle?
     {
         Vector3 racketVelocity = RacketManager.instance.racket.GetComponent<PhysicInfo>().GetVelocity(); // Trés sale! A modifier avec les managers Singleton
@@ -199,6 +224,7 @@ public class MagicBallRacketInterractionTests : MonoBehaviourPunCallbacks, IPunO
         return normalVelocity + tangentVelocity;
     }
 
+    [PunRPC]
     private Vector3 RacketMixedHit(Collision collision)
     {
         return RacketArcadeHit() * (1 - mixRatio) + RacketBasicPhysicHit(collision) * mixRatio;
