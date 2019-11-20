@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System.IO;
 using Malee.Editor;
 
 
 [CustomEditor(typeof(LevelScript))]
 public class LevelInspectorScript : Editor
 {
-    public enum Mode
+    public enum EditionMode
     {
-        View,
         Paint2D,
         Erase2D,
     }
 
-    private Mode selectedMode;
-    private Mode currentMode;
+    private EditionMode selectedMode;
+    private EditionMode currentMode;
 
     LevelScript myTarget;
 
@@ -33,6 +33,17 @@ public class LevelInspectorScript : Editor
     SerializedProperty editorSpaceProperty;
     ReorderableList mySpace;
 
+    private string levelsPath = "Assets/ScriptableObjects/Levels";
+    LevelsScriptable[] levels;
+    LevelsScriptable currentLevel;
+
+    WallBuilds walls;
+    Wall currentLayer;
+    int selectedLayer;
+    int numberOfLayers;
+
+    Texture BgTexture;
+
 
 
 
@@ -44,8 +55,10 @@ public class LevelInspectorScript : Editor
         editorSpaceProperty = serializedObject.FindProperty("editorSpace");
         mySpace = new ReorderableList(editorSpaceProperty, false, false, true);
 
+        BgTexture = EditorGUIUtility.Load("Assets/Graphics/Sprites/Rounded.png") as Texture;
+
+
         InitLevel();
-        ResetResizeValues();
         SubscribeEvents();
         InitStyles();
 
@@ -79,10 +92,41 @@ public class LevelInspectorScript : Editor
     }
 
 
-
-
     private void InitLevel()
     {
+
+        if (AssetDatabase.IsValidFolder("Assets/ScriptableObjects/Levels"))
+        {
+            string[] levelsPaths = AssetDatabase.FindAssets("t:scriptableobject", new[] { "Assets/ScriptableObjects/Levels" });
+            levels = new LevelsScriptable[levelsPaths.Length];
+
+            for (int i = 0; i < levelsPaths.Length; i++)
+            {
+
+                levels[i] = AssetDatabase.LoadAssetAtPath(AssetDatabase.GUIDToAssetPath(levelsPaths[i]), typeof(LevelsScriptable)) as LevelsScriptable;
+
+            }
+
+            //System.Array.Reverse(levels);
+
+            //myTarget.allLevels = new LevelsScriptable[levels.Length];
+            myTarget.allLevels = levels;
+
+        }
+        else
+        {
+            myTarget.allLevels = new LevelsScriptable[0];
+        }
+
+        AssetDatabase.Refresh();
+        AssetDatabase.SaveAssets();
+
+
+        Debug.Log("INIT");
+
+
+        //myTarget.allLevels = AssetDatabase.FindAssets("t:LevelsScriptable").Length;
+
         //mySerializedObject = new SerializedObject(myTarget);
 
         //if (myTarget.Pieces == null || myTarget.Pieces.Length == 0)
@@ -93,47 +137,17 @@ public class LevelInspectorScript : Editor
         // myTarget.transform.hideFlags = HideFlags.NotEditable;
     }
 
-    private void ResetResizeValues()
-    {
-        //newTotalColumns = myTarget.TotalRows;
-        //newTotalRows = myTarget.TotalColumns;
-    }
-
-    private void ResizeLevel()
-    {
-        //LevelPiece[] newPieces = new LevelPiece[newTotalColumns * newTotalRows];
-
-        //for (int col = 0; col < myTarget.TotalRows; col++)
-        //{
-        //    for (int row = 0; row < myTarget.TotalColumns; row++)
-        //    {
-        //        if (col < newTotalColumns && row < newTotalRows)
-        //        {
-        //            newPieces[col + row * newTotalColumns] = myTarget.Pieces[col + row * myTarget.TotalRows];
-        //        }
-        //        else
-        //        {
-        //            LevelPiece piece = myTarget.Pieces[col + row * myTarget.TotalRows];
-        //            if (piece != null)
-        //            {
-        //                Object.DestroyImmediate(piece.gameObject);
-        //            }
-        //        }
-        //    }
-        //}
-        //myTarget.Pieces = newPieces;
-        //myTarget.TotalRows = newTotalColumns;
-        //myTarget.TotalColumns = newTotalRows;
-    }
 
 
 
 
     public override void OnInspectorGUI()
     {
+        base.OnInspectorGUI();
+
         DrawLevelDataGUI();
-        //DrawLevelSizeGUI();
         DrawPieceSelectedGUI();
+
 
         if (GUI.changed)
         {
@@ -143,6 +157,8 @@ public class LevelInspectorScript : Editor
 
     private void OnSceneGUI()
     {
+        DrawLayerGUI();
+        DrawLevelGUI();
         DrawModeGUI();
         ModeHandler();
         EventHandler();
@@ -156,21 +172,22 @@ public class LevelInspectorScript : Editor
 
         EditorGUILayout.BeginVertical("box");
 
+        myTarget.selectedLevel = (LevelsScriptable)EditorGUILayout.ObjectField("Selected Level", myTarget.selectedLevel, typeof(LevelsScriptable), false);
+
+
+        //levelsList.DoLayoutList();
+
         //myTarget.Settings = (LevelSettings) EditorGUILayout.ObjectField("Level Settings", myTarget.Settings, 
         //typeof(LevelSettings), false);
 
-        if (myTarget.Settings != null)
+        if (myTarget.selectedLevel == null)
         {
-            //Editor.CreateEditor(myTarget.Settings).OnInspectorGUI();
-        }
-        else
-        {
-            EditorGUILayout.HelpBox("Tu dois attacher un levelsettings.asset", MessageType.Warning);
+            EditorGUILayout.HelpBox("Tu dois attacher un level.asset", MessageType.Warning);
         }
 
-        myTarget.nameLevel = EditorGUILayout.TextField("Name of Level", myTarget.nameLevel);
-        myTarget.background = (Sprite)EditorGUILayout.ObjectField("Background", myTarget.background,
-                                                                                     typeof(Sprite), false);
+        //myTarget.nameLevel = EditorGUILayout.TextField("Name of Level", myTarget.nameLevel);
+        //myTarget.background = (Sprite)EditorGUILayout.ObjectField("Background", myTarget.background,
+        //                                                                           typeof(Sprite), false);
 
         myTarget.xGridPlacement = EditorGUILayout.FloatField("Placement de la grille en X", myTarget.xGridPlacement);
         myTarget.yGridPlacement = EditorGUILayout.FloatField("Placement de la grille en Y", myTarget.yGridPlacement);
@@ -225,7 +242,7 @@ public class LevelInspectorScript : Editor
                 "Level Creator",
                 "Êtes-vous sûr de vouloir reset le level?\nCette action est irréversible", "Ouais", "Nop"))
             {
-                ResizeLevel();
+                //ResizeLevel();
             }
         }
 
@@ -235,7 +252,7 @@ public class LevelInspectorScript : Editor
 
         if (buttonReset)
         {
-            ResetResizeValues();
+            //ResetResizeValues();
         }
         GUI.enabled = OldEnabled;
 
@@ -263,20 +280,144 @@ public class LevelInspectorScript : Editor
 
     public void DrawModeGUI()
     {
-        List<Mode> modes = EditorUtilityScene.GetListFromEnum<Mode>();
+        List<EditionMode> modes = EditorUtilityScene.GetListFromEnum<EditionMode>();
         List<string> modeLabels = new List<string>();
 
-        foreach (Mode mode in modes)
+        foreach (EditionMode mode in modes)
         {
             modeLabels.Add(mode.ToString());
         }
 
+
         Handles.BeginGUI();
 
-        GUILayout.BeginArea(new Rect(10f, 10f, 360, 40f));
-        selectedMode = (Mode)GUILayout.Toolbar((int)currentMode, modeLabels.ToArray(), GUILayout.ExpandHeight(true));
+        EditorGUI.BeginDisabledGroup(myTarget.selectedLevel == null);
+
+        GUILayout.BeginArea(new Rect(10f, 100, 240, 30f));
+        selectedMode = (EditionMode)GUILayout.Toolbar((int)currentMode, modeLabels.ToArray(), GUILayout.ExpandHeight(true));
         GUILayout.EndArea();
 
+        EditorGUI.EndDisabledGroup();
+
+        Handles.EndGUI();
+    }
+
+
+    public void DrawLevelGUI()
+    {
+
+        Handles.BeginGUI();
+
+        GUI.Box(new Rect(5, 20, 250, 115), "");
+
+        GUILayout.BeginArea(new Rect(10f, 25, 190, 30));
+        myTarget.selectedLevel = (LevelsScriptable)EditorGUILayout.ObjectField(myTarget.selectedLevel, typeof(LevelsScriptable), false);
+        GUILayout.EndArea();
+
+
+        if (GUI.Button(new Rect(210, 22.5f, 40, 20), new GUIContent("New", "Create a new Level")))
+        {
+            string path = "Assets/ScriptableObjects/Levels";
+
+            if (!AssetDatabase.IsValidFolder(path))
+            {
+                AssetDatabase.CreateFolder("Assets/ScriptableObjects", "Levels");
+            }
+
+            LevelsScriptable newLevel = new LevelsScriptable();
+
+
+            string assetPath = path + "/Level00.asset";
+            assetPath = AssetDatabase.GenerateUniqueAssetPath(assetPath);
+            AssetDatabase.CreateAsset(newLevel, assetPath);
+
+            AssetDatabase.Refresh();
+            AssetDatabase.SaveAssets();
+
+            EditorGUIUtility.PingObject(newLevel);
+            currentLevel = newLevel;
+            myTarget.selectedLevel = currentLevel;
+
+
+
+
+            newLevel.level.levelWallBuilds.walls = new Wall[1];
+
+
+
+            string[] levelsPaths = AssetDatabase.FindAssets("t:scriptableobject", new[] { "Assets/ScriptableObjects/Levels" });
+            levels = new LevelsScriptable[levelsPaths.Length];
+
+            for (int i = 0; i < levelsPaths.Length; i++)
+            {
+
+                levels[i] = AssetDatabase.LoadAssetAtPath(AssetDatabase.GUIDToAssetPath(levelsPaths[i]), typeof(LevelsScriptable)) as LevelsScriptable;
+                Debug.Log("data path : " + levelsPaths[i]);
+
+            }
+
+
+            myTarget.allLevels = levels;
+        }
+
+        Handles.EndGUI();
+    }
+
+    public void DrawLayerGUI()
+    {
+        Handles.BeginGUI();
+
+        GUIStyle layerStyle = EditorStyles.centeredGreyMiniLabel;
+        layerStyle = EditorStyles.boldLabel;
+
+        GUIStyle buttonsStyle = EditorStyles.helpBox;
+        //buttonsStyle.fontStyle = ;
+
+        GUI.backgroundColor = Color.white;
+
+        if (GUI.Button(new Rect(55, 50, 20, 18), new GUIContent("<", "previous layer"), buttonsStyle))
+        {
+            if (selectedLayer < 0)
+            {
+                selectedLayer--;
+            }
+        }
+
+        GUILayout.BeginArea(new Rect(10, 50, 190, 30));
+
+        GUI.Label(new Rect(0, 0, 60, 25), "Layer", EditorStyles.boldLabel);
+
+
+
+        EditorGUI.BeginChangeCheck();
+
+        selectedLayer = EditorGUI.IntField(new Rect(60, 0, 22, 18), selectedLayer, layerStyle);
+
+        GUI.Label(new Rect(81, 0, 30, 25), "/");
+
+        numberOfLayers = EditorGUI.IntField(new Rect(90, 0, 22, 18), numberOfLayers, layerStyle);
+
+
+        EditorGUI.EndChangeCheck();
+
+        if (GUI.changed)
+        {
+            currentLayer = myTarget.selectedLevel.level.levelWallBuilds.walls[selectedLayer];
+        }
+
+
+
+        GUILayout.EndArea();
+
+        if (GUI.Button(new Rect(121, 50, 20, 18), new GUIContent(">", "next layer"), buttonsStyle))
+        {
+            if (selectedLayer < numberOfLayers)
+            {
+                selectedLayer++;
+            }
+        }
+
+        GUI.backgroundColor = Color.white;
         Handles.EndGUI();
     }
 
@@ -292,13 +433,9 @@ public class LevelInspectorScript : Editor
     {
         switch (selectedMode)
         {
-            case Mode.Paint2D:
-            case Mode.Erase2D:
+            case EditionMode.Paint2D:
+            case EditionMode.Erase2D:
                 Tools.current = Tool.None;
-                break;
-            case Mode.View:
-            default:
-                Tools.current = Tool.View;
                 break;
         }
 
@@ -334,13 +471,13 @@ public class LevelInspectorScript : Editor
 
         if (myTarget.IsInsideGridBounds(col, row))
         {
-            
+
         }
 
 
         switch (currentMode)
         {
-            case Mode.Paint2D:
+            case EditionMode.Paint2D:
                 SceneView _scene = SceneView.lastActiveSceneView;
                 _scene.orthographic = true;
 
@@ -362,7 +499,7 @@ public class LevelInspectorScript : Editor
                 }
                 break;
 
-            case Mode.Erase2D:
+            case EditionMode.Erase2D:
                 SceneView _scene2 = SceneView.lastActiveSceneView;
                 _scene2.orthographic = true;
 
@@ -380,10 +517,6 @@ public class LevelInspectorScript : Editor
                     Erase(col, row);
                 }
                 break;
-
-            case Mode.View:
-            default:
-                break;
         }
     }
 
@@ -396,10 +529,10 @@ public class LevelInspectorScript : Editor
         }
 
 
-        if (myTarget.Pieces[col + row * myTarget.TotalRows] != null)
-        {
-            DestroyImmediate(myTarget.Pieces[col + row * myTarget.TotalRows].gameObject);
-        }
+        //if (myTarget.Pieces[col + row * myTarget.TotalRows] != null)
+        //{
+        //    DestroyImmediate(myTarget.Pieces[col + row * myTarget.TotalRows].gameObject);
+        //}
 
         Debug.LogFormat("GridPos {0},{1}", col, row);
 
@@ -414,7 +547,7 @@ public class LevelInspectorScript : Editor
 
         //obj.hideFlags = HideFlags.HideInHierarchy;
 
-        myTarget.Pieces[col + row * myTarget.TotalRows] = obj.GetComponent<LevelPiece>();
+        //myTarget.Pieces[col + row * myTarget.TotalRows] = obj.GetComponent<LevelPiece>();
     }
 
     private void Erase(int col, int row)
@@ -424,10 +557,10 @@ public class LevelInspectorScript : Editor
             return;
         }
 
-        if (myTarget.Pieces[col + row * myTarget.TotalRows] != null)
-        {
-            DestroyImmediate(myTarget.Pieces[col + row * myTarget.TotalRows].gameObject);
-        }
+        //if (myTarget.Pieces[col + row * myTarget.TotalRows] != null)
+        //{
+        //    DestroyImmediate(myTarget.Pieces[col + row * myTarget.TotalRows].gameObject);
+        //}
     }
 
     private void Edit(int col, int row)

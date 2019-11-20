@@ -22676,125 +22676,15 @@ MonoBehaviour:
   xGridPlacement: -2.5
   yGridPlacement: 1
   zGridPlacement: 24.4
-  pieces:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   background: {fileID: 0}
-  settings:
-    levelWallBuilds:
-      walls: []
-    levelZoneConfig:
-      layersZoneConfiguration: []
-  allLevels: []
-  currentLevel: {fileID: 0}
+  allLevels:
+  - {fileID: 11400000, guid: c72e6a29d4836db4ebee987b960831fc, type: 2}
+  selectedLevel: {fileID: 11400000, guid: c72e6a29d4836db4ebee987b960831fc, type: 2}
   levelCategories:
     levelWallBuilds:
       walls: []
-    levelZoneConfig:
-      layersZoneConfiguration: []
+  numberOfWallLayer: 0
+  currentWallLayer: 0
 --- !u!1001 &1332850564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41275,26 +41165,6 @@ PrefabInstance:
       propertyPath: racket
       value: 
       objectReference: {fileID: 1668526753}
-    - target: {fileID: 6538805861387698752, guid: 58f791378df5ec443a772977301f5bc8,
-        type: 3}
-      propertyPath: currentLevelConfig.levelWallBuilds.walls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6538805861387698752, guid: 58f791378df5ec443a772977301f5bc8,
-        type: 3}
-      propertyPath: currentLevelConfig.levelZoneConfig.layersZoneConfiguration.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6538805861387698752, guid: 58f791378df5ec443a772977301f5bc8,
-        type: 3}
-      propertyPath: currentLevelConfig.levelWallBuilds.walls.Array.data[0].wallBricks.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6538805861387698752, guid: 58f791378df5ec443a772977301f5bc8,
-        type: 3}
-      propertyPath: currentLevelConfig.levelZoneConfig.layersZoneConfiguration.Array.data[0].configuration.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58f791378df5ec443a772977301f5bc8, type: 3}
 --- !u!4 &1663594260 stripped

@@ -17,7 +17,6 @@ public class LevelsScriptable : ScriptableObject
 public class LevelSettings 
 {
     public WallBuilds levelWallBuilds;
-    public LayerZoneConfigurations levelZoneConfig;
 }
 
 
@@ -52,48 +51,4 @@ public struct BrickSettings
     int brickID;
     Vector3 brickPosition;
     Vector3[] waypointsStorage;
-}
-
-
-
-
-
-/////////////////////////////  ZONES  ////////////////////////////////
-
-[System.Serializable]
-/// <summary>
-/// Every patterns for each Layer
-/// </summary>
-public class LayerZoneConfigurations
-{
-    public Configuration[] layersZoneConfiguration;
-}
-
-[System.Serializable]
-/// <summary>
-/// Patterns of zones for One layer
-/// </summary>
-public class Configuration
-{
-    public Rounds[] configuration;
-}
-
-[System.Serializable]
-/// <summary>
-/// Pattern of zones
-/// </summary>
-public class Rounds
-{
-    public ZoneSettings[] round;
-    public float delayBeforeNextRound;
-}
-
-/// <summary>
-/// Zone Parameters
-/// </summary>
-public struct ZoneSettings
-{
-    public int zoneID;
-    public Vector3 zonePosition;
-    public float duration;
 }
