@@ -14,7 +14,7 @@ public class LevelsScriptable : ScriptableObject
 }
 
 [System.Serializable]
-public class LevelSettings 
+public class LevelSettings
 {
     public WallBuilds levelWallBuilds;
 }
@@ -39,7 +39,18 @@ public class WallBuilds
 /// </summary>
 public class Wall
 {
-    public BrickSettings[] wallBricks;
+    public List<BrickSettings> wallBricks;
+
+    public Wall(int numberOfBricks)
+    {
+
+        wallBricks = new List<BrickSettings>();
+
+        for (int i = 0; i < numberOfBricks; i++)
+        {
+            wallBricks.Add(new BrickSettings());
+        }
+    }
 }
 
 [System.Serializable]
@@ -48,7 +59,7 @@ public class Wall
 /// </summary>
 public struct BrickSettings
 {
-    int brickID;
-    Vector3 brickPosition;
-    Vector3[] waypointsStorage;
+    public int brickID;
+    public Vector3 brickPosition;
+    public Vector3[] waypointsStorage;
 }

@@ -22679,10 +22679,1821 @@ MonoBehaviour:
   background: {fileID: 0}
   allLevels:
   - {fileID: 11400000, guid: c72e6a29d4836db4ebee987b960831fc, type: 2}
-  selectedLevel: {fileID: 11400000, guid: c72e6a29d4836db4ebee987b960831fc, type: 2}
+  - {fileID: 11400000, guid: c49edb96e1391b54fb2a52f0a4a3e3f3, type: 2}
+  - {fileID: 11400000, guid: 9f8d0129cb67c9944a1c57139ef4c69b, type: 2}
+  - {fileID: 11400000, guid: 74a60bb3f085ff24ab14ad052bbe0569, type: 2}
+  - {fileID: 11400000, guid: 079ce941773c7974888d6715b5d25b85, type: 2}
+  - {fileID: 11400000, guid: 771eee0c0aaa53d4a8704a8e63a131cc, type: 2}
+  selectedLevel: {fileID: 11400000, guid: 771eee0c0aaa53d4a8704a8e63a131cc, type: 2}
   levelCategories:
     levelWallBuilds:
-      walls: []
+      walls:
+      - wallBricks:
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+      - wallBricks:
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+      - wallBricks:
+        - brickID: 2
+          brickPosition: {x: 135, y: 56, z: 15}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 3
+          brickPosition: {x: 75, y: 46, z: 25}
+          waypointsStorage: []
+      - wallBricks:
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+      - wallBricks:
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+      - wallBricks:
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
+        - brickID: 0
+          brickPosition: {x: 0, y: 0, z: 0}
+          waypointsStorage: []
   numberOfWallLayer: 0
   currentWallLayer: 0
 --- !u!1001 &1332850564

@@ -25,7 +25,6 @@ public class LevelScript : MonoBehaviour
 
     public float zGridPlacement;
 
-
     [SerializeField]
     public Sprite background;
 
