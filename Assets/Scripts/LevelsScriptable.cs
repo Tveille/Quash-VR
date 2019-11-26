@@ -14,10 +14,9 @@ public class LevelsScriptable : ScriptableObject
 }
 
 [System.Serializable]
-public class LevelSettings 
+public class LevelSettings
 {
     public WallBuilds levelWallBuilds;
-    public LayerZoneConfigurations levelZoneConfig;
 }
 
 
@@ -40,7 +39,18 @@ public class WallBuilds
 /// </summary>
 public class Wall
 {
-    public BrickSettings[] wallBricks;
+    public List<BrickSettings> wallBricks;
+
+    public Wall(int numberOfBricks)
+    {
+
+        wallBricks = new List<BrickSettings>();
+
+        for (int i = 0; i < numberOfBricks; i++)
+        {
+            wallBricks.Add(new BrickSettings());
+        }
+    }
 }
 
 [System.Serializable]
@@ -49,51 +59,7 @@ public class Wall
 /// </summary>
 public struct BrickSettings
 {
-    int brickID;
-    Vector3 brickPosition;
-    Vector3[] waypointsStorage;
-}
-
-
-
-
-
-/////////////////////////////  ZONES  ////////////////////////////////
-
-[System.Serializable]
-/// <summary>
-/// Every patterns for each Layer
-/// </summary>
-public class LayerZoneConfigurations
-{
-    public Configuration[] layersZoneConfiguration;
-}
-
-[System.Serializable]
-/// <summary>
-/// Patterns of zones for One layer
-/// </summary>
-public class Configuration
-{
-    public Rounds[] configuration;
-}
-
-[System.Serializable]
-/// <summary>
-/// Pattern of zones
-/// </summary>
-public class Rounds
-{
-    public ZoneSettings[] round;
-    public float delayBeforeNextRound;
-}
-
-/// <summary>
-/// Zone Parameters
-/// </summary>
-public struct ZoneSettings
-{
-    public int zoneID;
-    public Vector3 zonePosition;
-    public float duration;
+    public int brickID;
+    public Vector3 brickPosition;
+    public Vector3[] waypointsStorage;
 }

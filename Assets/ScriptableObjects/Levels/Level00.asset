@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527f518b627f3ed469e47ed1fd924f24, type: 3}
   m_Name: Level00
   m_EditorClassIdentifier: 
+  level:
+    levelWallBuilds:
+      walls: []

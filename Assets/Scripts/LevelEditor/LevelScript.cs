@@ -25,37 +25,21 @@ public class LevelScript : MonoBehaviour
 
     public float zGridPlacement;
 
-
-    [SerializeField]
-    private LevelPiece[] pieces;
-
     [SerializeField]
     public Sprite background;
 
-    [SerializeField]
-    private LevelSettings settings;
 
-    private string levelsPath = "Assets/ScriptableObjects/Levels";
-    public LevelsScriptable[] allLevels;
+    
+    public LevelsScriptable[] allLevels = new LevelsScriptable[0];
 
-    public LevelsScriptable currentLevel;
+    public LevelsScriptable selectedLevel;
     public LevelSettings levelCategories;
 
+    public int numberOfWallLayer;
+    public int currentWallLayer;
 
 
 
-
-    public LevelSettings Settings
-    {
-        get { return settings; }
-        set { settings = value; }
-    }
-
-    public LevelPiece[] Pieces
-    {
-        get { return pieces; }
-        set { pieces = value; }
-    }
 
 
 
@@ -73,6 +57,11 @@ public class LevelScript : MonoBehaviour
 
 
 
+    public void FromLevelScriptToLevelManager()
+    {
+        //LevelManager.Instance.registeredLevels = new LevelsScriptable[10];
+        //LevelManager.Instance.registeredLevels = allLevels;
+    }
 
     public float maxWidthSpace()
     {
