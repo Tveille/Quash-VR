@@ -47,7 +47,7 @@ public class QPlayerManager : MonoBehaviourPun
     #endregion
 
     public GameObject player1;
-    public GameObject player2 = null;
+    public GameObject player2;
 
     private GameObject player1RightController;
     private GameObject player1LeftController;
@@ -97,6 +97,7 @@ public class QPlayerManager : MonoBehaviourPun
             player2RightController = player2?.GetComponentInChildren<RightControllerGetter>().Get();
         }
     }
+    
 
     ////////////////////////////////////    VRTKUnityEvents Called methods     /////////////////////////////////////
 

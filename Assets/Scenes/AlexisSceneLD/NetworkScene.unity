@@ -78725,6 +78725,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8976967245826851535, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
         type: 3}
+    - target: {fileID: 7029054920403073268, guid: 58f791378df5ec443a772977301f5bc8,
+        type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 8976967245826851535, guid: f74565dd8bbecd347ac68e59bdd6fd2c,
+        type: 3}
     - target: {fileID: 2113905627460504248, guid: 58f791378df5ec443a772977301f5bc8,
         type: 3}
       propertyPath: m_LocalPosition.x
