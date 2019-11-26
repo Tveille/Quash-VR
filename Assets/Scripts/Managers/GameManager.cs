@@ -28,8 +28,8 @@ public class GameManager : MonoBehaviour
     {
         QPlayerManager.instance.SetPlayer(PhotonNetwork.Instantiate(prefabPlayer.name, prefabPlayer.transform.position, Quaternion.identity, 0) as GameObject, 1);
 
-        PhotonNetwork.SendRate = 40;
-        PhotonNetwork.SerializationRate = 40;
+        PhotonNetwork.SendRate = 60;
+        PhotonNetwork.SerializationRate = 60;
     }
     public void RestartScene()
     {
