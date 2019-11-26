@@ -33,20 +33,18 @@ public class QPlayerManager : MonoBehaviourPun
 
     private void Awake()
     {
-        if(instance != null)
+        if(instance)
         {
             Destroy(gameObject);
             return;
         }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(instance);
-        }
+
+        instance = this;
+        DontDestroyOnLoad(instance);
     }
     #endregion
 
-    public GameObject player1;
+    public GameObject player1 = null;
     public GameObject player2 = null;
 
     private GameObject player1RightController;
@@ -54,14 +52,23 @@ public class QPlayerManager : MonoBehaviourPun
 
     private GameObject player2RightController;
     private GameObject player2LeftController;
-    private int refNumber;
 
     private void Start()
     {
         StartCoroutine(SetupControllers());
     }
 
-
+    public void SetPlayer(GameObject player, int PlayerID)
+    {
+        if (PlayerID == 1)
+        {
+            player1 = player;
+        }
+        else if (PlayerID == 2)
+        {
+            player2 = player;
+        }
+    }
 
     public GameObject GetController(PlayerID playerID, PlayerHand playerHand)         //A editer pour chaque cas player
     {
@@ -88,14 +95,17 @@ public class QPlayerManager : MonoBehaviourPun
         yield return new WaitForFixedUpdate();
         if (player1)
         {
-            player1LeftController = player1?.GetComponentInChildren<LeftControllerGetter>().Get();
-            player1RightController = player1?.GetComponentInChildren<RightControllerGetter>().Get();
+            //Debug.LogError(player1.GetComponentInChildren<LeftControllerGetter>());
+            player1LeftController = player1.GetComponentInChildren<LeftControllerGetter>().Get();
+            player1RightController = player1.GetComponentInChildren<RightControllerGetter>().Get();
         }
+        /*
         if (player2)
         {
             player2LeftController = player2?.GetComponentInChildren<LeftControllerGetter>().Get();
             player2RightController = player2?.GetComponentInChildren<RightControllerGetter>().Get();
         }
+        */
     }
 
     ////////////////////////////////////    VRTKUnityEvents Called methods     /////////////////////////////////////
