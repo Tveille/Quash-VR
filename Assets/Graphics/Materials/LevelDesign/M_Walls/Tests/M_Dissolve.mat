@@ -65,6 +65,7 @@ Material:
     - Vector1_2DD77E5F: 2.5
     - Vector1_3207FA27: 0.5
     - Vector1_7CEAB2E0: 0
+    - Vector1_8FA0F9BF: 0
     - Vector1_939CDD3C: 0.8
     - Vector1_9F1E5E16: 0
     - Vector1_A885E10: 1
@@ -74,6 +75,7 @@ Material:
     - Vector1_FFAEB007: -6.08
     - _Alpha: 1
     - _AlphaClip: 0
+    - _AngleRadius: 0.4
     - _Blend: 0
     - _BumpScale: 1
     - _Cull: 2
@@ -107,11 +109,11 @@ Material:
     - Vector3_A1C7960: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _EmissionColor: {r: 0.08873497, g: 2.1185474, b: 1.1868302, a: 1}
+    - _EmissionColor: {r: 0.088735014, g: 2.1185474, b: 0.42703676, a: 1}
     - _GridColor: {r: 0, g: 0, b: 0, a: 0}
     - _RadialShear: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Tiling: {r: 0.5, g: 5, b: 0, a: 0}
+    - _Tiling: {r: 4, g: 4, b: 0, a: 0}
     - _WallColor: {r: 0.9433962, g: 0, b: 0.091300346, a: 0}
 --- !u!114 &8880755464055290328
 MonoBehaviour:
