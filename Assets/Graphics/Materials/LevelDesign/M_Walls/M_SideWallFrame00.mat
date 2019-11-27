@@ -71,7 +71,7 @@ Material:
     - _BumpScale: 1
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DistanceRange: 2
+    - _DistanceRange: 7
     - _DstBlend: 0
     - _EmissiveBrightness: 0.5
     - _EnvironmentReflections: 1
