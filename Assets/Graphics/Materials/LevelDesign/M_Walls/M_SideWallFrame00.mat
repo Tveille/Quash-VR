@@ -57,6 +57,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_50FD37E8_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 030046f1aa531654fb07fe1b460770c4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -67,14 +71,15 @@ Material:
     - _BumpScale: 1
     - _Cull: 2
     - _Cutoff: 0.5
+    - _DistanceRange: 2
     - _DstBlend: 0
-    - _EmissiveBrightness: 0.2
+    - _EmissiveBrightness: 0.5
     - _EnvironmentReflections: 1
     - _FresnelPower: 0.5
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Metallic: 1
+    - _Metallic: 0.85
     - _OcclusionStrength: 1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
@@ -86,10 +91,12 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _AlbedoColor: {r: 0, g: 0, b: 0, a: 0}
+    - Vector3_238A47CB: {r: 0, g: 0, b: 0, a: 0}
+    - _AlbedoColor: {r: 0, g: 0.09776497, b: 1, a: 0}
+    - _BackWallPos: {r: 2.5, g: 3.5, b: -15, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissiveColor: {r: 0.39999998, g: 0.94000006, b: 1, a: 1}
-    - _FresnelColor: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissiveColor: {r: 0.39999995, g: 0.94999987, b: 1, a: 1}
+    - _FresnelColor: {r: 0.3355262, g: 0, b: 0.5, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
