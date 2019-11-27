@@ -111,7 +111,7 @@ Material:
     - _GridColor: {r: 0, g: 0, b: 0, a: 0}
     - _RadialShear: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Tiling: {r: 4, g: 4, b: 0, a: 0}
+    - _Tiling: {r: 0.5, g: 5, b: 0, a: 0}
     - _WallColor: {r: 0.9433962, g: 0, b: 0.091300346, a: 0}
 --- !u!114 &8880755464055290328
 MonoBehaviour:
