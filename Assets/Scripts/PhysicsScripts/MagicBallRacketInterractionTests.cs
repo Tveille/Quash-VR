@@ -77,18 +77,12 @@ public class MagicBallRacketInterractionTests : MonoBehaviourPunCallbacks, IPunO
     }
 
     private void FixedUpdate()
-    {
-        
-
-        if (photonView.IsMine)
-        {
-            lastVelocity = rigidbody.velocity;  // Vitesse avant contact necessaire pour le calcul du rebond (méthode Bounce)
-            if (ballState == BallState.NORMAL)
-                rigidbody.AddForce(gravity * Vector3.down);
-            else if (ballState == BallState.SLOW)
-                rigidbody.AddForce(gravity / (slowness * slowness) * Vector3.down);
-        }
-        
+    {  
+        lastVelocity = rigidbody.velocity;  // Vitesse avant contact necessaire pour le calcul du rebond (méthode Bounce)
+        if (ballState == BallState.NORMAL)
+            rigidbody.AddForce(gravity * Vector3.down);
+        else if (ballState == BallState.SLOW)
+            rigidbody.AddForce(gravity / (slowness * slowness) * Vector3.down);
     }
 
     [PunRPC]
@@ -100,8 +94,9 @@ public class MagicBallRacketInterractionTests : MonoBehaviourPunCallbacks, IPunO
     {
         AudioManager.instance?.PlayHitSound(other.gameObject.tag, other.GetContact(0).point, Quaternion.LookRotation(other.GetContact(0).normal), RacketManager.instance.racket.GetComponent<PhysicInfo>().GetVelocity().magnitude);
         
-        if (other.gameObject.CompareTag("Racket") )//&& view.IsMine)
+        if (other.gameObject.CompareTag("Racket") )
         {
+            Debug.Log("yes");
             Vector3 newVelocity = Vector3.zero;
             
             switch (physicsUsed)
@@ -131,30 +126,29 @@ public class MagicBallRacketInterractionTests : MonoBehaviourPunCallbacks, IPunO
                     break;
             }
 
-            view.RPC("OnHitCollision", RpcTarget.All, myVel);
+            OnHitCollision(newVelocity);
+            view.RPC("OnHitCollision", RpcTarget.Others, myVel);
         }
-        else if (photonView.IsMine)
+        else if (other.gameObject.CompareTag("FrontWall") || other.gameObject.CompareTag("Brick"))
         {
-            if (other.gameObject.CompareTag("FrontWall") || other.gameObject.CompareTag("Brick"))
-            {
-                MagicalBounce3(other);
-                ballState = BallState.SLOW;
-                view.RPC("MagicalBounce3Velocity", RpcTarget.All, theVel);
-            }
-            else
-            {
-                StandardBounce(other.GetContact(0));        // Util?
-                view.RPC("StandardBounceVelocity", RpcTarget.All, ziVel);
-            }
-                
+            MagicalBounce3(other);
+            ballState = BallState.SLOW;
+           // view.RPC("MagicalBounce3Velocity", RpcTarget.All, theVel);
         }
+        else
+        {
+            StandardBounce(other.GetContact(0));        // Util?
+           // view.RPC("StandardBounceVelocity", RpcTarget.All, ziVel);
+        }
+                
+       
         
         BallEventManager.instance?.OnBallCollision(new BallCollisionInfo(other.gameObject.tag, other.GetContact(0).point, other.GetContact(0).normal,lastVelocity));
     }
 
     [PunRPC]
     private void OnHitCollision(Vector3 direction){
-        direction = myVel;
+        myVel = direction  ;
         rigidbody.velocity = ClampVelocity(hitSpeedMultiplier * direction);
         RacketManager.instance.OnHitEvent(gameObject);  // Ignore collision pour quelques frames.
         ballState = BallState.NORMAL;

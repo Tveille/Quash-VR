@@ -28677,6 +28677,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86f168f45575fff4791f2d2b9fa2d699, type: 3}
+--- !u!1 &952983436 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3229351853486334900, guid: 86aa4bc98f473ea45b90047a06625a42,
+    type: 3}
+  m_PrefabInstance: {fileID: 1538209521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &952983437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952983436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35144820bcc25444bb8f0fd767d9423e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SmoothingDelay: 5
 --- !u!43 &953425673
 Mesh:
   m_ObjectHideFlags: 0
@@ -58370,21 +58389,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
-    - target: {fileID: 1449243544681325886, guid: 86aa4bc98f473ea45b90047a06625a42,
-        type: 3}
-      propertyPath: ObservedComponents.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1449243544681325886, guid: 86aa4bc98f473ea45b90047a06625a42,
-        type: 3}
-      propertyPath: viewIdField
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1449243544681325886, guid: 86aa4bc98f473ea45b90047a06625a42,
-        type: 3}
-      propertyPath: ObservedComponents.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4822642385164060240, guid: 86aa4bc98f473ea45b90047a06625a42,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -58440,8 +58444,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1449243544681325886, guid: 86aa4bc98f473ea45b90047a06625a42,
+        type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449243544681325886, guid: 86aa4bc98f473ea45b90047a06625a42,
+        type: 3}
+      propertyPath: viewIdField
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449243544681325886, guid: 86aa4bc98f473ea45b90047a06625a42,
+        type: 3}
+      propertyPath: ObservedComponents.Array.data[2]
+      value: 
+      objectReference: {fileID: 1538209522}
+    - target: {fileID: 1449243544681325886, guid: 86aa4bc98f473ea45b90047a06625a42,
+        type: 3}
+      propertyPath: ObservedComponents.Array.data[0]
+      value: 
+      objectReference: {fileID: 952983437}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86aa4bc98f473ea45b90047a06625a42, type: 3}
+--- !u!114 &1538209522 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6254731831715652976, guid: 86aa4bc98f473ea45b90047a06625a42,
+    type: 3}
+  m_PrefabInstance: {fileID: 1538209521}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952983436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7329262ded6914aa74f53be6bd3488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1539302600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60389,7 +60425,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1217612
+  m_Name: pb_Mesh-6092
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
