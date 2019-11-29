@@ -1,14 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!310 &1
-UnityConnectSettings:
-  m_ObjectHideFlags: 0
-  UnityPurchasingSettings:
-    m_Enabled: 0
-    m_TestMode: 0
-  UnityAnalyticsSettings:
-    m_Enabled: 0
-    m_InitializeOnStartup: 1
-    m_TestMode: 0
-    m_TestEventUrl: 
-    m_TestConfigUrl: 
+version https://git-lfs.github.com/spec/v1
+oid sha256:e62b0523ce2ab533191e1a423b7e2b034f1e4bc5b1f64189fb858828a1fe4f81
+size 295

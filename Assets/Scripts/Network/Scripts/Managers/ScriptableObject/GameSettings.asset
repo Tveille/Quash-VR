@@ -1,16 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cbca41b25b899a468424a31b9ab3bca, type: 3}
-  m_Name: GameSettings
-  m_EditorClassIdentifier: 
-  _gameVersion: 0.0.0
-  _nickName: Alexis
+version https://git-lfs.github.com/spec/v1
+oid sha256:7698eea959e9c80341e9e784440df154a729a91ef9152e0e246381947b8896ad
+size 443

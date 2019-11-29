@@ -1,33 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af21a1be78f83547bc1b00707414dc1, type: 3}
-  m_Name: Pool List
-  m_EditorClassIdentifier: 
-  pools:
-  - tag: AudioSource
-    prefab: {fileID: 414941099223655605, guid: d5a31ec5219a2dc448cd66587b3eb2d7, type: 3}
-    size: 5
-  - tag: ImpactFX
-    prefab: {fileID: 2194597433777538208, guid: a4b20a9794e29dd46aec1255019e3eb8,
-      type: 3}
-    size: 2
-  - tag: BounceFX
-    prefab: {fileID: 565995459955419888, guid: 1871c528be518d1418d139ffbaf1537d, type: 3}
-    size: 5
-  - tag: CubeDeathFX
-    prefab: {fileID: 5170862702514152613, guid: 15c9a258f05c0bd46a7baca3257ea527,
-      type: 3}
-    size: 20
-  - tag: CubeImpactFX
-    prefab: {fileID: 5227381701002517277, guid: c36e5b9fcb419a64e90e961470c5ba1d,
-      type: 3}
-    size: 35
+version https://git-lfs.github.com/spec/v1
+oid sha256:2feaf82e055820d657b5250d04849c45a5ab050f52cb295edb3ba0ff3bd38c5c
+size 1040
