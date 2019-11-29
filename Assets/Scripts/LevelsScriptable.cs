@@ -59,7 +59,19 @@ public class Wall
 /// </summary>
 public struct BrickSettings
 {
-    public int brickID;
+    public bool isBrickHere;
+    public string brickID;
+
+    //public GameObject prefab;
     public Vector3 brickPosition;
+
+    public int armorValue;
+    public int scoreValue;
+
+    public bool isMoving;
+    public float speed;
+    public float smoothTime;
     public Vector3[] waypointsStorage;
+
+    public int brickColorPreset;
 }

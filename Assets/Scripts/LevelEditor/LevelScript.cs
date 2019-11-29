@@ -35,9 +35,28 @@ public class LevelScript : MonoBehaviour
     public LevelsScriptable selectedLevel;
     public LevelSettings levelCategories;
 
-    public int numberOfWallLayer;
-    public int currentWallLayer;
+    public PresetScriptable[] ColorPreset;
 
+
+    public GameObject[] bricksOnScreen;
+    public int bricksOnLayer;
+    public int numberOfNeutralBrick;
+    public int numberOfColoredBrick01;
+    public int numberOfColoredBrick02;
+
+    public GameObject brickPrefab;
+    public Vector3[] waypointsToPaint = new Vector3[2];
+
+    public Wall currentLayer;
+    public int selectedLayer;
+    public int numberOfLayers;
+    public int totalLayersDisplayed;
+
+    private GameObject prefabBase;
+    private string prefabPath = "Assets/Prefabs/Bricks";
+
+    private PresetScriptable[] colorPresets;
+    private string presetPath = "Assets/ScriptableObjects/ColorPresets";
 
 
 
@@ -54,6 +73,7 @@ public class LevelScript : MonoBehaviour
         get { return totalColumns; }
         set { totalColumns = value; }
     }
+
 
 
 

@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BrickMovingBehaviour : MonoBehaviour
+public class BrickBehaviours : MonoBehaviour
 {
-    
-    [Header("Wall Layer")]
-    public int wallLayerID = 0;
 
     [Header("Score Modifier")]
     public int scoreValue;
 
+
+    [Header("Armor")]
+    [Tooltip("How many hit BEFORE the next one kill it")]
+    public int armorPoints = 1;
+
+
     [Header("Waypoint")]
+    public bool isMoving;
     [Tooltip("Enter waypoints positions here")]
     public Vector3[] waypoints;
 
@@ -37,30 +41,38 @@ public class BrickMovingBehaviour : MonoBehaviour
     private bool onItsWayBack;
 
 
+
+
+
     private void Awake()
     {
-        if(waypoints.Length != 0)
+        if (isMoving)
         {
-            this.transform.position = waypoints[waypointIndex];
+            if (waypoints.Length != 0)
+            {
+                this.transform.position = waypoints[waypointIndex];
 
-            waypointIndex++;
+                waypointIndex++;
+            }
         }
     }
 
+
     private void Update()
     {
-        Moving();
+        if (isMoving)
+        {
+            Moving();
+        }
     }
 
-    /// <summary>
-    /// Déplacement de la Brick
-    /// </summary>
+
     private void Moving()
     {
         this.transform.position = Vector3.SmoothDamp(this.transform.position, waypoints[waypointIndex], ref refVector, smoothTime,
             speed);
 
-        if(this.transform.position == waypoints[waypointIndex])
+        if (this.transform.position == waypoints[waypointIndex])
         {
             //Debug.Log("Reached");
             if (hasToWait)
@@ -75,9 +87,8 @@ public class BrickMovingBehaviour : MonoBehaviour
         }
     }
 
-
     /// <summary>
-    /// Définition du prochain 
+    /// Définition du prochain waypoint
     /// </summary>
     private void NextWaypoint()
     {
@@ -121,7 +132,7 @@ public class BrickMovingBehaviour : MonoBehaviour
         }
     }
 
-    IEnumerator WaitUntil (float timeToWait)
+    IEnumerator WaitUntil(float timeToWait)
     {
         yield return new WaitForSeconds(timeToWait);
 
@@ -131,11 +142,5 @@ public class BrickMovingBehaviour : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Ball")
-        {
-            BrickManager.Instance.DeadBrick(this.gameObject, scoreValue);
-        }
-    }
+
 }
