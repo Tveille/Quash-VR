@@ -12,14 +12,25 @@ public class ObjectWindow : EditorWindow
 
     public static ObjectWindow instance;
     private string path = "Assets/Prefabs/Bricks";
+
     private List<InfoLevelPiece> items;
     private Dictionary<InfoLevelPiece.Category, List<InfoLevelPiece>> categorizedItems;
     private Dictionary<InfoLevelPiece, Texture2D> previews;
+
+
     private Vector2 scrollPosition;
     private const float buttonWidth = 80;
     private const float buttonHeight = 90;
     private GUIStyle tabStyle;
 
+    BrickSettings paintBrick = new BrickSettings();
+
+    private GameObject prefabBase;
+    private string prefabPath = "Assets/Prefabs/Bricks";
+
+    public enum PaintMode { OnDraw, OnSelection }
+    PaintMode paintMode;
+    private string[] paintModeLabel;
 
     public delegate void itemSelectedDelegate(InfoLevelPiece item, Texture2D preview); //Receive an item and a texture
     public static event itemSelectedDelegate ItemSelectedEvent;
@@ -43,13 +54,23 @@ public class ObjectWindow : EditorWindow
 
     private void OnEnable()
     {
-        if (categories == null)
+        //if (categories == null)
+        //{
+        //    InitCategories();
+        //}
+        //if (categorizedItems == null)
+        //{
+        //    InitContent();
+        //}
+
+        InitEditModes();
+        InitBrickParameters();
+
+        prefabBase = EditorUtilityScene.GetAssetsWithScript<BrickBehaviours>(prefabPath)[0].gameObject;
+
+        if (prefabBase == null)
         {
-            InitCategories();
-        }
-        if (categorizedItems == null)
-        {
-            InitContent();
+            Debug.Log("Prefab Base is null");
         }
     }
 
@@ -70,6 +91,7 @@ public class ObjectWindow : EditorWindow
         }
     }
 
+
     private void InitCategories()
     {
         categories = EditorUtilityScene.GetListFromEnum<InfoLevelPiece.Category>();
@@ -79,6 +101,18 @@ public class ObjectWindow : EditorWindow
         {
             categoryLabel.Add(category.ToString());
         }
+    }
+
+    private void InitEditModes()
+    {
+        paintModeLabel = new string[2] { "onDraw" ,"onSelection" };
+    }
+
+    private void InitBrickParameters()
+    {
+        Texture2D preview = AssetPreview.GetAssetPreview(prefabBase);
+
+
     }
 
     private void DrawTabs()
@@ -112,7 +146,6 @@ public class ObjectWindow : EditorWindow
         GUILayout.EndScrollView();
     }
 
-
     /// <summary>
     /// Génère une Dictionary de key "InfoLevelPiece" et d'élément Texture2D pour l'affichage en window
     /// </summary>
@@ -133,6 +166,17 @@ public class ObjectWindow : EditorWindow
         }
     }
 
+
+    private void DrawEditModes()
+    {
+        int index = (int)paintMode;
+        index = GUILayout.Toolbar(index, paintModeLabel);
+
+        paintMode = (PaintMode)index;
+    }
+
+
+    
 
     private GUIContent[] GetGUIContentsFromItems()
     {
@@ -182,10 +226,10 @@ public class ObjectWindow : EditorWindow
 
     private void Update()
     {
-        if (previews.Count != items.Count)
-        {
-            GeneratePreviews();
-        }
+        //if (previews.Count != items.Count)
+        //{
+        //    GeneratePreviews();
+        //}
     }
 
 
@@ -202,8 +246,9 @@ public class ObjectWindow : EditorWindow
 
     private void OnGUI()
     {
-        DrawTabs();
-        DrawScroll();
+        DrawEditModes();
+        //DrawTabs();
+        //DrawScroll();
     }
 
 }
