@@ -26,7 +26,6 @@ namespace Photon.Pun
         public int minViewId;
     }
 
-    [HelpURL("https://doc.photonengine.com/en-us/pun/current/getting-started/feature-overview#scene_photonviews_in_multiple_scenes")]
     public class PunSceneSettings : ScriptableObject
     {
 
