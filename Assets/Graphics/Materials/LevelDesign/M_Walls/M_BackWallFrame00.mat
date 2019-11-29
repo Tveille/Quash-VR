@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_BackWallFrame00
-  m_Shader: {fileID: -6465566751694194690, guid: e1a5ae90ef398c447bf64c5f59d82b95,
+  m_Shader: {fileID: -6465566751694194690, guid: 04e94d0e5bdbd1f48bf84179d9246eb3,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -43,6 +43,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HologramTexture:
+        m_Texture: {fileID: 2800000, guid: abfabee1f74f3d447b38bc74585ac96a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -78,6 +82,7 @@ Material:
     - _OcclusionStrength: 1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _ScrollingSpeed: 0.1
     - _Smoothness: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -90,6 +95,8 @@ Material:
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissiveColor: {r: 0.9309582, g: 0.94509804, b: 0.02352941, a: 0}
-    - _FresnelColor: {r: 2.1185474, g: 0, b: 0.22183743, a: 0}
+    - _EmissiveColor: {r: 0.33552623, g: 0, b: 0.5, a: 0}
+    - _FresnelColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _TextureTiling: {r: 1, g: 3, b: 0, a: 0}
+    - _WallColor: {r: 0.9054055, g: 0, b: 1, a: 0}

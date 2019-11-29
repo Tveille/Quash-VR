@@ -82,7 +82,7 @@ Material:
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _FrameRadius: 0.1
-    - _FresnelPower: 0.5
+    - _FresnelPower: 0.8
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -106,8 +106,8 @@ Material:
     - Color_F7C52B1A: {r: 0, g: 0, b: 0, a: 1}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _CoreEmissiveColor: {r: 0, g: 0.92844176, b: 6.964403, a: 0}
+    - _CoreEmissiveColor: {r: 0, g: 0.7, b: 0.116666555, a: 1}
     - _EdgesColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FresnelColor: {r: 0.343848, g: 2.828427, b: 0, a: 0}
+    - _FresnelColor: {r: 0.627451, g: 5.992157, b: 1.5058824, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}

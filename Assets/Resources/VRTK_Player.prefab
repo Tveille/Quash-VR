@@ -200,7 +200,6 @@ GameObject:
   - component: {fileID: 8451126288808329959}
   - component: {fileID: 6821508232259680630}
   - component: {fileID: 4702033048848065624}
-  - component: {fileID: 1163696776}
   - component: {fileID: 1226541883389966132}
   m_Layer: 0
   m_Name: LeftController
@@ -222,7 +221,7 @@ Transform:
   m_Children:
   - {fileID: 874887430}
   m_Father: {fileID: 7801512562378669575}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7168094651677042421
 MonoBehaviour:
@@ -410,190 +409,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 549ed84219cd8e54197cfd125b9a09ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1163696776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150532118874212417}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b7c8f5f1a0f45b4e99e3fbcbc5b94f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnTriggerPressed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OnPlayer1LeftTriggerPress
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnTriggerReleased:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OnPlayer1LeftTriggerRelease
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnTriggerTouchStart:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerTouchEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerHairlineStart:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerHairlineEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerClicked:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerUnclicked:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerAxisChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  OnGripPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  OnGripReleased:
-    m_PersistentCalls:
-      m_Calls: []
-  OnGripTouchStart:
-    m_PersistentCalls:
-      m_Calls: []
-  OnGripTouchEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  OnGripHairlineStart:
-    m_PersistentCalls:
-      m_Calls: []
-  OnGripHairlineEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  OnGripClicked:
-    m_PersistentCalls:
-      m_Calls: []
-  OnGripUnclicked:
-    m_PersistentCalls:
-      m_Calls: []
-  OnGripAxisChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTouchpadPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTouchpadReleased:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTouchpadTouchStart:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTouchpadTouchEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTouchpadAxisChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButtonOnePressed:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButtonOneReleased:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButtonOneTouchStart:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButtonOneTouchEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButtonTwoPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButtonTwoReleased:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButtonTwoTouchStart:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButtonTwoTouchEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  OnStartMenuPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  OnStartMenuReleased:
-    m_PersistentCalls:
-      m_Calls: []
-  OnAliasPointerOn:
-    m_PersistentCalls:
-      m_Calls: []
-  OnAliasPointerOff:
-    m_PersistentCalls:
-      m_Calls: []
-  OnAliasPointerSet:
-    m_PersistentCalls:
-      m_Calls: []
-  OnAliasGrabOn:
-    m_PersistentCalls:
-      m_Calls: []
-  OnAliasGrabOff:
-    m_PersistentCalls:
-      m_Calls: []
-  OnAliasUseOn:
-    m_PersistentCalls:
-      m_Calls: []
-  OnAliasUseOff:
-    m_PersistentCalls:
-      m_Calls: []
-  OnAliasUIClickOn:
-    m_PersistentCalls:
-      m_Calls: []
-  OnAliasUIClickOff:
-    m_PersistentCalls:
-      m_Calls: []
-  OnAliasMenuOn:
-    m_PersistentCalls:
-      m_Calls: []
-  OnAliasMenuOff:
-    m_PersistentCalls:
-      m_Calls: []
-  OnControllerEnabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnControllerDisabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnControllerIndexChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  OnControllerModelAvailable:
-    m_PersistentCalls:
-      m_Calls: []
-  OnControllerVisible:
-    m_PersistentCalls:
-      m_Calls: []
-  OnControllerHidden:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1226541883389966132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,7 +416,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 150532118874212417}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b7c8f5f1a0f45b4e99e3fbcbc5b94f3, type: 3}
   m_Name: 
@@ -1349,22 +1164,22 @@ MonoBehaviour:
   cachedSystemSDKInfo:
     baseTypeName: VRTK.SDK_BaseSystem
     fallbackTypeName: VRTK.SDK_FallbackSystem
-    typeName: VRTK.SDK_SimSystem
+    typeName: VRTK.SDK_SteamVRSystem
     descriptionIndex: 0
   cachedBoundariesSDKInfo:
     baseTypeName: VRTK.SDK_BaseBoundaries
     fallbackTypeName: VRTK.SDK_FallbackBoundaries
-    typeName: VRTK.SDK_SimBoundaries
+    typeName: VRTK.SDK_SteamVRBoundaries
     descriptionIndex: 0
   cachedHeadsetSDKInfo:
     baseTypeName: VRTK.SDK_BaseHeadset
     fallbackTypeName: VRTK.SDK_FallbackHeadset
-    typeName: VRTK.SDK_SimHeadset
+    typeName: VRTK.SDK_SteamVRHeadset
     descriptionIndex: 0
   cachedControllerSDKInfo:
     baseTypeName: VRTK.SDK_BaseController
     fallbackTypeName: VRTK.SDK_FallbackController
-    typeName: VRTK.SDK_SimController
+    typeName: VRTK.SDK_SteamVRController
     descriptionIndex: 0
 --- !u!1 &7801512561288448486
 GameObject:
@@ -1529,7 +1344,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7801512562378669575
 Transform:
   m_ObjectHideFlags: 0
@@ -1541,8 +1356,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8552349933306650082}
   - {fileID: 4078316109679935818}
+  - {fileID: 8552349933306650082}
   m_Father: {fileID: 8166748994558718948}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1811,7 +1626,7 @@ Transform:
   m_Children:
   - {fileID: 1378147367}
   m_Father: {fileID: 7801512562378669575}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5712077845761979393
 MonoBehaviour:
@@ -2265,6 +2080,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[SteamVR]'
       objectReference: {fileID: 0}
+    - target: {fileID: 132594, guid: 4f35fa249b5008c44ac2998be6f82d4d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 458990, guid: 4f35fa249b5008c44ac2998be6f82d4d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2565,6 +2384,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11416958, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
+      propertyPath: assignAllBeforeIdentified
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 11489174, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: vertices.Array.data[0].z
       value: -1.125
@@ -2632,6 +2455,30 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 11420968, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
+--- !u!1 &7801512562686572895 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 189822, guid: 4d293c8e162f3874b982baadd71153d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7801512562686483489}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7801512562686333657 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 413432, guid: 4d293c8e162f3874b982baadd71153d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7801512562686483489}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7801512562686507171 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 124034, guid: 4d293c8e162f3874b982baadd71153d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7801512562686483489}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7801512562686394611 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 482514, guid: 4d293c8e162f3874b982baadd71153d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7801512562686483489}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7801512562686324515 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 439042, guid: 4d293c8e162f3874b982baadd71153d2,
@@ -2671,30 +2518,6 @@ GameObject:
 --- !u!4 &7801512562686355383 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 408470, guid: 4d293c8e162f3874b982baadd71153d2,
-    type: 3}
-  m_PrefabInstance: {fileID: 7801512562686483489}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7801512562686572895 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 189822, guid: 4d293c8e162f3874b982baadd71153d2,
-    type: 3}
-  m_PrefabInstance: {fileID: 7801512562686483489}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &7801512562686333657 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 413432, guid: 4d293c8e162f3874b982baadd71153d2,
-    type: 3}
-  m_PrefabInstance: {fileID: 7801512562686483489}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7801512562686507171 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 124034, guid: 4d293c8e162f3874b982baadd71153d2,
-    type: 3}
-  m_PrefabInstance: {fileID: 7801512562686483489}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &7801512562686394611 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 482514, guid: 4d293c8e162f3874b982baadd71153d2,
     type: 3}
   m_PrefabInstance: {fileID: 7801512562686483489}
   m_PrefabAsset: {fileID: 0}
